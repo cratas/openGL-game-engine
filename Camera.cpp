@@ -1,6 +1,5 @@
 #include "Camera.h"
 
-
 /// <summary>
 /// Camera class constructor, which takes one argument: start position of camera
 /// </summary>

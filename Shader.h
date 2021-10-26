@@ -11,11 +11,14 @@
 #include <iostream>
 #include <sstream>
 
-
 #include "Camera.h"
 #include "WindowInitializer.h"
 
 class Camera;
+
+/// <summary>
+/// Shader class keeps information about vert, frag shaders and shaderID, which is called shaderProgram
+/// </summary>
 class Shader
 {
 private:
@@ -25,7 +28,6 @@ private:
 	GLuint shaderProgram;
 	const char* vertex_shader;
 	const char* fragment_shader;
-	void setConstValues();
 	string loadFile(const char* fname);
 public:
 	Shader(const char* vertexFile, const char* fragmentFile, Camera* camera);

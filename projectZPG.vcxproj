@@ -154,6 +154,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="ShaderFactory.cpp" />
+    <ClCompile Include="ShaderManager.cpp" />
     <ClCompile Include="Transformations.cpp" />
     <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="UserInput.cpp" />
@@ -169,6 +171,8 @@
     <ClInclude Include="Quad.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="Shader.h" />
+    <ClInclude Include="ShaderFactory.h" />
+    <ClInclude Include="ShaderManager.h" />
     <ClInclude Include="sphere.h" />
     <ClInclude Include="suzi_flat.h" />
     <ClInclude Include="suzi_smooth.h" />

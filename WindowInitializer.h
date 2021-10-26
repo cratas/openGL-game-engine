@@ -20,7 +20,6 @@
 
 using namespace std;
 
-
 /// <summary>
 /// Singleton class initializing modern OpenGL (3.3+)
 /// </summary>
@@ -29,14 +28,10 @@ class WindowInitializer
 private:
 	static WindowInitializer* instance;
 	GLFWwindow* window;
-
 	WindowInitializer();
-
 	static void error_callback(int error, const char* description);
 	void getVersionInfo();
-
 public:
 	static WindowInitializer* getInstance();
 	GLFWwindow* getWindow();
-
 };

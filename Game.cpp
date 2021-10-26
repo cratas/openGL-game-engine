@@ -8,19 +8,38 @@ Game::Game()
 	WindowInitializer* windowInitializer = WindowInitializer::getInstance();
 	this->window = windowInitializer->getWindow();
 
-	this->objectManager = new ObjectManager();
-	this->camera = new Camera(glm::vec3(0.0f, 0.0f, 3.0f));
+	this->camera = new Camera(glm::vec3(0.0f, 0.0f, 5.0f));
 	this->userInput = new UserInput(camera);
 }
 
 /// <summary>
-/// method creating and drawing objects
+/// method creating and drawing objects, runs in loop
 /// </summary>
 void Game::runGame()
 {
-	this->shaderProgram = new Shader("lambert.vert", "lambert.frag", camera);
 	
-	this->objectManager->createTriangle(suziFlat, sizeof(suziFlat) / sizeof(suziFlat[0]), this->shaderProgram);
+	//PLAIN 0
+	ObjectManager::getInstance()->createTriangle(plain, sizeof(plain) / sizeof(plain[0]), ShaderManager::getInstance()->getConstantShader(camera));
+	ObjectManager::getInstance()->getObject(0)->getTransformations()->scale(15, 15, 15);
+	ObjectManager::getInstance()->getObject(0)->getTransformations()->translate(0, -0.2, 0);
+	//SPHERE 1
+	ObjectManager::getInstance()->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getConstantShader(camera));
+
+
+	//SUZI_FLAT 2
+	ObjectManager::getInstance()->createTriangle(suziFlat, sizeof(suziFlat) / sizeof(suziFlat[0]), ShaderManager::getInstance()->getLambertShader(camera));
+	
+	//SECOND SPHERE 3
+	ObjectManager::getInstance()->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getConstantShader(camera));
+	ObjectManager::getInstance()->getObject(3)->getTransformations()->translate(-3, 0, 0);
+
+	//SUZI_FLAT 4
+	ObjectManager::getInstance()->createTriangle(suziSmooth, sizeof(suziSmooth) / sizeof(suziSmooth[0]), ShaderManager::getInstance()->getConstantShader(camera));
+	ObjectManager::getInstance()->getObject(4)->getTransformations()->translate(0, 1, -2);
+	ObjectManager::getInstance()->getObject(4)->getTransformations()->scale(0.5, 0.5, 0.5);
+
+
+
 
 	float angle = 1;
 	while (!glfwWindowShouldClose(window))
@@ -33,10 +52,16 @@ void Game::runGame()
 
 		angle += 0.01;
 
-		objectManager->getObject(0)->getTransformations()->setMatrixDefault();
-		objectManager->getObject(0)->getTransformations()->rotate(angle, 0, 0);
+		ObjectManager::getInstance()->getObject(2)->getTransformations()->setMatrixDefault();
+		ObjectManager::getInstance()->getObject(2)->getTransformations()->scale(0.7, 0.7, 0.7);
+		ObjectManager::getInstance()->getObject(2)->getTransformations()->rotate(0, angle, 0);
+		
+		ObjectManager::getInstance()->getObject(1)->getTransformations()->setMatrixDefault();
+		ObjectManager::getInstance()->getObject(1)->getTransformations()->rotate(angle, angle, angle);
+		ObjectManager::getInstance()->getObject(1)->getTransformations()->scale(0.5, 0.5, 0.5);
+		ObjectManager::getInstance()->getObject(1)->getTransformations()->translate(5, 0, 0);
 
-		objectManager->drawAllObjects();
+		ObjectManager::getInstance()->drawAllObjects();
 
 		// update other events like input handling
 		glfwPollEvents();
@@ -47,6 +72,4 @@ void Game::runGame()
 
 	glfwTerminate();
 	exit(EXIT_SUCCESS);
-
-	shaderProgram->compileErrors();
 }

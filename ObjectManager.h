@@ -4,13 +4,19 @@
 #include "Shader.h"
 #include "ObjectFactory.h"
 
+/// <summary>
+/// Class managing game Objects
+/// </summary>
 class ObjectManager
 {
 private:
 	std::vector<AbstractObject*> objects;
 	int count;
 	void addObject(AbstractObject* object);
+	static ObjectManager* instance;
+	ObjectManager();
 public:
+	static ObjectManager* getInstance();
 	AbstractObject* getObject(int i);
 	int getCount();
 	void drawAllObjects();

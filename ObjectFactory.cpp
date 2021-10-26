@@ -3,11 +3,11 @@
 
 ObjectFactory* ObjectFactory::instance = 0;
 
-ObjectFactory::ObjectFactory()
-{
+ObjectFactory::ObjectFactory(){}
 
-}
-
+/// <summary>
+/// Static method which returns pointer on instance of class, Singleton pattern used
+/// </summary>
 ObjectFactory* ObjectFactory::getInstance()
 {
 	if (instance == nullptr)
@@ -17,6 +17,9 @@ ObjectFactory* ObjectFactory::getInstance()
 	return instance;
 }
 
+/// <summary>
+/// Method creating specific type of Abstract Object(Quad)
+/// </summary>
 AbstractObject* ObjectFactory::createQuad(Model* model, Shader* shader)
 {
 	AbstractObject* object = nullptr;
@@ -25,6 +28,9 @@ AbstractObject* ObjectFactory::createQuad(Model* model, Shader* shader)
 	return object;
 }
 
+/// <summary>
+/// Method creating specific type of Abstract Object(Triangle)
+/// </summary>
 AbstractObject* ObjectFactory::createTriangle(Model* model, Shader* shader)
 {
 	AbstractObject* object = nullptr;

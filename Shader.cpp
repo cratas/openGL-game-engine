@@ -1,6 +1,8 @@
 #include "Shader.h"
 
-
+/// <summary>
+/// Class constructor takes path to vert and frag file and pointer to Camera class
+/// </summary>
 Shader::Shader(const char* vertexFile, const char* fragmentFile, Camera* camera) : camera(camera)
 {
 	camera->shader = this;
@@ -32,8 +34,13 @@ Shader::Shader(const char* vertexFile, const char* fragmentFile, Camera* camera)
 
 	glDeleteShader(vertexShader);
 	glDeleteShader(fragmentShader);
+
+	compileErrors();
 }
 
+/// <summary>
+/// Method for loading shaders from file
+/// </summary>
 string Shader::loadFile(const char* fname)
 {
 	ifstream file(fname);
@@ -48,7 +55,9 @@ string Shader::loadFile(const char* fname)
 	return fileData.str();
 }
 
-
+/// <summary>
+/// Method activatesShader sends data on GPU
+/// </summary>
 void Shader::activateShader(glm::mat4 M)
 {
 	glUseProgram(shaderProgram);
@@ -57,11 +66,17 @@ void Shader::activateShader(glm::mat4 M)
 	glUniformMatrix4fv(idModelTransform, 1, GL_FALSE, &M[0][0]);
 }
 
+/// <summary>
+/// Method for delete shader
+/// </summary>
 void Shader::deleteShader()
 {
 	glDeleteProgram(shaderProgram);
 }
 
+/// <summary>
+/// Method compileErros catches errors
+/// </summary>
 void Shader::compileErrors()
 {
 	GLint status;

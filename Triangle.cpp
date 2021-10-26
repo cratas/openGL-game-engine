@@ -1,5 +1,8 @@
 #include "Triangle.h"
 
+/// <summary>
+/// Class constructor taking pointer to Model and Shader class
+/// </summary>
 Triangle::Triangle(Model* model, Shader* shader)
 {
 	this->model = model;
@@ -7,6 +10,9 @@ Triangle::Triangle(Model* model, Shader* shader)
 	this->transformations = new Transformations();
 }
 
+/// <summary>
+/// Method draw activates shader with current Matrix, bind VAO and draw TRIANGLE
+/// </summary>
 void Triangle::draw()
 {
 	shader->activateShader(transformations->getTransformatedMatrix());

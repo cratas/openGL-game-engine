@@ -1,6 +1,8 @@
 #include "Quad.h"
 
-
+/// <summary>
+/// Class constructor taking pointer to Model and Shader class
+/// </summary>
 Quad::Quad(Model* model, Shader* shader)
 {
 	this->model = model;
@@ -8,8 +10,9 @@ Quad::Quad(Model* model, Shader* shader)
 	this->transformations = new Transformations();
 }
 
-
-
+/// <summary>
+/// Method draw activates shader with current Matrix, bind VAO and draw QUAD
+/// </summary>
 void Quad::draw()
 {
 	shader->activateShader(transformations->getTransformatedMatrix());

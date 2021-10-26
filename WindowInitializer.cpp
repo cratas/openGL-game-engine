@@ -43,7 +43,6 @@ WindowInitializer::WindowInitializer()
 	glViewport(0, 0, width, height);
 }
 
-
 /// <summary>
 /// public function to create singleton instance of WindowInitializer class
 /// </summary>
@@ -56,7 +55,6 @@ WindowInitializer* WindowInitializer::getInstance()
 	}
 	return instance;
 }
-
 
 /// <summary>
 /// getter of GLFWwindow object

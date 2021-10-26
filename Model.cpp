@@ -1,5 +1,8 @@
 #include "Model.h"
 
+/// <summary>
+/// Model consturctor taking array of points and size of points
+/// </summary>
 Model::Model(const float points[], int size)
 {
 	this->sizeOfPoints = size / 6;
@@ -14,7 +17,9 @@ Model::Model(const float points[], int size)
 	initVAO();
 }
 
-
+/// <summary>
+/// Method for initialize Vertex array object
+/// </summary>
 void Model::initVAO()
 {
 	//Vertex Array Object (VAO)
@@ -30,6 +35,9 @@ void Model::initVAO()
 
 }
 
+/// <summary>
+/// Method for initializing Vertex Buffer Object
+/// </summary>
 void Model::initVBO()
 {
 	//vertex buffer object (VBO)
@@ -38,6 +46,9 @@ void Model::initVBO()
 	glBufferData(GL_ARRAY_BUFFER, sizeof(points), points, GL_STATIC_DRAW);
 }
 
+/// <summary>
+/// Method binding Vertex Array Object
+/// </summary>
 void Model::bindVAO()
 {
 	glBindVertexArray(VAO);

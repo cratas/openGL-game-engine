@@ -1,5 +1,8 @@
 ﻿  Game.cpp
 C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\suzi_flat.h(2910,1): warning C4305: 'initializing': truncation from 'double' to 'const float'
 C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\sphere.h(2886,1): warning C4305: 'initializing': truncation from 'double' to 'const float'
-C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\Game.cpp(34,16): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\suzi_smooth.h(2911,1): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\Game.cpp(24,88): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\Game.cpp(53,16): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\Game.cpp(56,88): warning C4305: 'argument': truncation from 'double' to 'float'
   projectZPG.vcxproj -> C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\Debug\projectZPG.exe

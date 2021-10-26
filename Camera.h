@@ -23,6 +23,10 @@
 #include "Shader.h"
 
 class Shader;
+
+/// <summary>
+/// Class visualising moving camera controlled via userInput class
+/// </summary>
 class Camera
 {
 public:

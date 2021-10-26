@@ -13,87 +13,96 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Hlavičkové soubory\Objects">
-      <UniqueIdentifier>{01a126b8-9016-44b4-b3c0-0b4200b36878}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Zdrojové soubory\Objects">
-      <UniqueIdentifier>{ba80b3c4-f6ef-4464-8250-bd3c4aa8060d}</UniqueIdentifier>
+    <Filter Include="Hlavičkové soubory\Scene">
+      <UniqueIdentifier>{271cc4a3-482a-4b67-a364-5aaeb4cb7759}</UniqueIdentifier>
     </Filter>
     <Filter Include="Hlavičkové soubory\Models">
       <UniqueIdentifier>{55927f07-c482-4bfc-8d85-62321cfc8fa5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hlavičkové soubory\ObjectsManagment">
+      <UniqueIdentifier>{01a126b8-9016-44b4-b3c0-0b4200b36878}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hlavičkové soubory\ShadersManagment">
+      <UniqueIdentifier>{ed5bf34f-ac67-43c6-b424-f5497b97f8be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hlavičkové soubory\Input">
+      <UniqueIdentifier>{1cdbbdf7-d76b-441d-baf8-bea3135eef05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Zdrojové soubory\Input">
+      <UniqueIdentifier>{c1b80619-f72c-4ff0-9f3e-525bbf5f67fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Zdrojové soubory\Scene">
+      <UniqueIdentifier>{f4f88553-4746-4cb7-98b5-b7ff6ae71f7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Zdrojové soubory\ShaderManagment">
+      <UniqueIdentifier>{95f9d56f-6117-4c7b-a706-df5b0f72a391}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Zdrojové soubory\ObjectsManagment">
+      <UniqueIdentifier>{ba80b3c4-f6ef-4464-8250-bd3c4aa8060d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Zdrojové soubory</Filter>
     </ClCompile>
-    <ClCompile Include="WindowInitializer.cpp">
-      <Filter>Zdrojové soubory</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Zdrojové soubory</Filter>
-    </ClCompile>
-    <ClCompile Include="Transformations.cpp">
-      <Filter>Zdrojové soubory</Filter>
-    </ClCompile>
     <ClCompile Include="Triangle.cpp">
-      <Filter>Zdrojové soubory\Objects</Filter>
+      <Filter>Zdrojové soubory\ObjectsManagment</Filter>
     </ClCompile>
     <ClCompile Include="Quad.cpp">
-      <Filter>Zdrojové soubory\Objects</Filter>
+      <Filter>Zdrojové soubory\ObjectsManagment</Filter>
     </ClCompile>
     <ClCompile Include="ObjectManager.cpp">
-      <Filter>Zdrojové soubory\Objects</Filter>
+      <Filter>Zdrojové soubory\ObjectsManagment</Filter>
     </ClCompile>
     <ClCompile Include="ObjectFactory.cpp">
-      <Filter>Zdrojové soubory\Objects</Filter>
+      <Filter>Zdrojové soubory\ObjectsManagment</Filter>
     </ClCompile>
     <ClCompile Include="AbstractObject.cpp">
-      <Filter>Zdrojové soubory\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Camera.cpp">
-      <Filter>Zdrojové soubory</Filter>
-    </ClCompile>
-    <ClCompile Include="UserInput.cpp">
-      <Filter>Zdrojové soubory</Filter>
-    </ClCompile>
-    <ClCompile Include="Shader.cpp">
-      <Filter>Zdrojové soubory</Filter>
+      <Filter>Zdrojové soubory\ObjectsManagment</Filter>
     </ClCompile>
     <ClCompile Include="Model.cpp">
-      <Filter>Zdrojové soubory\Objects</Filter>
+      <Filter>Zdrojové soubory\ObjectsManagment</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInput.cpp">
+      <Filter>Zdrojové soubory\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowInitializer.cpp">
+      <Filter>Zdrojové soubory\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Zdrojové soubory\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Zdrojové soubory\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Zdrojové soubory\ShaderManagment</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderFactory.cpp">
+      <Filter>Zdrojové soubory\ShaderManagment</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderManager.cpp">
+      <Filter>Zdrojové soubory\ShaderManagment</Filter>
+    </ClCompile>
+    <ClCompile Include="Transformations.cpp">
+      <Filter>Zdrojové soubory\ObjectsManagment</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="WindowInitializer.h">
-      <Filter>Hlavičkové soubory</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Hlavičkové soubory</Filter>
-    </ClInclude>
-    <ClInclude Include="Transformations.h">
-      <Filter>Hlavičkové soubory</Filter>
-    </ClInclude>
     <ClInclude Include="ObjectFactory.h">
-      <Filter>Hlavičkové soubory\Objects</Filter>
+      <Filter>Hlavičkové soubory\ObjectsManagment</Filter>
     </ClInclude>
     <ClInclude Include="AbstractObject.h">
-      <Filter>Hlavičkové soubory\Objects</Filter>
+      <Filter>Hlavičkové soubory\ObjectsManagment</Filter>
     </ClInclude>
     <ClInclude Include="ObjectManager.h">
-      <Filter>Hlavičkové soubory\Objects</Filter>
+      <Filter>Hlavičkové soubory\ObjectsManagment</Filter>
     </ClInclude>
     <ClInclude Include="Triangle.h">
-      <Filter>Hlavičkové soubory\Objects</Filter>
+      <Filter>Hlavičkové soubory\ObjectsManagment</Filter>
     </ClInclude>
     <ClInclude Include="Quad.h">
-      <Filter>Hlavičkové soubory\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>Hlavičkové soubory</Filter>
-    </ClInclude>
-    <ClInclude Include="UserInput.h">
-      <Filter>Hlavičkové soubory</Filter>
+      <Filter>Hlavičkové soubory\ObjectsManagment</Filter>
     </ClInclude>
     <ClInclude Include="plain.h">
       <Filter>Hlavičkové soubory\Models</Filter>
@@ -107,11 +116,32 @@
     <ClInclude Include="suzi_smooth.h">
       <Filter>Hlavičkové soubory\Models</Filter>
     </ClInclude>
-    <ClInclude Include="Shader.h">
-      <Filter>Hlavičkové soubory</Filter>
-    </ClInclude>
     <ClInclude Include="Model.h">
-      <Filter>Hlavičkové soubory\Objects</Filter>
+      <Filter>Hlavičkové soubory\ObjectsManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Hlavičkové soubory\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Hlavičkové soubory\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowInitializer.h">
+      <Filter>Hlavičkové soubory\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderFactory.h">
+      <Filter>Hlavičkové soubory\ShadersManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderManager.h">
+      <Filter>Hlavičkové soubory\ShadersManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Hlavičkové soubory\ShadersManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="Transformations.h">
+      <Filter>Hlavičkové soubory\ObjectsManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInput.h">
+      <Filter>Hlavičkové soubory\Input</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

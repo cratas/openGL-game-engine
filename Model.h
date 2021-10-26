@@ -9,7 +9,9 @@
 #include <iostream>
 #include <sstream>
 
-
+/// <summary>
+/// Model class keeping information about model(points) and initializing Vertex Array Object and Verter Buffer Object
+/// </summary>
 class Model
 {
 private:
@@ -19,7 +21,6 @@ public:
 	void bindVAO();
 	GLuint VBO;
 	int sizeOfPoints;
-
 	Model(const float points[], int size);
 	void initVBO();
 	void initVAO();
