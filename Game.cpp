@@ -8,7 +8,7 @@ Game::Game()
 	WindowInitializer* windowInitializer = WindowInitializer::getInstance();
 	this->window = windowInitializer->getWindow();
 
-	this->objectFactory = ObjectFactory::getInstance();
+	this->objectManager = new ObjectManager();
 	this->camera = new Camera(glm::vec3(0.0f, 0.0f, 3.0f));
 	this->userInput = new UserInput(camera);
 }
@@ -19,9 +19,8 @@ Game::Game()
 void Game::runGame()
 {
 	this->shaderProgram = new Shader("lambert.vert", "lambert.frag", camera);
-
-	objectFactory->createTriangle(new Model(sphere, sizeof(sphere) / sizeof(sphere[0])), shaderProgram);
-	objectFactory->createTriangle(new Model(suziFlat, sizeof(suziFlat) / sizeof(suziFlat[0])), shaderProgram);
+	
+	this->objectManager->createTriangle(suziFlat, sizeof(suziFlat) / sizeof(suziFlat[0]), this->shaderProgram);
 
 	float angle = 1;
 	while (!glfwWindowShouldClose(window))
@@ -34,15 +33,10 @@ void Game::runGame()
 
 		angle += 0.01;
 
-		objectFactory->getObjectManager()->getObject(0)->getTransformations()->setMatrixDefault();
-		objectFactory->getObjectManager()->getObject(0)->getTransformations()->rotate(0, 0, 0);
+		objectManager->getObject(0)->getTransformations()->setMatrixDefault();
+		objectManager->getObject(0)->getTransformations()->rotate(angle, 0, 0);
 
-		objectFactory->getObjectManager()->getObject(1)->getTransformations()->setMatrixDefault();
-		objectFactory->getObjectManager()->getObject(1)->getTransformations()->translate(4, 0, 0);
-		objectFactory->getObjectManager()->getObject(1)->getTransformations()->rotate(0, angle, 0);
-		objectFactory->getObjectManager()->getObject(1)->getTransformations()->scale(0.3f, 0.3f, 0.3f);
-	
-		objectFactory->getObjectManager()->drawAllObjects();
+		objectManager->drawAllObjects();
 
 		// update other events like input handling
 		glfwPollEvents();

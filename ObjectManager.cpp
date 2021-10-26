@@ -1,5 +1,7 @@
 #include "ObjectManager.h"
 
+
+
 AbstractObject* ObjectManager::getObject(int i)
 {
 	return this->objects[i];
@@ -22,4 +24,20 @@ void ObjectManager::drawAllObjects()
 	{
 		objects[i]->draw();
 	}
+}
+
+void ObjectManager::createQuad(const float points[], int size, Shader* shader)
+{
+	AbstractObject* object = nullptr;
+	object = ObjectFactory::getInstance()->createQuad(new Model(points, size), shader);
+
+	this->addObject(object);
+}
+
+void ObjectManager::createTriangle(const float points[], int size, Shader* shader)
+{
+	AbstractObject* object = nullptr;
+	object = ObjectFactory::getInstance()->createTriangle(new Model(points, size), shader);
+
+	this->addObject(object);
 }

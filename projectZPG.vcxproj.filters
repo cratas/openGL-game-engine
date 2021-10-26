@@ -30,9 +30,6 @@
     <ClCompile Include="WindowInitializer.cpp">
       <Filter>Zdrojové soubory</Filter>
     </ClCompile>
-    <ClCompile Include="Model.cpp">
-      <Filter>Zdrojové soubory</Filter>
-    </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Zdrojové soubory</Filter>
     </ClCompile>
@@ -63,12 +60,12 @@
     <ClCompile Include="Shader.cpp">
       <Filter>Zdrojové soubory</Filter>
     </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Zdrojové soubory\Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WindowInitializer.h">
-      <Filter>Hlavičkové soubory</Filter>
-    </ClInclude>
-    <ClInclude Include="Model.h">
       <Filter>Hlavičkové soubory</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
@@ -112,6 +109,9 @@
     </ClInclude>
     <ClInclude Include="Shader.h">
       <Filter>Hlavičkové soubory</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Hlavičkové soubory\Objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

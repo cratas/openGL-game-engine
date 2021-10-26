@@ -20,9 +20,7 @@ public:
 	GLuint VBO;
 	int sizeOfPoints;
 
-
 	Model(const float points[], int size);
 	void initVBO();
 	void initVAO();
-
 };
