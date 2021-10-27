@@ -23,7 +23,7 @@ void Game::runGame()
 	ObjectManager::getInstance()->getObject(0)->getTransformations()->scale(15, 15, 15);
 	ObjectManager::getInstance()->getObject(0)->getTransformations()->translate(0, -0.2, 0);
 	//SPHERE 1
-	ObjectManager::getInstance()->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getConstantShader(camera));
+	ObjectManager::getInstance()->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getLambertShader(camera));
 
 
 	//SUZI_FLAT 2

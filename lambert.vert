@@ -9,5 +9,5 @@ uniform mat4 camMatrix;
 void main () {
 	gl_Position = camMatrix * modelMatrix *  vec4(position, 1.0);
 	ex_worldPosition = modelMatrix * vec4(position, 1.0);
-	ex_worldNormal = (modelMatrix) * vec4(normal, 1.0);
+	ex_worldNormal = transpose(inverse(modelMatrix)) * vec4(normal, 1.0);
 }
