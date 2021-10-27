@@ -157,5 +157,11 @@
     <None Include="lambert.vert">
       <Filter>Soubory zdrojů</Filter>
     </None>
+    <None Include="phong.vert">
+      <Filter>Soubory zdrojů</Filter>
+    </None>
+    <None Include="phong.frag">
+      <Filter>Soubory zdrojů</Filter>
+    </None>
   </ItemGroup>
 </Project>

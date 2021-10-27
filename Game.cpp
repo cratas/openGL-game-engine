@@ -33,13 +33,10 @@ void Game::runGame()
 	ObjectManager::getInstance()->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getConstantShader(camera));
 	ObjectManager::getInstance()->getObject(3)->getTransformations()->translate(-3, 0, 0);
 
-	//SUZI_FLAT 4
-	ObjectManager::getInstance()->createTriangle(suziSmooth, sizeof(suziSmooth) / sizeof(suziSmooth[0]), ShaderManager::getInstance()->getConstantShader(camera));
+	//SUZI_SMOOTH 4
+	ObjectManager::getInstance()->createTriangle(suziSmooth, sizeof(suziSmooth) / sizeof(suziSmooth[0]), ShaderManager::getInstance()->getPhongShader(camera));
 	ObjectManager::getInstance()->getObject(4)->getTransformations()->translate(0, 1, -2);
 	ObjectManager::getInstance()->getObject(4)->getTransformations()->scale(0.5, 0.5, 0.5);
-
-
-
 
 	float angle = 1;
 	while (!glfwWindowShouldClose(window))
