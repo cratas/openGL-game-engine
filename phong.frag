@@ -2,16 +2,16 @@
 in vec4 ex_worldPosition;
 in vec4 ex_worldNormal;
 out vec4 frag_colour;
-uniform vec3 camPos;
+uniform vec3 camPosition;
 uniform vec3 lightObjectPos;
-void main(void) 
+
+void main() 
 {                                       
     vec3 lightVec = lightObjectPos - vec3(ex_worldPosition);
     float dist = length(lightVec);
     float a = 0.5;                                             
     float b = 0.7;                                            
     float inten = 1;
-
 
     vec3 normal = normalize(vec3(ex_worldNormal));    
     vec3 lightDirection = normalize( lightVec);
@@ -21,7 +21,7 @@ void main(void)
     vec4 ambient = 0.1* vec4(0.385, 0.647, 0.812, 1.0);                           
 
     float specularLight = 0.50f;                                                  
-    vec3 viewDirection = normalize(camPos  -vec3 (ex_worldPosition));                             
+    vec3 viewDirection = normalize(camPosition  -vec3 (ex_worldPosition));                             
     vec3 reflectionDirection = reflect((-lightDirection), (normal));                  
     float specAmount = pow(max(dot(viewDirection, (reflectionDirection)), 0.0f), 8);
     float specular = specAmount * specularLight;                                  
