@@ -17,7 +17,7 @@ class Model
 private:
 	GLuint VAO;
 public:
-	float points[100000];
+	float points[1000000];
 	void bindVAO();
 	GLuint VBO;
 	int sizeOfPoints;

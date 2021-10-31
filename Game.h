@@ -14,6 +14,7 @@
 #include "sphere.h"
 #include "plain.h"
 #include "suzi_smooth.h"
+#include "tree.h"
 
 /// <summary>
 /// Class visualising game scene

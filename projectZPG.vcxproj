@@ -177,6 +177,7 @@
     <ClInclude Include="suzi_flat.h" />
     <ClInclude Include="suzi_smooth.h" />
     <ClInclude Include="Transformations.h" />
+    <ClInclude Include="tree.h" />
     <ClInclude Include="Triangle.h" />
     <ClInclude Include="UserInput.h" />
     <ClInclude Include="WindowInitializer.h" />

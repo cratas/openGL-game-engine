@@ -17,26 +17,49 @@ Game::Game()
 /// </summary>
 void Game::runGame()
 {
-	
-	//PLAIN 0
-	ObjectManager::getInstance()->createTriangle(plain, sizeof(plain) / sizeof(plain[0]), ShaderManager::getInstance()->getConstantShader(camera));
-	ObjectManager::getInstance()->getObject(0)->getTransformations()->scale(15, 15, 15);
-	ObjectManager::getInstance()->getObject(0)->getTransformations()->translate(0, -0.2, 0);
-	//SPHERE 1
-	ObjectManager::getInstance()->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getLambertShader(camera));
+	/*
+	ObjectManager::getInstance()->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getPhongShader(camera));
+	ObjectManager::getInstance()->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getPhongShader(camera));
+	ObjectManager::getInstance()->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getPhongShader(camera));
+	ObjectManager::getInstance()->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getPhongShader(camera));
+	*/
+	ObjectManager::getInstance()->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getLambertShader(camera));
+	ObjectManager::getInstance()->getObject(0)->getTransformations()->scale(0.7, 0.7, 0.7);
 
+	ObjectManager::getInstance()->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getLambertShader(camera));
+	ObjectManager::getInstance()->getObject(1)->getTransformations()->scale(0.3, 0.3, 0.3);
+	ObjectManager::getInstance()->getObject(1)->getTransformations()->translate(-8, 0, 0);
 
-	//SUZI_FLAT 2
-	ObjectManager::getInstance()->createTriangle(suziFlat, sizeof(suziFlat) / sizeof(suziFlat[0]), ShaderManager::getInstance()->getLambertShader(camera));
-	
-	//SECOND SPHERE 3
-	ObjectManager::getInstance()->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getConstantShader(camera));
-	ObjectManager::getInstance()->getObject(3)->getTransformations()->translate(-3, 0, 0);
+	ObjectManager::getInstance()->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getLambertShader(camera));
+	ObjectManager::getInstance()->getObject(2)->getTransformations()->translate(8, 0, 0);
 
-	//SUZI_SMOOTH 4
-	ObjectManager::getInstance()->createTriangle(suziSmooth, sizeof(suziSmooth) / sizeof(suziSmooth[0]), ShaderManager::getInstance()->getPhongShader(camera));
-	ObjectManager::getInstance()->getObject(4)->getTransformations()->translate(0, 1, -2);
-	ObjectManager::getInstance()->getObject(4)->getTransformations()->scale(0.5, 0.5, 0.5);
+	ObjectManager::getInstance()->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getLambertShader(camera));
+	ObjectManager::getInstance()->getObject(2)->getTransformations()->scale(0.5, 0.5, 0.5);
+	ObjectManager::getInstance()->getObject(2)->getTransformations()->translate(6, 0, 10);
+
+	ObjectManager::getInstance()->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getConstantShader(camera));
+	ObjectManager::getInstance()->getObject(3)->getTransformations()->scale(1.2, 1.2, 1.2);
+	ObjectManager::getInstance()->getObject(3)->getTransformations()->translate(4, 0, -8);
+
+	ObjectManager::getInstance()->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getLambertShader(camera));
+	ObjectManager::getInstance()->getObject(4)->getTransformations()->scale(0.9, 0.9, 0.9);
+	ObjectManager::getInstance()->getObject(4)->getTransformations()->translate(0, 0, 10);
+
+	ObjectManager::getInstance()->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getLambertShader(camera));
+	ObjectManager::getInstance()->getObject(5)->getTransformations()->scale(0.8, 0.8, 0.8);
+	ObjectManager::getInstance()->getObject(5)->getTransformations()->translate(5, 0, 10);
+
+	ObjectManager::getInstance()->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getLambertShader(camera));
+	ObjectManager::getInstance()->getObject(6)->getTransformations()->scale(0.8, 0.8, 0.8);
+	ObjectManager::getInstance()->getObject(6)->getTransformations()->translate(0, 0, -10);
+
+	ObjectManager::getInstance()->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getPhongShader(camera));
+	ObjectManager::getInstance()->getObject(7)->getTransformations()->scale(1.8, 1.8, 1.8);
+	ObjectManager::getInstance()->getObject(7)->getTransformations()->translate(7, 0, 0);
+
+	ObjectManager::getInstance()->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getLambertShader(camera));
+	ObjectManager::getInstance()->getObject(8)->getTransformations()->scale(1.2, 1.2, 1.2);
+	ObjectManager::getInstance()->getObject(8)->getTransformations()->translate(5, 0, 0);
 
 	float angle = 1;
 	while (!glfwWindowShouldClose(window))
@@ -49,14 +72,27 @@ void Game::runGame()
 
 		angle += 0.01;
 
+		/*
+		ObjectManager::getInstance()->getObject(0)->getTransformations()->setMatrixDefault();
+		ObjectManager::getInstance()->getObject(0)->getTransformations()->scale(0.7, 0.7, 0.7);
+		ObjectManager::getInstance()->getObject(0)->getTransformations()->rotate(0, angle, 0);
+		ObjectManager::getInstance()->getObject(0)->getTransformations()->translate(2, 0, 0);
+
+		ObjectManager::getInstance()->getObject(1)->getTransformations()->setMatrixDefault();
+		ObjectManager::getInstance()->getObject(1)->getTransformations()->scale(0.7, 0.7, 0.7);
+		ObjectManager::getInstance()->getObject(1)->getTransformations()->rotate(0, angle, 0);
+		ObjectManager::getInstance()->getObject(1)->getTransformations()->translate(-2, 0, 0);
+
 		ObjectManager::getInstance()->getObject(2)->getTransformations()->setMatrixDefault();
 		ObjectManager::getInstance()->getObject(2)->getTransformations()->scale(0.7, 0.7, 0.7);
 		ObjectManager::getInstance()->getObject(2)->getTransformations()->rotate(0, angle, 0);
-		
-		ObjectManager::getInstance()->getObject(1)->getTransformations()->setMatrixDefault();
-		ObjectManager::getInstance()->getObject(1)->getTransformations()->rotate(angle, angle, angle);
-		ObjectManager::getInstance()->getObject(1)->getTransformations()->scale(0.5, 0.5, 0.5);
-		ObjectManager::getInstance()->getObject(1)->getTransformations()->translate(5, 0, 0);
+		ObjectManager::getInstance()->getObject(2)->getTransformations()->translate(0, 0, 2);
+
+		ObjectManager::getInstance()->getObject(3)->getTransformations()->setMatrixDefault();
+		ObjectManager::getInstance()->getObject(3)->getTransformations()->scale(0.7, 0.7, 0.7);
+		ObjectManager::getInstance()->getObject(3)->getTransformations()->rotate(0, angle, 0);
+		ObjectManager::getInstance()->getObject(3)->getTransformations()->translate(0, 0, -2);
+		*/
 
 		ObjectManager::getInstance()->drawAllObjects();
 
