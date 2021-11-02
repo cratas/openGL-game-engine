@@ -20,7 +20,7 @@ void main()
     vec4 diffuse = dot_product * vec4(0.385, 0.647, 0.812, 1.0);       
     vec4 ambient = 0.1* vec4(0.385, 0.647, 0.812, 1.0);                           
 
-    float specularLight = 0.10f;                                                  
+    float specularLight = 0.50f;                                                  
     vec3 viewDirection = normalize(camPosition  -vec3 (ex_worldPosition));                             
     vec3 reflectionDirection = reflect((-lightDirection), (normal));                  
     float specAmount = pow(max(dot(viewDirection, (reflectionDirection)), 0.0f), 8);

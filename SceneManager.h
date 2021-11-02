@@ -11,6 +11,7 @@ private:
 	Scene* forestScene;
 	Scene* sphereScene;
 	SceneManager();
+	float angle = 0;
 public:
 	static SceneManager* getInstance();
 	void createForestScene(Camera* camera);

@@ -63,6 +63,7 @@ void Shader::activateShader(glm::mat4 M)
 	glUseProgram(shaderProgram);
 	camera->setMatrix(45.0f, 0.1f, 100.0f, shaderProgram, "camMatrix");
 	GLint idModelTransform = glGetUniformLocation(shaderProgram, "modelMatrix");
+	glUniform3f(glGetUniformLocation(shaderProgram, "camPosition"), camera->position.x, camera->position.y, camera->position.z);
 	glUniformMatrix4fv(idModelTransform, 1, GL_FALSE, &M[0][0]);
 }
 

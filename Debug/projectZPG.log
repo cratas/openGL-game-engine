@@ -1,22 +1,10 @@
-﻿  Game.cpp
+﻿  SceneManager.cpp
 C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\suzi_flat.h(2910,1): warning C4305: 'initializing': truncation from 'double' to 'const float'
 C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\sphere.h(2886,1): warning C4305: 'initializing': truncation from 'double' to 'const float'
 C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\suzi_smooth.h(2911,1): warning C4305: 'initializing': truncation from 'double' to 'const float'
 C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\tree.h(92819,1): warning C4305: 'initializing': truncation from 'double' to 'const float'
-C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\Game.cpp(32,16): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\Game.cpp(35,48): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  SceneManager.cpp
-C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\suzi_flat.h(2910,1): warning C4305: 'initializing': truncation from 'double' to 'const float'
-C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\sphere.h(2886,1): warning C4305: 'initializing': truncation from 'double' to 'const float'
-C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\suzi_smooth.h(2911,1): warning C4305: 'initializing': truncation from 'double' to 'const float'
-C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\tree.h(92819,1): warning C4305: 'initializing': truncation from 'double' to 'const float'
-C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\SceneManager.cpp(48,92): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\SceneManager.cpp(49,83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\SceneManager.cpp(53,92): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\SceneManager.cpp(54,83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\SceneManager.cpp(58,92): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\SceneManager.cpp(59,83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\SceneManager.cpp(63,92): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\SceneManager.cpp(64,83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Generating Code...
+C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\SceneManager.cpp(50,92): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\SceneManager.cpp(55,92): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\SceneManager.cpp(60,92): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\projectZPG\SceneManager.cpp(65,92): warning C4305: 'argument': truncation from 'double' to 'float'
   projectZPG.vcxproj -> C:\Users\Ryzen 5\Desktop\School\5th_semester\ZPG\projectZPG\Debug\projectZPG.exe

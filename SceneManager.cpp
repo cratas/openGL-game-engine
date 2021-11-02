@@ -41,8 +41,9 @@ void SceneManager::drawForestScene()
 	}
 }
 
-void SceneManager::drawSphereScene(int angle)
+void SceneManager::drawSphereScene(int a)
 {
+	//angle += 0.01;
 	if (this->sphereScene != nullptr)
 	{
 		this->sphereScene->objectManager->getObject(0)->getTransformations()->setMatrixDefault();
