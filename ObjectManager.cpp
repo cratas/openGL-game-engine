@@ -1,20 +1,6 @@
 #include "ObjectManager.h"
 
-ObjectManager* ObjectManager::instance = 0;
-
-ObjectManager::ObjectManager(){}
-
-/// <summary>
-/// Static method which returns pointer on instance of class, Singleton pattern used
-/// </summary>
-ObjectManager* ObjectManager::getInstance()
-{
-	if (instance == nullptr)
-	{
-		instance = new ObjectManager();
-	}
-	return instance;
-}
+ObjectManager::ObjectManager() {};
 
 /// <summary>
 /// Method returning pointer to AbstractObject from Objects vector by index

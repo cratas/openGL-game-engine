@@ -4,6 +4,8 @@ c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\projectzpg\debug\win
 c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\projectzpg\debug\userinput.obj
 c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\projectzpg\debug\triangle.obj
 c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\projectzpg\debug\transformations.obj
+c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\projectzpg\debug\shadermanager.obj
+c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\projectzpg\debug\shaderfactory.obj
 c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\projectzpg\debug\shader.obj
 c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\projectzpg\debug\model.obj
 c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\projectzpg\debug\main.obj
@@ -13,16 +15,9 @@ c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\projectzpg\debug\obj
 c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\projectzpg\debug\game.obj
 c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\projectzpg\debug\camera.obj
 c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\projectzpg\debug\abstractobject.obj
-c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\projectzpg\debug\shadermanager.obj
-c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\projectzpg\debug\shaderfactory.obj
 c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\debug\projectzpg.exe
 c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\debug\projectzpg.ilk
 c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\debug\projectzpg.pdb
-c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\projectzpg\debug\gameobject.obj
-c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\projectzpg\debug\vao.obj
-c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\projectzpg\debug\vbo.obj
-c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\projectzpg\debug\game.obj.enc
-c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\projectzpg\debug\shader.obj.enc
 c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\projectzpg\debug\projectzpg.tlog\cl.command.1.tlog
 c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\projectzpg\debug\projectzpg.tlog\cl.read.1.tlog
 c:\users\ryzen 5\desktop\school\5th_semester\zpg\projectzpg\projectzpg\debug\projectzpg.tlog\cl.write.1.tlog

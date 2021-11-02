@@ -66,15 +66,6 @@
     <ClCompile Include="UserInput.cpp">
       <Filter>Zdrojové soubory\Input</Filter>
     </ClCompile>
-    <ClCompile Include="WindowInitializer.cpp">
-      <Filter>Zdrojové soubory\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Zdrojové soubory\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Camera.cpp">
-      <Filter>Zdrojové soubory\Scene</Filter>
-    </ClCompile>
     <ClCompile Include="Shader.cpp">
       <Filter>Zdrojové soubory\ShaderManagment</Filter>
     </ClCompile>
@@ -86,6 +77,24 @@
     </ClCompile>
     <ClCompile Include="Transformations.cpp">
       <Filter>Zdrojové soubory\ObjectsManagment</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Zdrojové soubory</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Zdrojové soubory</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowInitializer.cpp">
+      <Filter>Zdrojové soubory</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Zdrojové soubory\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneFactory.cpp">
+      <Filter>Zdrojové soubory\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Zdrojové soubory\Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -119,15 +128,6 @@
     <ClInclude Include="Model.h">
       <Filter>Hlavičkové soubory\ObjectsManagment</Filter>
     </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Hlavičkové soubory\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>Hlavičkové soubory\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="WindowInitializer.h">
-      <Filter>Hlavičkové soubory\Scene</Filter>
-    </ClInclude>
     <ClInclude Include="ShaderFactory.h">
       <Filter>Hlavičkové soubory\ShadersManagment</Filter>
     </ClInclude>
@@ -145,6 +145,24 @@
     </ClInclude>
     <ClInclude Include="tree.h">
       <Filter>Hlavičkové soubory\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Hlavičkové soubory</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Hlavičkové soubory</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowInitializer.h">
+      <Filter>Hlavičkové soubory</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneFactory.h">
+      <Filter>Hlavičkové soubory\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Hlavičkové soubory\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Hlavičkové soubory\Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
