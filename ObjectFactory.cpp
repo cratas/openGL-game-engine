@@ -39,3 +39,4 @@ AbstractObject* ObjectFactory::createTriangle(Model* model, Shader* shader)
 	return object;
 }
 
+

@@ -1,5 +1,7 @@
 #include "Shader.h"
 
+#include "soil.h"
+
 /// <summary>
 /// Class constructor takes path to vert and frag file and pointer to Camera class
 /// </summary>
@@ -15,6 +17,26 @@ Shader::Shader(const char* vertexFile, const char* fragmentFile, Camera* camera)
 
 	this->vertex_shader = vertexShaderString.c_str();
 	this->fragment_shader = fragmentShaderString.c_str();
+
+	//start
+
+	//Bind the first texture to the first texture unit.
+	glActiveTexture(GL_TEXTURE0);
+	//2D texture
+	GLuint textureID = SOIL_load_OGL_texture("Textures/test.png", SOIL_LOAD_RGBA, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
+
+	//Cube Map (SkyBox)
+	//GLuint textureID = SOIL_load_OGL_cubemap("xpos.jpg","xneg.jpg","ypos.jpg","yneg.jpg","zpos.jpg","zneg.jpg",SOIL_LOAD_RGB,SOIL_CREATE_NEW_ID,SOIL_FLAG_MIPMAPS    );
+
+	glBindTexture(GL_TEXTURE_2D, textureID);
+
+	//Set texture unit to fragment shader
+	GLint uniformID = glGetUniformLocation(shaderProgram, "textureUnitID");
+	glUniform1i(uniformID, 0);
+
+
+
+	/// end
 
 	vertexShader = glCreateShader(GL_VERTEX_SHADER);
 	glShaderSource(vertexShader, 1, (const GLchar**)&vertex_shader, &vlen);
@@ -34,6 +56,7 @@ Shader::Shader(const char* vertexFile, const char* fragmentFile, Camera* camera)
 
 	glDeleteShader(vertexShader);
 	glDeleteShader(fragmentShader);
+
 
 	compileErrors();
 }

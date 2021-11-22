@@ -1,11 +1,21 @@
 #include "UserInput.h"
 
+int UserInput::width = 800;
+int UserInput::height = 600;
+
 /// <summary>
 /// Class constructor taking one argument pointer to Camera class
 /// </summary>
 UserInput::UserInput(Camera* camera)
 {
 	this->camera = camera;
+}
+
+static void window_size_callback(GLFWwindow* window, int width, int height) {
+	UserInput::width = width;
+	UserInput::height = height;
+	printf("resize %d, %d \n", width, height);
+	glViewport(0, 0, width, height);
 }
 
 /// <summary>
@@ -48,6 +58,11 @@ void UserInput::checkInput()
 	{
 		camera->speed = 0.1f;
 	}
+
+	glfwSetWindowSizeCallback(window, window_size_callback);
+
+	camera->width = UserInput::width;
+	camera->height = UserInput::height;
 
 	if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS)
 	{

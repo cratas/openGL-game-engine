@@ -164,6 +164,9 @@
     <ClInclude Include="Scene.h">
       <Filter>Hlavičkové soubory\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="plainTexture.h">
+      <Filter>Hlavičkové soubory\Models</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="constant.vert">

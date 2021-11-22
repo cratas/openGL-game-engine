@@ -27,7 +27,7 @@ Shader* ShaderFactory::createConstantShader(Camera* camera)
 /// <summary>
 /// Method for creating lambert shader
 /// </summary>
-Shader* ShaderFactory::crateLambertShader(Camera* camera)
+Shader* ShaderFactory::createLambertShader(Camera* camera)
 {
 	return new Shader("lambert.vert", "lambert.frag", camera);
 }
@@ -36,7 +36,7 @@ Shader* ShaderFactory::crateLambertShader(Camera* camera)
 /// <summary>
 /// Method for creating phong shader
 /// </summary>
-Shader* ShaderFactory::cratePhongShader(Camera* camera)
+Shader* ShaderFactory::createPhongShader(Camera* camera)
 {
 	return new Shader("phong.vert", "phong.frag", camera);
 }

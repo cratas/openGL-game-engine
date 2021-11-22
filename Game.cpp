@@ -1,5 +1,9 @@
 #include "Game.h"
 
+#include<assimp/Importer.hpp>// C++ importerinterface
+#include<assimp/scene.h>// aiSceneoutputdata structure
+#include<assimp/postprocess.h>// Post processingflags
+
 /// <summary>
 /// Constructor of game scene initialize window, camera, objects factory and user input
 /// </summary>
@@ -18,7 +22,8 @@ Game::Game()
 void Game::runGame()
 {
 	SceneManager::getInstance()->createForestScene(camera);
-	SceneManager::getInstance()->createSphereScene(camera);
+	//SceneManager::getInstance()->createSphereScene(camera);
+
 
 	float angle = 1;
 	while (!glfwWindowShouldClose(window))
@@ -27,18 +32,19 @@ void Game::runGame()
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glEnable(GL_DEPTH_TEST);
 
+
 		userInput->checkInput();
 
 		angle += 0.01;
 
-		//SceneManager::getInstance()->drawForestScene();
-		SceneManager::getInstance()->drawSphereScene(angle);
+		SceneManager::getInstance()->drawForestScene();
+		//SceneManager::getInstance()->drawSphereScene(angle);
 
 		//SceneManager::getInstance()->drawForestScene();
 		
 		// update other events like input handling
 		glfwPollEvents();
-		// put the stuff we’ve been drawing onto the display
+		// put the stuff weï¿½ve been drawing onto the display
 		glfwSwapBuffers(window);
 	}
 	glfwDestroyWindow(window);

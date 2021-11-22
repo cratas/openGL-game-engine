@@ -13,6 +13,6 @@ private:
 public:
 	static ShaderFactory* getInstance();
 	Shader* createConstantShader(Camera* camera);
-	Shader* crateLambertShader(Camera* camera);
-	Shader* cratePhongShader(Camera* camera);
+	Shader* createLambertShader(Camera* camera);
+	Shader* createPhongShader(Camera* camera);
 };

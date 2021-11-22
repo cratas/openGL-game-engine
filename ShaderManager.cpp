@@ -46,7 +46,7 @@ Shader* ShaderManager::getLambertShader(Camera* camera)
 {
 	if (this->lambertShader == nullptr)
 	{
-		return ShaderFactory::getInstance()->crateLambertShader(camera);
+		return ShaderFactory::getInstance()->createLambertShader(camera);
 	}
 	else
 	{
@@ -61,7 +61,7 @@ Shader* ShaderManager::getPhongShader(Camera* camera)
 {
 	if (this->phongShader == nullptr)
 	{
-		return ShaderFactory::getInstance()->cratePhongShader(camera);
+		return ShaderFactory::getInstance()->createPhongShader(camera);
 	}
 	else
 	{

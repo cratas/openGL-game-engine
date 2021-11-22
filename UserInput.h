@@ -11,4 +11,6 @@ private:
 public:
 	void checkInput();
 	UserInput(Camera* camera);
+	static int width;
+	static int height;
 };

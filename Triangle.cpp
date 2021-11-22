@@ -17,5 +17,6 @@ void Triangle::draw()
 {
 	shader->activateShader(transformations->getTransformatedMatrix());
 	model->bindVAO();
-	glDrawArrays(GL_TRIANGLES, 0, model->sizeOfPoints);
+	//glDrawArrays(GL_TRIANGLES, 0, model->sizeOfPoints);
+	glDrawElements(GL_TRIANGLES, model->getIndicesCount(), GL_UNSIGNED_INT, NULL);
 }

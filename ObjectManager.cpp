@@ -44,7 +44,7 @@ void ObjectManager::drawAllObjects()
 void ObjectManager::createQuad(const float points[], int size, Shader* shader)
 {
 	AbstractObject* object = nullptr;
-	object = ObjectFactory::getInstance()->createQuad(new Model(points, size), shader);
+	object = ObjectFactory::getInstance()->createQuad(new Model(points, size, false), shader);
 
 	this->addObject(object);
 }
@@ -55,7 +55,20 @@ void ObjectManager::createQuad(const float points[], int size, Shader* shader)
 void ObjectManager::createTriangle(const float points[], int size, Shader* shader)
 {
 	AbstractObject* object = nullptr;
-	object = ObjectFactory::getInstance()->createTriangle(new Model(points, size), shader);
+	object = ObjectFactory::getInstance()->createTriangle(new Model(points, size, false), shader);
 
 	this->addObject(object);
 }
+
+/// <summary>
+/// Method creating specific type of AbstractObject calling FactoryObject class
+/// </summary>
+void ObjectManager::createTextureTriangle(Shader* shader, string fileName)
+{
+	AbstractObject* object = nullptr;
+	object = ObjectFactory::getInstance()->createTriangle(new Model(fileName), shader);
+
+	this->addObject(object);
+}
+
+

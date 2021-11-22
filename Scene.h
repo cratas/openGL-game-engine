@@ -9,6 +9,7 @@
 #include "plain.h"
 #include "suzi_smooth.h"
 #include "tree.h"
+#include "plainTexture.h"
 
 class Scene
 {

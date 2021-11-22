@@ -7,11 +7,8 @@ uniform vec3 lightObjectPosition;
 
 void main() 
 {                                       
-    vec3 lightVec = lightObjectPosition - vec3(ex_worldPosition);
-    float dist = length(lightVec);
-    float a = 0.5;                                             
-    float b = 0.7;                                            
-    float inten = 1;
+    vec3 lightVec = lightObjectPosition - vec3(ex_worldPosition);                                     
+    float intensity = 1;
 
     vec3 normal = normalize(vec3(ex_worldNormal));    
     vec3 lightDirection = normalize( lightVec);
@@ -25,5 +22,5 @@ void main()
     vec3 reflectionDirection = reflect((-lightDirection), (normal));                  
     float specAmount = pow(max(dot(viewDirection, (reflectionDirection)), 0.0f), 8);
     float specular = specAmount * specularLight;                                  
-    frag_colour = diffuse * inten + ambient   + specular * inten;  
+    frag_colour = diffuse * intensity + ambient   + specular * intensity;  
 } 
