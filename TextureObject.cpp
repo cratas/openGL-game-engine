@@ -1,9 +1,9 @@
-#include "Triangle.h"
+#include "TextureObject.h"
 
 /// <summary>
 /// Class constructor taking pointer to Model and Shader class
 /// </summary>
-Triangle::Triangle(Model* model, Shader* shader)
+TextureObject::TextureObject(Model* model, Shader* shader)
 {
 	this->model = model;
 	this->shader = shader;
@@ -13,9 +13,9 @@ Triangle::Triangle(Model* model, Shader* shader)
 /// <summary>
 /// Method draw activates shader with current Matrix, bind VAO and draw TRIANGLE
 /// </summary>
-void Triangle::draw()
+void TextureObject::draw()
 {
 	shader->activateShader(transformations->getTransformatedMatrix());
 	model->bindVAO();
-	glDrawArrays(GL_TRIANGLES, 0, model->sizeOfPoints);
+	glDrawElements(GL_TRIANGLES, model->getIndicesCount(), GL_UNSIGNED_INT, NULL);
 }

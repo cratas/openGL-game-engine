@@ -13,7 +13,7 @@ Game::Game()
 	this->window = windowInitializer->getWindow();
 
 	this->camera = new Camera(glm::vec3(0.0f, 0.0f, 10.0f));
-	this->userInput = new UserInput(camera);
+	this->controller = new Controller(camera);
 }
 
 /// <summary>
@@ -33,7 +33,7 @@ void Game::runGame()
 		glEnable(GL_DEPTH_TEST);
 
 
-		userInput->checkInput();
+		controller->checkInput();
 
 		angle += 0.01;
 

@@ -22,6 +22,9 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include<assimp/Importer.hpp>// C++ importerinterface
+#include<assimp/scene.h>// aiSceneoutputdata structure
+#include<assimp/postprocess.h>// Post processingflags
 
 using namespace std;
 

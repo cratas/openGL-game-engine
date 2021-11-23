@@ -25,9 +25,6 @@
     <Filter Include="Hlavičkové soubory\ShadersManagment">
       <UniqueIdentifier>{ed5bf34f-ac67-43c6-b424-f5497b97f8be}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Hlavičkové soubory\Input">
-      <UniqueIdentifier>{1cdbbdf7-d76b-441d-baf8-bea3135eef05}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Zdrojové soubory\Input">
       <UniqueIdentifier>{c1b80619-f72c-4ff0-9f3e-525bbf5f67fd}</UniqueIdentifier>
     </Filter>
@@ -63,9 +60,6 @@
     <ClCompile Include="Model.cpp">
       <Filter>Zdrojové soubory\ObjectsManagment</Filter>
     </ClCompile>
-    <ClCompile Include="UserInput.cpp">
-      <Filter>Zdrojové soubory\Input</Filter>
-    </ClCompile>
     <ClCompile Include="Shader.cpp">
       <Filter>Zdrojové soubory\ShaderManagment</Filter>
     </ClCompile>
@@ -95,6 +89,12 @@
     </ClCompile>
     <ClCompile Include="SceneManager.cpp">
       <Filter>Zdrojové soubory\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller.cpp">
+      <Filter>Zdrojové soubory\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureObject.cpp">
+      <Filter>Zdrojové soubory\ObjectsManagment</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -140,9 +140,6 @@
     <ClInclude Include="Transformations.h">
       <Filter>Hlavičkové soubory\ObjectsManagment</Filter>
     </ClInclude>
-    <ClInclude Include="UserInput.h">
-      <Filter>Hlavičkové soubory\Input</Filter>
-    </ClInclude>
     <ClInclude Include="tree.h">
       <Filter>Hlavičkové soubory\Models</Filter>
     </ClInclude>
@@ -166,6 +163,12 @@
     </ClInclude>
     <ClInclude Include="plainTexture.h">
       <Filter>Hlavičkové soubory\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.h">
+      <Filter>Hlavičkové soubory</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureObject.h">
+      <Filter>Hlavičkové soubory\ObjectsManagment</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

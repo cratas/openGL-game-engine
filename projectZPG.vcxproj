@@ -159,9 +159,10 @@
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="ShaderFactory.cpp" />
     <ClCompile Include="ShaderManager.cpp" />
+    <ClCompile Include="TextureObject.cpp" />
     <ClCompile Include="Transformations.cpp" />
     <ClCompile Include="Triangle.cpp" />
-    <ClCompile Include="UserInput.cpp" />
+    <ClCompile Include="Controller.cpp" />
     <ClCompile Include="WindowInitializer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -183,10 +184,11 @@
     <ClInclude Include="sphere.h" />
     <ClInclude Include="suzi_flat.h" />
     <ClInclude Include="suzi_smooth.h" />
+    <ClInclude Include="TextureObject.h" />
     <ClInclude Include="Transformations.h" />
     <ClInclude Include="tree.h" />
     <ClInclude Include="Triangle.h" />
-    <ClInclude Include="UserInput.h" />
+    <ClInclude Include="Controller.h" />
     <ClInclude Include="WindowInitializer.h" />
   </ItemGroup>
   <ItemGroup>

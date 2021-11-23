@@ -1,19 +1,19 @@
-#include "UserInput.h"
+#include "Controller.h"
 
-int UserInput::width = 800;
-int UserInput::height = 600;
+int Controller::width = 800;
+int Controller::height = 600;
 
 /// <summary>
 /// Class constructor taking one argument pointer to Camera class
 /// </summary>
-UserInput::UserInput(Camera* camera)
+Controller::Controller(Camera* camera)
 {
 	this->camera = camera;
 }
 
 static void window_size_callback(GLFWwindow* window, int width, int height) {
-	UserInput::width = width;
-	UserInput::height = height;
+	Controller::width = width;
+	Controller::height = height;
 	printf("resize %d, %d \n", width, height);
 	glViewport(0, 0, width, height);
 }
@@ -21,7 +21,7 @@ static void window_size_callback(GLFWwindow* window, int width, int height) {
 /// <summary>
 /// Method checkInput is called in main loop, handle user input and sends info to camera
 /// </summary>
-void UserInput::checkInput()
+void Controller::checkInput()
 {
 	WindowInitializer *windowInitializer = WindowInitializer::getInstance();
 	GLFWwindow *window = windowInitializer->getWindow();
@@ -61,8 +61,8 @@ void UserInput::checkInput()
 
 	glfwSetWindowSizeCallback(window, window_size_callback);
 
-	camera->width = UserInput::width;
-	camera->height = UserInput::height;
+	camera->width = Controller::width;
+	camera->height = Controller::height;
 
 	if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS)
 	{

@@ -24,10 +24,10 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 {
 	Scene* scene = new Scene(camera);
 
-	scene->objectManager->createTextureTriangle(ShaderManager::getInstance()->getConstantShader(camera), "Textures/building.obj");
+	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getConstantShader(camera), "Textures/building.obj");
 
-	//scene->objectManager->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getLambertShader(camera));
-	//scene->objectManager->getObject(0)->getTransformations()->scale(0.7, 0.7, 0.7);
+	scene->objectManager->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getLambertShader(camera));
+	scene->objectManager->getObject(1)->getTransformations()->scale(0.7, 0.7, 0.7);
 
 	//scene->objectManager->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getLambertShader(camera));
 	//scene->objectManager->getObject(1)->getTransformations()->scale(0.3, 0.3, 0.3);

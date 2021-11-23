@@ -6,9 +6,9 @@
 #include "Quad.h"
 #include "Triangle.h"
 #include "ObjectManager.h"
-#include "UserInput.h"
 #include "ShaderManager.h"
 #include "SceneManager.h"
+#include "Controller.h"
 
 /// <summary>
 /// Class visualising game scene
@@ -17,7 +17,7 @@ class Game
 {
 private:
 	GLFWwindow* window;
-	UserInput* userInput;
+	Controller* controller;
 	Camera* camera;
 public:
 	Game();

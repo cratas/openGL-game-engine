@@ -63,10 +63,10 @@ void ObjectManager::createTriangle(const float points[], int size, Shader* shade
 /// <summary>
 /// Method creating specific type of AbstractObject calling FactoryObject class
 /// </summary>
-void ObjectManager::createTextureTriangle(Shader* shader, string fileName)
+void ObjectManager::createTextureObject(Shader* shader, string fileName)
 {
 	AbstractObject* object = nullptr;
-	object = ObjectFactory::getInstance()->createTriangle(new Model(fileName), shader);
+	object = ObjectFactory::getInstance()->createTextureObject(new Model(fileName), shader);
 
 	this->addObject(object);
 }

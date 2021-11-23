@@ -1,13 +1,10 @@
 #include "Model.h"
-#include<assimp/Importer.hpp>// C++ importerinterface
-#include<assimp/scene.h>// aiSceneoutputdata structure
-#include<assimp/postprocess.h>// Post processingflags
 
-using namespace std;
-
+/// <summary>
+/// Model constructor taking fileName of .obj file
+/// </summary>
 Model::Model(string fileName)
 {
-
     struct Vertex
     {
         float Position[3];
@@ -161,32 +158,16 @@ int Model::getIndicesCount()
 /// </summary>
 Model::Model(const float points[], int size, bool isTexture)
 {
-	if (isTexture == true)
-	{
-		this->sizeOfPoints = size / 8;
-		//this->points = new float[size];
+    this->sizeOfPoints = size / 6;
+    //this->points = new float[size];
 
-		for (int i = 0; i < size; i++)
-		{
-			this->points[i] = points[i];
-		}
+    for (int i = 0; i < size; i++)
+    {
+        this->points[i] = points[i];
+    }
 
-		initVBO();
-		initTextureVAO();
-	} 
-	else
-	{
-		this->sizeOfPoints = size / 6;
-		//this->points = new float[size];
-
-		for (int i = 0; i < size; i++)
-		{
-			this->points[i] = points[i];
-		}
-
-		initVBO();
-		initVAO();
-	} 
+    initVBO();
+    initVAO();
 }
 
 /// <summary>

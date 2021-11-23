@@ -4,13 +4,13 @@
 /// <summary>
 /// Class used for reading User input and control camera
 /// </summary>
-class UserInput
+class Controller
 {
 private:
 	Camera* camera;
 public:
 	void checkInput();
-	UserInput(Camera* camera);
+	Controller(Camera* camera);
 	static int width;
 	static int height;
 };
