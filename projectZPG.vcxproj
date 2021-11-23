@@ -159,6 +159,7 @@
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="ShaderFactory.cpp" />
     <ClCompile Include="ShaderManager.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="TextureObject.cpp" />
     <ClCompile Include="Transformations.cpp" />
     <ClCompile Include="Triangle.cpp" />
@@ -184,6 +185,7 @@
     <ClInclude Include="sphere.h" />
     <ClInclude Include="suzi_flat.h" />
     <ClInclude Include="suzi_smooth.h" />
+    <ClInclude Include="TextureManager.h" />
     <ClInclude Include="TextureObject.h" />
     <ClInclude Include="Transformations.h" />
     <ClInclude Include="tree.h" />
@@ -198,6 +200,8 @@
     <None Include="lambert.vert" />
     <None Include="phong.frag" />
     <None Include="phong.vert" />
+    <None Include="texture.frag" />
+    <None Include="texture.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

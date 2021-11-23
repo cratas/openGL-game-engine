@@ -19,6 +19,6 @@ public:
 	int getCount();
 	void drawAllObjects();
 	void createTriangle(const float points[], int size, Shader* shader);
-	void createTextureObject(Shader* shader, const string fileName);
+	void createTextureObject(Shader* shader, const string fileName, int textureID);
 	void createQuad(const float points[], int size, Shader* shader);
 };

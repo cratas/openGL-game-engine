@@ -18,5 +18,5 @@ public:
 	static ObjectFactory* getInstance();
 	AbstractObject* createQuad(Model* model, Shader* shader);
 	AbstractObject* createTriangle(Model* model, Shader* shader);
-	AbstractObject* createTextureObject(Model* model, Shader* shader);
+	AbstractObject* createTextureObject(Model* model, Shader* shader, int textureID);
 };

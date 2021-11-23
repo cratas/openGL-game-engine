@@ -34,4 +34,5 @@ public:
 	void activateShader(glm::mat4 M);
 	void deleteShader();
 	void compileErrors();
+	void setTextureID(int id);
 };

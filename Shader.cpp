@@ -21,19 +21,21 @@ Shader::Shader(const char* vertexFile, const char* fragmentFile, Camera* camera)
 	//start
 
 	//Bind the first texture to the first texture unit.
-	glActiveTexture(GL_TEXTURE0);
+	//glActiveTexture(GL_TEXTURE0);
+
+
 	//2D texture
-	GLuint textureID = SOIL_load_OGL_texture("Textures/test.png", SOIL_LOAD_RGBA, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
+	//GLuint textureID = SOIL_load_OGL_texture("Textures/grass.png", SOIL_LOAD_RGBA, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
 
-	//Cube Map (SkyBox)
-	//GLuint textureID = SOIL_load_OGL_cubemap("xpos.jpg","xneg.jpg","ypos.jpg","yneg.jpg","zpos.jpg","zneg.jpg",SOIL_LOAD_RGB,SOIL_CREATE_NEW_ID,SOIL_FLAG_MIPMAPS    );
+	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT); // opakovani textury
+	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
-	glBindTexture(GL_TEXTURE_2D, textureID);
+	////Cube Map (SkyBox)
+	////GLuint textureID = SOIL_load_OGL_cubemap("xpos.jpg","xneg.jpg","ypos.jpg","yneg.jpg","zpos.jpg","zneg.jpg",SOIL_LOAD_RGB,SOIL_CREATE_NEW_ID,SOIL_FLAG_MIPMAPS    );
+
+	//glBindTexture(GL_TEXTURE_2D, textureID);
 
 	//Set texture unit to fragment shader
-	GLint uniformID = glGetUniformLocation(shaderProgram, "textureUnitID");
-	glUniform1i(uniformID, 0);
-
 
 
 	/// end
@@ -61,6 +63,12 @@ Shader::Shader(const char* vertexFile, const char* fragmentFile, Camera* camera)
 	compileErrors();
 }
 
+void Shader::setTextureID(int id)
+{
+	GLint uniformID = glGetUniformLocation(shaderProgram, "textureUnitID");
+	glUniform1i(uniformID, id);
+}
+
 /// <summary>
 /// Method for loading shaders from file
 /// </summary>
@@ -84,7 +92,7 @@ string Shader::loadFile(const char* fname)
 void Shader::activateShader(glm::mat4 M)
 {
 	glUseProgram(shaderProgram);
-	camera->setMatrix(45.0f, 0.1f, 100.0f, shaderProgram, "camMatrix");
+	camera->setMatrix(45.0f, 0.1f, 200.0f, shaderProgram, "camMatrix");
 	GLint idModelTransform = glGetUniformLocation(shaderProgram, "modelMatrix");
 	glUniform3f(glGetUniformLocation(shaderProgram, "camPosition"), camera->position.x, camera->position.y, camera->position.z);
 	glUniformMatrix4fv(idModelTransform, 1, GL_FALSE, &M[0][0]);

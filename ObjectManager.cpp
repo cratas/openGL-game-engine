@@ -35,6 +35,7 @@ void ObjectManager::drawAllObjects()
 	for (int i = 0; i < this->getCount(); i++)
 	{
 		objects[i]->draw();
+
 	}
 }
 
@@ -63,10 +64,10 @@ void ObjectManager::createTriangle(const float points[], int size, Shader* shade
 /// <summary>
 /// Method creating specific type of AbstractObject calling FactoryObject class
 /// </summary>
-void ObjectManager::createTextureObject(Shader* shader, string fileName)
+void ObjectManager::createTextureObject(Shader* shader, string fileName, int textureID)
 {
 	AbstractObject* object = nullptr;
-	object = ObjectFactory::getInstance()->createTextureObject(new Model(fileName), shader);
+	object = ObjectFactory::getInstance()->createTextureObject(new Model(fileName), shader, textureID);
 
 	this->addObject(object);
 }

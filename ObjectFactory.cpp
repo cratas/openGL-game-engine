@@ -42,10 +42,10 @@ AbstractObject* ObjectFactory::createTriangle(Model* model, Shader* shader)
 /// <summary>
 /// Method creating specific type of Abstract Object(TexureObject)
 /// </summary>
-AbstractObject* ObjectFactory::createTextureObject(Model* model, Shader* shader)
+AbstractObject* ObjectFactory::createTextureObject(Model* model, Shader* shader, int textureID)
 {
 	AbstractObject* object = nullptr;
-	object = new TextureObject(model, shader);
+	object = new TextureObject(model, shader, textureID);
 
 	return object;
 }

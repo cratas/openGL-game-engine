@@ -96,6 +96,9 @@
     <ClCompile Include="TextureObject.cpp">
       <Filter>Zdrojové soubory\ObjectsManagment</Filter>
     </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Zdrojové soubory\ObjectsManagment</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ObjectFactory.h">
@@ -170,6 +173,9 @@
     <ClInclude Include="TextureObject.h">
       <Filter>Hlavičkové soubory\ObjectsManagment</Filter>
     </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Hlavičkové soubory\ObjectsManagment</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="constant.vert">
@@ -188,6 +194,12 @@
       <Filter>Soubory zdrojů</Filter>
     </None>
     <None Include="phong.frag">
+      <Filter>Soubory zdrojů</Filter>
+    </None>
+    <None Include="texture.frag">
+      <Filter>Soubory zdrojů</Filter>
+    </None>
+    <None Include="texture.vert">
       <Filter>Soubory zdrojů</Filter>
     </None>
   </ItemGroup>
