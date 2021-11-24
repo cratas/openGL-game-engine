@@ -18,7 +18,6 @@ private:
 	int texturesCount = 0;
 public:	
 	static TextureManager* getInstance();
-	static int counter;
 	void addTexture(const char*, int id);
 	void setTexture(int textureID);
 };

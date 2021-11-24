@@ -1,6 +1,10 @@
 #pragma once
 #include "Scene.h"
 
+
+/// <summary>
+/// class creating game scene with objects
+/// </summary>
 class SceneFactory
 {
 private:

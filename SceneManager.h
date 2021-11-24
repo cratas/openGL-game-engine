@@ -3,6 +3,9 @@
 #include "SceneFactory.h"
 
 
+/// <summary>
+/// class managing game scene drawing
+/// </summary>
 class SceneManager
 {
 private:
