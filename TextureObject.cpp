@@ -21,7 +21,6 @@ void TextureObject::draw()
 	model->bindVAO();
 
 	shader->setTextureID(this->textureID);
-	TextureManager::getInstance()->setTexture(this->textureID);
 
 	glDrawElements(GL_TRIANGLES, model->getIndicesCount(), GL_UNSIGNED_INT, NULL);
 }

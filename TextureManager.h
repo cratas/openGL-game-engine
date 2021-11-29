@@ -15,9 +15,9 @@ private:
 	static TextureManager* instance;
 	std::vector<int> textures;
 	TextureManager();
-	int texturesCount = 0;
+	static int texturesCount;
 public:	
 	static TextureManager* getInstance();
-	void addTexture(const char*, int id);
-	void setTexture(int textureID);
+	void addTexture(const char*);
+	int getTexture(int textureID);
 };

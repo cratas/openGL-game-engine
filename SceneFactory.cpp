@@ -25,15 +25,19 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 {
 	Scene* scene = new Scene(camera);
 
-	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getConstantShader(camera), "Textures/teren.obj", 0);
-	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getConstantShader(camera), "Textures/building.obj", 1);
-	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getConstantShader(camera), "Textures/skydome.obj", 2);
+	TextureManager::getInstance()->addTexture("Textures/grass.png");
+	TextureManager::getInstance()->addTexture("Textures/building.png");
+	TextureManager::getInstance()->addTexture("Textures/skydome.png");
 
-	TextureManager::getInstance()->addTexture("Textures/grass.png", 0);
-	TextureManager::getInstance()->addTexture("Textures/building.png", 1);
-	TextureManager::getInstance()->addTexture("Textures/skydome.png", 2);
+	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getConstantShader(camera)
+		, "Textures/teren.obj", TextureManager::getInstance()->getTexture(0));
+	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getPhongShader(camera)
+		, "Textures/building.obj", TextureManager::getInstance()->getTexture(1));
+	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getConstantShader(camera)
+			, "Textures/skydome.obj", TextureManager::getInstance()->getTexture(2));
 
-	scene->objectManager->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getLambertShader(camera));
+	scene->objectManager->createTriangle(tree, sizeof(tree) / sizeof(tree[0])
+		, ShaderManager::getInstance()->getLambertShader(camera));
 	scene->objectManager->getObject(1)->getTransformations()->scale(0.7, 0.7, 0.7);
 	scene->objectManager->getObject(2)->getTransformations()->scale(15, 15, 15);
 	scene->objectManager->getObject(2)->getTransformations()->translate(0, 0.9, 0);

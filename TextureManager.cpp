@@ -2,6 +2,8 @@
 
 TextureManager* TextureManager::instance = 0;
 
+int TextureManager::texturesCount = 0;
+
 TextureManager::TextureManager() {};
 
 /// <summary>
@@ -16,10 +18,13 @@ TextureManager* TextureManager::getInstance()
 	return instance;
 }
 
-void TextureManager::addTexture(const char* fileName, int id)
+/// <summary>
+/// function to add texture by filename into texures vector(Integers)
+/// </summary>
+void TextureManager::addTexture(const char* fileName)
 {
 
-	glActiveTexture(GL_TEXTURE0 + id);
+	glActiveTexture(GL_TEXTURE0 + texturesCount++);
 
 	GLuint textureID = SOIL_load_OGL_texture(fileName, SOIL_LOAD_RGBA, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
 	textures.push_back(textureID);
@@ -28,13 +33,12 @@ void TextureManager::addTexture(const char* fileName, int id)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
 	glBindTexture(GL_TEXTURE_2D, textureID);
-
-	
-	//glGenerateMipmap(GL_TEXTURE_2D);
 }
 
-void TextureManager::setTexture(int textureID)
-{
-	glActiveTexture(GL_TEXTURE0 + textureID);
-	glGenerateMipmap(GL_TEXTURE_2D);
+
+/// <summary>
+/// Function returning texture from textures vector by id
+/// </summary>
+int TextureManager::getTexture(int textureID){
+	return --textures[textureID];
 }
