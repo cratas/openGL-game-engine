@@ -28,20 +28,74 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 	TextureManager::getInstance()->addTexture("Textures/grass.png");
 	TextureManager::getInstance()->addTexture("Textures/building.png");
 	TextureManager::getInstance()->addTexture("Textures/skydome.png");
+	TextureManager::getInstance()->addTexture("Textures/tree.png");
+	TextureManager::getInstance()->addTexture("Textures/zombie.png");
 
-	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getConstantShader(camera)
+
+	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getPhongShader(camera)
 		, "Textures/teren.obj", TextureManager::getInstance()->getTexture(0));
 	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getPhongShader(camera)
 		, "Textures/building.obj", TextureManager::getInstance()->getTexture(1));
-	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getConstantShader(camera)
+	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getPhongShader(camera)
 			, "Textures/skydome.obj", TextureManager::getInstance()->getTexture(2));
 
-	scene->objectManager->createTriangle(tree, sizeof(tree) / sizeof(tree[0])
-		, ShaderManager::getInstance()->getLambertShader(camera));
-	scene->objectManager->getObject(1)->getTransformations()->scale(0.7, 0.7, 0.7);
+
+
+	//trees
+	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getPhongShader(camera)
+		, "Textures/tree.obj", TextureManager::getInstance()->getTexture(3));
+	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getPhongShader(camera)
+		, "Textures/tree.obj", TextureManager::getInstance()->getTexture(3));
+	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getPhongShader(camera)
+		, "Textures/tree.obj", TextureManager::getInstance()->getTexture(3));
+	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getPhongShader(camera)
+		, "Textures/tree.obj", TextureManager::getInstance()->getTexture(3));
+	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getPhongShader(camera)
+		, "Textures/tree.obj", TextureManager::getInstance()->getTexture(3));
+
+	//zombie
+	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getPhongShader(camera)
+		, "Textures/zombie.obj", TextureManager::getInstance()->getTexture(4));
+
+
+	//light
+	scene->objectManager->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getConstantShader(camera));
+
+
+	//scene->objectManager->getObject(1)->getTransformations()->scale(1.2, 1.2, 1.2);
+	//skydome
 	scene->objectManager->getObject(2)->getTransformations()->scale(15, 15, 15);
 	scene->objectManager->getObject(2)->getTransformations()->translate(0, 0.9, 0);
-	scene->objectManager->getObject(3)->getTransformations()->translate(5, 0, 0);
+	//tree 0
+	scene->objectManager->getObject(3)->getTransformations()->translate(15, 0, 0);
+	scene->objectManager->getObject(3)->getTransformations()->scale(0.5, 0.5, 0.5);
+	
+	//tree 1
+	scene->objectManager->getObject(4)->getTransformations()->translate(25, 0, 12);
+	scene->objectManager->getObject(4)->getTransformations()->scale(0.4, 0.4, 0.4);
+
+	//tree 2
+	scene->objectManager->getObject(5)->getTransformations()->translate(-25, 0, 25);
+	scene->objectManager->getObject(5)->getTransformations()->scale(0.2, 0.2, 0.2);
+
+	//tree 3
+	scene->objectManager->getObject(6)->getTransformations()->translate(-15, 0, 5);
+	scene->objectManager->getObject(6)->getTransformations()->scale(0.1, 0.1, 0.1);
+
+	//tree 4
+	scene->objectManager->getObject(7)->getTransformations()->translate(-10, 0, 0);
+	scene->objectManager->getObject(7)->getTransformations()->scale(0.3, 0.3, 0.3);
+
+	//zombie
+	scene->objectManager->getObject(8)->getTransformations()->translate(0, 0, 14);
+	//scene->objectManager->getObject(8)->getTransformations()->scale(0.3, 0.3, 0.3);
+
+	//light
+	scene->objectManager->getObject(9)->getTransformations()->translate(0, 10, 15);
+
+
+	//scene->objectManager->createTriangle(tree, sizeof(tree) / sizeof(tree[0])
+	//	, ShaderManager::getInstance()->getLambertShader(camera));
 
 	//scene->objectManager->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getLambertShader(camera));
 	//scene->objectManager->getObject(1)->getTransformations()->scale(0.3, 0.3, 0.3);

@@ -18,28 +18,6 @@ Shader::Shader(const char* vertexFile, const char* fragmentFile, Camera* camera)
 	this->vertex_shader = vertexShaderString.c_str();
 	this->fragment_shader = fragmentShaderString.c_str();
 
-	//start
-
-	//Bind the first texture to the first texture unit.
-	//glActiveTexture(GL_TEXTURE0);
-
-
-	//2D texture
-	//GLuint textureID = SOIL_load_OGL_texture("Textures/grass.png", SOIL_LOAD_RGBA, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
-
-	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT); // opakovani textury
-	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-
-	////Cube Map (SkyBox)
-	////GLuint textureID = SOIL_load_OGL_cubemap("xpos.jpg","xneg.jpg","ypos.jpg","yneg.jpg","zpos.jpg","zneg.jpg",SOIL_LOAD_RGB,SOIL_CREATE_NEW_ID,SOIL_FLAG_MIPMAPS    );
-
-	//glBindTexture(GL_TEXTURE_2D, textureID);
-
-	//Set texture unit to fragment shader
-
-
-	/// end
-
 	vertexShader = glCreateShader(GL_VERTEX_SHADER);
 	glShaderSource(vertexShader, 1, (const GLchar**)&vertex_shader, &vlen);
 	glCompileShader(vertexShader);
@@ -62,6 +40,8 @@ Shader::Shader(const char* vertexFile, const char* fragmentFile, Camera* camera)
 
 	compileErrors();
 }
+
+
 
 void Shader::setTextureID(int id)
 {
@@ -95,6 +75,7 @@ void Shader::activateShader(glm::mat4 M)
 	camera->setMatrix(45.0f, 0.1f, 200.0f, shaderProgram, "camMatrix");
 	GLint idModelTransform = glGetUniformLocation(shaderProgram, "modelMatrix");
 	glUniform3f(glGetUniformLocation(shaderProgram, "camPosition"), camera->position.x, camera->position.y, camera->position.z);
+	glUniform3f(glGetUniformLocation(shaderProgram, "lightObjectPosition"), 0.0f, 10.0f, 15.0f);
 	glUniformMatrix4fv(idModelTransform, 1, GL_FALSE, &M[0][0]);
 }
 

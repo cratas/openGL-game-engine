@@ -40,5 +40,5 @@ void TextureManager::addTexture(const char* fileName)
 /// Function returning texture from textures vector by id
 /// </summary>
 int TextureManager::getTexture(int textureID){
-	return --textures[textureID];
+	return textures[textureID]-1;
 }

@@ -20,7 +20,7 @@ ShaderFactory* ShaderFactory::getInstance()
 /// Method for creating constant shader
 /// </summary>
 Shader* ShaderFactory::createConstantShader(Camera* camera)
-{
+{ 
 	return new Shader("constant.vert", "constant.frag", camera);
 }
 
@@ -38,5 +38,5 @@ Shader* ShaderFactory::createLambertShader(Camera* camera)
 /// </summary>
 Shader* ShaderFactory::createPhongShader(Camera* camera)
 {
-	return new Shader("phong.vert", "phong.frag", camera);
+	return new Shader("texture.vert", "texture.frag", camera);
 }

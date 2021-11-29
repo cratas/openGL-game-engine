@@ -12,7 +12,7 @@ Game::Game()
 	WindowInitializer* windowInitializer = WindowInitializer::getInstance();
 	this->window = windowInitializer->getWindow();
 
-	this->camera = new Camera(glm::vec3(0.0f, 0.0f, 10.0f));
+	this->camera = new Camera(glm::vec3(0.0f, 5.0f, 20.0f));
 	this->controller = new Controller(camera);
 }
 
