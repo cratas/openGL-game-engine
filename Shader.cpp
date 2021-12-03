@@ -71,11 +71,27 @@ string Shader::loadFile(const char* fname)
 /// </summary>
 void Shader::activateShader(glm::mat4 M)
 {
+	const int lightsCount = 3;
+	//glm::vec3 pointLightPositions[] = {
+	//	glm::vec3(30.0f, 10.0f, 15.0f),
+	//	glm::vec3(-30.0f, 10.0f, 15.0f),
+	//	glm::vec3(0.0f, 10.0f, 15.0f),
+	//	glm::vec3(0.0f,0.0f,0.0f)
+	//};
+
+	glm::vec3 pointLightPositions[4];
+	pointLightPositions[0] = LightManager::getInstance()->getObject(0)->position;
+	pointLightPositions[1] = LightManager::getInstance()->getObject(1)->position;
+	pointLightPositions[2] = LightManager::getInstance()->getObject(2)->position;
+
+	pointLightPositions[3] = glm::vec3(camera->position.x, camera->position.y, camera->position.z);
 	glUseProgram(shaderProgram);
 	camera->setMatrix(45.0f, 0.1f, 200.0f, shaderProgram, "camMatrix");
 	GLint idModelTransform = glGetUniformLocation(shaderProgram, "modelMatrix");
 	glUniform3f(glGetUniformLocation(shaderProgram, "camPosition"), camera->position.x, camera->position.y, camera->position.z);
-	glUniform3f(glGetUniformLocation(shaderProgram, "lightObjectPosition"), 0.0f, 10.0f, 15.0f);
+
+	glUniform3fv(glGetUniformLocation(shaderProgram, "lightObjectPositions"), 4, glm::value_ptr(pointLightPositions[0]));
+	glUniform1d(glGetUniformLocation(shaderProgram, "lightsCount"), 3);
 	glUniformMatrix4fv(idModelTransform, 1, GL_FALSE, &M[0][0]);
 }
 

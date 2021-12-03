@@ -72,4 +72,16 @@ void ObjectManager::createTextureObject(Shader* shader, string fileName, int tex
 	this->addObject(object);
 }
 
+/// <summary>
+/// Method creating specific type of AbstractObject calling FactoryObject class
+/// </summary>
+void ObjectManager::createLightObject(const float points[], int size, Shader* shader, glm::vec3 position, glm::vec4 colour)
+{
+	AbstractObject* object = nullptr;
+	object = ObjectFactory::getInstance()->createLightObject(new Model(points, size, false), shader, position, colour);
+
+	this->addObject(object);
+}
+
+
 

@@ -30,6 +30,7 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 	TextureManager::getInstance()->addTexture("Textures/skydome.png");
 	TextureManager::getInstance()->addTexture("Textures/tree.png");
 	TextureManager::getInstance()->addTexture("Textures/zombie.png");
+	TextureManager::getInstance()->addTexture("Textures/bake.png");
 
 
 	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getPhongShader(camera)
@@ -57,12 +58,28 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getPhongShader(camera)
 		, "Textures/zombie.obj", TextureManager::getInstance()->getTexture(4));
 
-
 	//light
-	scene->objectManager->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getConstantShader(camera));
+	scene->objectManager->createLightObject(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getConstantShader(camera)
+		, glm::vec3(0.0f, 10.0f, 15.0f), glm::vec4(1.0f, 1.0f, 1.0f, 1.0f));
 
+	//walls
+	for (int i = 0; i < 23; i++)
+	{
+		scene->objectManager->createTextureObject(ShaderManager::getInstance()->getPhongShader(camera)
+			, "Textures/zed.obj", TextureManager::getInstance()->getTexture(5));
+	}
 
-	//scene->objectManager->getObject(1)->getTransformations()->scale(1.2, 1.2, 1.2);
+	scene->objectManager->createLightObject(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getConstantShader(camera)
+					, glm::vec3(30.0f, 10.0f, 15.0f), glm::vec4(1.0f, 1.0f, 1.0f, 1.0f));
+	//lights
+	scene->objectManager->createLightObject(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getConstantShader(camera)
+		, glm::vec3(-30.0f, 10.0f, 15.0f), glm::vec4(1.0f, 1.0f, 1.0f, 1.0f));
+	//scene->objectManager->getObject(33)->getTransformations()->translate(30, 10, 15);
+	//scene->objectManager->getObject(34)->getTransformations()->translate(0, 10, 15);
+
+	//grass
+	scene->objectManager->getObject(0)->getTransformations()->scale(1.2, 1.2, 1.2);
+	
 	//skydome
 	scene->objectManager->getObject(2)->getTransformations()->scale(15, 15, 15);
 	scene->objectManager->getObject(2)->getTransformations()->translate(0, 0.9, 0);
@@ -91,7 +108,52 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 	//scene->objectManager->getObject(8)->getTransformations()->scale(0.3, 0.3, 0.3);
 
 	//light
-	//scene->objectManager->getObject(9)->getTransformations()->translate(0, 10, 15);
+	//scene->objectManager->getObject(9)->getTransformations()->translate(-30, 10, 15);
+
+	//walls
+	//before building
+	scene->objectManager->getObject(10)->getTransformations()->translate(0, -100, 0);
+	scene->objectManager->getObject(11)->getTransformations()->translate(0, 0, -25);
+	scene->objectManager->getObject(12)->getTransformations()->translate(8, 0, 22.8);
+	scene->objectManager->getObject(13)->getTransformations()->translate(-8, 0, 22.8);
+	scene->objectManager->getObject(14)->getTransformations()->translate(8, 0, -25);
+	scene->objectManager->getObject(15)->getTransformations()->translate(-8, 0, -25);
+	scene->objectManager->getObject(16)->getTransformations()->translate(-16, 0, -25);
+	scene->objectManager->getObject(17)->getTransformations()->translate(16, 0, -25);
+	scene->objectManager->getObject(31)->getTransformations()->translate(-16, 0, 22.8);
+	scene->objectManager->getObject(32)->getTransformations()->translate(16, 0, 22.8);
+
+	//right side
+	scene->objectManager->getObject(18)->getTransformations()->translate(19.6, 0, -21);
+	scene->objectManager->getObject(18)->getTransformations()->rotate(0, 1.571, 0);
+	scene->objectManager->getObject(19)->getTransformations()->translate(19.6, 0, -13);
+	scene->objectManager->getObject(19)->getTransformations()->rotate(0, 1.571, 0);
+	scene->objectManager->getObject(20)->getTransformations()->translate(19.6, 0, -5);
+	scene->objectManager->getObject(20)->getTransformations()->rotate(0, 1.571, 0);
+	scene->objectManager->getObject(21)->getTransformations()->translate(19.6, 0, 3);
+	scene->objectManager->getObject(21)->getTransformations()->rotate(0, 1.571, 0);
+	scene->objectManager->getObject(22)->getTransformations()->translate(19.6, 0, 11);
+	scene->objectManager->getObject(22)->getTransformations()->rotate(0, 1.571, 0);
+	scene->objectManager->getObject(23)->getTransformations()->translate(19.6, 0, 19);
+	scene->objectManager->getObject(23)->getTransformations()->rotate(0, 1.571, 0);
+	//left side
+	scene->objectManager->getObject(24)->getTransformations()->translate(-19.6, 0, -21);
+	scene->objectManager->getObject(24)->getTransformations()->rotate(0, 1.571, 0);
+	scene->objectManager->getObject(25)->getTransformations()->translate(-19.6, 0, -13);
+	scene->objectManager->getObject(25)->getTransformations()->rotate(0, 1.571, 0);
+	scene->objectManager->getObject(26)->getTransformations()->translate(-19.6, 0, -5);
+	scene->objectManager->getObject(26)->getTransformations()->rotate(0, 1.571, 0);
+	scene->objectManager->getObject(27)->getTransformations()->translate(-19.6, 0, 3);
+	scene->objectManager->getObject(27)->getTransformations()->rotate(0, 1.571, 0);
+	scene->objectManager->getObject(28)->getTransformations()->translate(-19.6, 0, 11);
+	scene->objectManager->getObject(28)->getTransformations()->rotate(0, 1.571, 0);
+	scene->objectManager->getObject(29)->getTransformations()->translate(-19.6, 0, 19);
+	scene->objectManager->getObject(29)->getTransformations()->rotate(0, 1.571, 0);
+	scene->objectManager->getObject(30)->getTransformations()->translate(-19.6, 0, 19);
+	scene->objectManager->getObject(30)->getTransformations()->rotate(0, 1.571, 0);
+
+
+
 
 
 	//scene->objectManager->createTriangle(tree, sizeof(tree) / sizeof(tree[0])

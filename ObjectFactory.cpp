@@ -40,6 +40,17 @@ AbstractObject* ObjectFactory::createTriangle(Model* model, Shader* shader)
 }
 
 /// <summary>
+/// Method creating specific type of Abstract Object(Triangle)
+/// </summary>
+AbstractObject* ObjectFactory::createLightObject(Model* model, Shader* shader, glm::vec3 position, glm::vec4 colour)
+{
+	AbstractObject* object = nullptr;
+	object = new LightObject(model, shader, position, colour);
+
+	return object;
+}
+
+/// <summary>
 /// Method creating specific type of Abstract Object(TexureObject)
 /// </summary>
 AbstractObject* ObjectFactory::createTextureObject(Model* model, Shader* shader, int textureID)

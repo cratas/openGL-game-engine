@@ -21,4 +21,5 @@ public:
 	void createTriangle(const float points[], int size, Shader* shader);
 	void createTextureObject(Shader* shader, const string fileName, int textureID);
 	void createQuad(const float points[], int size, Shader* shader);
+	void createLightObject(const float points[], int size, Shader* shader, glm::vec3 position, glm::vec4 colour);
 };

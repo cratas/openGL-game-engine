@@ -13,6 +13,7 @@
 
 #include "Camera.h"
 #include "WindowInitializer.h"
+#include "LightManager.h"
 
 class Camera;
 

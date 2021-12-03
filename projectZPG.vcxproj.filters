@@ -37,6 +37,12 @@
     <Filter Include="Zdrojové soubory\ObjectsManagment">
       <UniqueIdentifier>{ba80b3c4-f6ef-4464-8250-bd3c4aa8060d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Hlavičkové soubory\LightManagment">
+      <UniqueIdentifier>{eeb38c17-fa2a-4ad2-87f0-b186d3f45218}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Zdrojové soubory\LightManagment">
+      <UniqueIdentifier>{6302f0f5-3059-44c9-a62c-80bc113b05a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -97,6 +103,15 @@
       <Filter>Zdrojové soubory\ObjectsManagment</Filter>
     </ClCompile>
     <ClCompile Include="TextureManager.cpp">
+      <Filter>Zdrojové soubory\ObjectsManagment</Filter>
+    </ClCompile>
+    <ClCompile Include="Light.cpp">
+      <Filter>Zdrojové soubory\LightManagment</Filter>
+    </ClCompile>
+    <ClCompile Include="LightManager.cpp">
+      <Filter>Zdrojové soubory\LightManagment</Filter>
+    </ClCompile>
+    <ClCompile Include="LightObject.cpp">
       <Filter>Zdrojové soubory\ObjectsManagment</Filter>
     </ClCompile>
   </ItemGroup>
@@ -174,6 +189,15 @@
       <Filter>Hlavičkové soubory\ObjectsManagment</Filter>
     </ClInclude>
     <ClInclude Include="TextureManager.h">
+      <Filter>Hlavičkové soubory\ObjectsManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>Hlavičkové soubory\LightManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="LightManager.h">
+      <Filter>Hlavičkové soubory\LightManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="LightObject.h">
       <Filter>Hlavičkové soubory\ObjectsManagment</Filter>
     </ClInclude>
   </ItemGroup>
