@@ -70,10 +70,10 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 	}
 
 	scene->objectManager->createLightObject(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getConstantShader(camera)
-					, glm::vec3(30.0f, 10.0f, 15.0f), glm::vec4(1.0f, 1.0f, 1.0f, 1.0f));
+					, glm::vec3(30.0f, 10.0f, 15.0f), glm::vec4(1.0f, 0.0f, 0.0f, 1.0f));
 	//lights
 	scene->objectManager->createLightObject(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getConstantShader(camera)
-		, glm::vec3(-30.0f, 10.0f, 15.0f), glm::vec4(1.0f, 1.0f, 1.0f, 1.0f));
+		, glm::vec3(-30.0f, 10.0f, 15.0f), glm::vec4(0.0f, 0.0f, 1.0f, 1.0f));
 	//scene->objectManager->getObject(33)->getTransformations()->translate(30, 10, 15);
 	//scene->objectManager->getObject(34)->getTransformations()->translate(0, 10, 15);
 

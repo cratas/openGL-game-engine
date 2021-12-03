@@ -3,9 +3,10 @@ in vec4 ex_worldPosition;
 in vec4 ex_worldNormal;
 out vec4 final_colour;
 uniform vec3 camPosition;
+uniform float lightsCount;
 uniform vec3 lightObjectPositions[4];
+uniform vec4 lightObjectColour[4];
 uniform sampler2D textureUnitID;
-uniform int lightsCount;
 in vec2 uv;
 
 void main() 
@@ -24,7 +25,7 @@ void main()
         vec3 lightDirection = normalize( lightVec);
         float dot_product = max(dot((normal), (lightDirection)), 0.0);
 
-        vec4 diffuse = dot_product * vec4(1.0, 1.0, 1.0, 1.0);       
+        vec4 diffuse = dot_product * lightObjectColour[i];       
         vec4 ambient = (0.1 / 4)* vec4(1.0, 1.0, 1.0, 1.0);    
     
         float specularLight = 0.50f;                                                  

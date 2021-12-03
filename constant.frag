@@ -6,5 +6,5 @@ in vec2 uv;
 
 void main() 
 {
-	frag_colour = texture(textureUnitID, uv);
+	frag_colour = vec4(1.0, 1.0, 1.0, 1.0);
 }
