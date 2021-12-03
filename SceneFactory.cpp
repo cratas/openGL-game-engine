@@ -91,7 +91,7 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 	//scene->objectManager->getObject(8)->getTransformations()->scale(0.3, 0.3, 0.3);
 
 	//light
-	scene->objectManager->getObject(9)->getTransformations()->translate(0, 10, 15);
+	//scene->objectManager->getObject(9)->getTransformations()->translate(0, 10, 15);
 
 
 	//scene->objectManager->createTriangle(tree, sizeof(tree) / sizeof(tree[0])
