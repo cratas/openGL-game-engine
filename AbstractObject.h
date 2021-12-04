@@ -1,6 +1,6 @@
 #pragma once
 #include "Model.h"
-#include "Shader.h"
+#include "AbstractShader.h"
 #include "Transformations.h"
 
 /// <summary>
@@ -10,7 +10,7 @@ class AbstractObject
 {
 protected:
 	Model* model;
-	Shader* shader;
+	AbstractShader* shader;
 	Transformations* transformations;
 public:
 	virtual void draw() = 0;

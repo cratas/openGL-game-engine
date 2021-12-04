@@ -1,11 +1,11 @@
-#include "Shader.h"
+#include "AbstractShader.h"
 
 #include "soil.h"
 
 /// <summary>
 /// Class constructor takes path to vert and frag file and pointer to Camera class
 /// </summary>
-Shader::Shader(const char* vertexFile, const char* fragmentFile, Camera* camera) : camera(camera)
+AbstractShader::AbstractShader(const char* vertexFile, const char* fragmentFile, Camera* camera) : camera(camera)
 {
 	camera->shader = this;
 
@@ -43,7 +43,7 @@ Shader::Shader(const char* vertexFile, const char* fragmentFile, Camera* camera)
 
 
 
-void Shader::setTextureID(int id)
+void AbstractShader::setTextureID(int id)
 {
 	GLint uniformID = glGetUniformLocation(shaderProgram, "textureUnitID");
 	glUniform1i(uniformID, id);
@@ -52,7 +52,7 @@ void Shader::setTextureID(int id)
 /// <summary>
 /// Method for loading shaders from file
 /// </summary>
-string Shader::loadFile(const char* fname)
+string AbstractShader::loadFile(const char* fname)
 {
 	ifstream file(fname);
 	if (!file.is_open())
@@ -69,7 +69,7 @@ string Shader::loadFile(const char* fname)
 /// <summary>
 /// Method activatesShader sends data on GPU
 /// </summary>
-void Shader::activateShader(glm::mat4 M)
+void AbstractShader::activateShader(glm::mat4 M)
 {
 	//glm::vec3 pointLightPositions[] = {
 	//	glm::vec3(30.0f, 10.0f, 15.0f),
@@ -103,7 +103,7 @@ void Shader::activateShader(glm::mat4 M)
 /// <summary>
 /// Method for delete shader
 /// </summary>
-void Shader::deleteShader()
+void AbstractShader::deleteShader()
 {
 	glDeleteProgram(shaderProgram);
 }
@@ -111,7 +111,7 @@ void Shader::deleteShader()
 /// <summary>
 /// Method compileErros catches errors
 /// </summary>
-void Shader::compileErrors()
+void AbstractShader::compileErrors()
 {
 	GLint status;
 	glGetProgramiv(shaderProgram, GL_LINK_STATUS, &status);

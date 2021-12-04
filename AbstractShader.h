@@ -20,7 +20,7 @@ class Camera;
 /// <summary>
 /// Shader class keeps information about vert, frag shaders and shaderID, which is called shaderProgram
 /// </summary>
-class Shader
+class AbstractShader
 {
 private:
 	GLuint vertexShader;
@@ -31,7 +31,7 @@ private:
 	const char* fragment_shader;
 	string loadFile(const char* fname);
 public:
-	Shader(const char* vertexFile, const char* fragmentFile, Camera* camera);
+	AbstractShader(const char* vertexFile, const char* fragmentFile, Camera* camera);
 	void activateShader(glm::mat4 M);
 	void deleteShader();
 	void compileErrors();

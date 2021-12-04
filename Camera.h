@@ -20,7 +20,7 @@
 #include <stdio.h>
 #include <vector>
 #include <stdexcept>
-#include "Shader.h"
+#include "AbstractShader.h"
 
 class Shader;
 
@@ -30,7 +30,7 @@ class Shader;
 class Camera
 {
 public:
-	Shader* shader;
+	AbstractShader* shader;
 	glm::vec3 position;
 	glm::vec3 orientation = glm::vec3(0.0f, 0.0f, -1.0f);
 	glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f);

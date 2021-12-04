@@ -1,6 +1,6 @@
 #pragma once
 #include "AbstractObject.h"
-#include "Shader.h"
+#include "AbstractShader.h"
 #include "Model.h"
 #include "Quad.h"
 #include "Triangle.h"

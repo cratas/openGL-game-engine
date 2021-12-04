@@ -7,9 +7,9 @@
 /// <summary>
 /// Class Quad inherits from class AbstractObject and draw Object as Quad
 /// </summary>
-class Quad : public AbstractObject
+class ConstantShader : public AbstractShader
 {
 public:
-	Quad(Model* model, Shader* shader);
+	ConstantShader(Camera* camera);
 	void draw();
 };
