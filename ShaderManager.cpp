@@ -25,7 +25,7 @@ ShaderManager* ShaderManager::getInstance()
 }
 
 /// <summary>
-/// Method returning pointer to constant shader, allow create only one instance for each type
+/// Method returning pointer to constant shader, allows create only one instance for each type
 /// </summary>
 Shader* ShaderManager::getConstantShader(Camera* camera)
 {
