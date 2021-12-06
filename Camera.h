@@ -29,6 +29,9 @@ class AbstractShader;
 /// </summary>
 class Camera
 {
+private:
+	glm::mat4 view;
+	glm::mat4 projection;
 public:
 	AbstractShader* shader;
 	glm::vec3 position;
@@ -38,9 +41,13 @@ public:
 	int width = 800;
 	int height = 600;
 	bool firstClick = true;
+	bool leftClick = true;
 	float speed = 0.1f;
 	float sensitivity = 100.0f;
 
 	Camera(glm::vec3 position);
 	void setMatrix(float FOVdeg, float nearPlane, float farPlane, GLuint& shader, const char* uniform);
+	glm::mat4 getView();
+	glm::mat4 getProjection();
+
 };

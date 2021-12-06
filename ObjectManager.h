@@ -10,13 +10,15 @@
 class ObjectManager
 {
 private:
-	std::vector<AbstractObject*> objects;
-	int count;
-	void addObject(AbstractObject* object);
-public:
 	ObjectManager();
+	std::vector<AbstractObject*> objects;
+	void addObject(AbstractObject* object);
+	static ObjectManager* instance;
+public:
+	static ObjectManager* getInstance();
 	AbstractObject* getObject(int i);
 	int getCount();
+	void removeObject(int id);
 	void drawAllObjects();
 	void createTriangle(const float points[], int size, AbstractShader* shader);
 	void createTextureObject(AbstractShader* shader, const string fileName, int textureID);

@@ -95,6 +95,49 @@ void Controller::checkInput()
 	else if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_RELEASE)
 	{
 		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
-		camera->firstClick = true;
-	}
+
+		if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
+		{
+			if (camera->leftClick)
+			{
+				camera->leftClick = false;
+
+				GLbyte color[4];
+				GLfloat depth;
+				GLuint index;
+
+				double mouseX;
+				double mouseY;
+
+				glfwGetCursorPos(window, &mouseX, &mouseY);
+
+				int newy = camera->height - mouseY;
+
+				glReadPixels(mouseX, newy, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, color);
+				glReadPixels(mouseX, newy, 1, 1, GL_DEPTH_COMPONENT, GL_FLOAT, &depth);
+				glReadPixels(mouseX, newy, 1, 1, GL_STENCIL_INDEX, GL_UNSIGNED_INT, &index);
+
+				ObjectManager::getInstance()->removeObject(index);
+				printf(" -----------%d-----------\n", index);
+
+				printf("Clicked on pixel %d, %d, color %02hhx%02hhx%02hhx%02hhx, % f, stencil index % u\n", mouseX, mouseY, color[0], color[1], color[2], color[3], depth, index);
+
+					//Mùžeme nastavit vybrané tìleso scena->setSelect(index-1);
+
+					//Mùžeme vypoèíst pozici v globálním souøadném systému.  
+				glm::vec3 screenX = glm::vec3(mouseX, newy, depth);
+
+				glm::vec4 viewPort = glm::vec4(0, 0, camera->width, camera->height);
+				glm::vec3 pos = glm::unProject(screenX, camera->getView(), camera->getProjection(), viewPort);
+
+				printf("unProject [%f,%f,%f]\n", pos.x, pos.y, pos.z);
+			}
+		}
+		else if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_RELEASE)
+		{
+			camera->leftClick = true;
+			camera->firstClick = true;
+		}
+	} 
+	
 }

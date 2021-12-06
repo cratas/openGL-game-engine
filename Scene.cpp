@@ -4,7 +4,7 @@
 Scene::Scene(Camera* camera)
 {
 	this->camera = camera;
-	this->objectManager = new ObjectManager();
+	this->objectManager = ObjectManager::getInstance();
 }
 
 
