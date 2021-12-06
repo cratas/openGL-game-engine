@@ -24,14 +24,15 @@ void Game::runGame()
 	SceneManager::getInstance()->createForestScene(camera);
 	//SceneManager::getInstance()->createSphereScene(camera);
 
+	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_STENCIL_TEST);
+	glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
 
 	float angle = 1;
 	while (!glfwWindowShouldClose(window))
 	{
 		// clear color and depth buffer
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		glEnable(GL_DEPTH_TEST);
-
 
 		controller->checkInput();
 

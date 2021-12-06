@@ -26,6 +26,7 @@ public:
 	Transformations();
 	void rotate( float x, float y, float z);
 	void translate(float x, float y, float z);
+	void bezierTranslate(float x, float y, float z);
 	void scale(float x, float y, float z);
 	glm::mat4 getTransformatedMatrix();
 	void setMatrixDefault();

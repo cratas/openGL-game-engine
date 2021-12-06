@@ -20,10 +20,10 @@ ObjectFactory* ObjectFactory::getInstance()
 /// <summary>
 /// Method creating specific type of Abstract Object(Quad)
 /// </summary>
-AbstractObject* ObjectFactory::createQuad(Model* model, AbstractShader* shader)
+AbstractObject* ObjectFactory::createQuad(Model* model, AbstractShader* shader, bool isRemovable)
 {
 	AbstractObject* object = nullptr;
-	object = new Quad(model, shader);
+	object = new Quad(model, shader, isRemovable);
 
 	return object;
 }
@@ -31,10 +31,10 @@ AbstractObject* ObjectFactory::createQuad(Model* model, AbstractShader* shader)
 /// <summary>
 /// Method creating specific type of Abstract Object(Triangle)
 /// </summary>
-AbstractObject* ObjectFactory::createTriangle(Model* model, AbstractShader* shader)
+AbstractObject* ObjectFactory::createTriangle(Model* model, AbstractShader* shader, bool isRemovable)
 {
 	AbstractObject* object = nullptr;
-	object = new Triangle(model, shader);
+	object = new Triangle(model, shader, isRemovable);
 
 	return object;
 }
@@ -53,10 +53,21 @@ AbstractObject* ObjectFactory::createLightObject(Model* model, AbstractShader* s
 /// <summary>
 /// Method creating specific type of Abstract Object(TexureObject)
 /// </summary>
-AbstractObject* ObjectFactory::createTextureObject(Model* model, AbstractShader* shader, int textureID)
+AbstractObject* ObjectFactory::createTextureObject(Model* model, AbstractShader* shader, int textureID, bool isRemovable, Bezier* bezier)
 {
 	AbstractObject* object = nullptr;
-	object = new TextureObject(model, shader, textureID);
+	object = new TextureObject(model, shader, textureID, isRemovable, bezier);
+
+	return object;
+}
+
+/// <summary>
+/// Method creating specific type of Abstract Object(TexureObject)
+/// </summary>
+AbstractObject* ObjectFactory::createTextureObject(Model* model, AbstractShader* shader, int textureID, bool isRemovable)
+{
+	AbstractObject* object = nullptr;
+	object = new TextureObject(model, shader, textureID, isRemovable);
 
 	return object;
 }

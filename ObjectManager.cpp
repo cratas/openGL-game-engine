@@ -46,7 +46,10 @@ int ObjectManager::getCount()
 /// </summary>
 void ObjectManager::removeObject(int id)
 {
-	this->objects.erase(this->objects.begin() + id);
+	if (this->objects[id]->isRemovable)
+	{
+		this->objects.erase(this->objects.begin() + id);
+	}
 }
 
 /// <summary>
@@ -54,9 +57,6 @@ void ObjectManager::removeObject(int id)
 /// </summary>
 void ObjectManager::drawAllObjects()
 {
-	glEnable(GL_STENCIL_TEST);
-	glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
-
 	for (int i = 0; i < this->getCount(); i++)
 	{
 		glStencilFunc(GL_ALWAYS, i, 0xFF);
@@ -67,10 +67,10 @@ void ObjectManager::drawAllObjects()
 /// <summary>
 /// Method creating specific type of AbstractObject calling FactoryObject class
 /// </summary>
-void ObjectManager::createQuad(const float points[], int size, AbstractShader* shader)
+void ObjectManager::createQuad(const float points[], int size, AbstractShader* shader, bool isRemovable)
 {
 	AbstractObject* object = nullptr;
-	object = ObjectFactory::getInstance()->createQuad(new Model(points, size, false), shader);
+	object = ObjectFactory::getInstance()->createQuad(new Model(points, size, false), shader, isRemovable);
 
 	this->addObject(object);
 }
@@ -78,10 +78,10 @@ void ObjectManager::createQuad(const float points[], int size, AbstractShader* s
 /// <summary>
 /// Method creating specific type of AbstractObject calling FactoryObject class
 /// </summary>
-void ObjectManager::createTriangle(const float points[], int size, AbstractShader* shader)
+void ObjectManager::createTriangle(const float points[], int size, AbstractShader* shader, bool isRemovable)
 {
 	AbstractObject* object = nullptr;
-	object = ObjectFactory::getInstance()->createTriangle(new Model(points, size, false), shader);
+	object = ObjectFactory::getInstance()->createTriangle(new Model(points, size, false), shader, isRemovable);
 
 	this->addObject(object);
 }
@@ -89,13 +89,25 @@ void ObjectManager::createTriangle(const float points[], int size, AbstractShade
 /// <summary>
 /// Method creating specific type of AbstractObject calling FactoryObject class
 /// </summary>
-void ObjectManager::createTextureObject(AbstractShader* shader, string fileName, int textureID)
+void ObjectManager::createTextureObject(AbstractShader* shader, string fileName, int textureID, bool isRemovable, Bezier* bezier)
 {
 	AbstractObject* object = nullptr;
-	object = ObjectFactory::getInstance()->createTextureObject(new Model(fileName), shader, textureID);
+	object = ObjectFactory::getInstance()->createTextureObject(new Model(fileName), shader, textureID, isRemovable, bezier);
 
 	this->addObject(object);
 }
+
+/// <summary>
+/// Method creating specific type of AbstractObject calling FactoryObject class
+/// </summary>
+void ObjectManager::createTextureObject(AbstractShader* shader, string fileName, int textureID, bool isRemovable)
+{
+	AbstractObject* object = nullptr;
+	object = ObjectFactory::getInstance()->createTextureObject(new Model(fileName), shader, textureID, isRemovable);
+
+	this->addObject(object);
+}
+
 
 /// <summary>
 /// Method creating specific type of AbstractObject calling FactoryObject class

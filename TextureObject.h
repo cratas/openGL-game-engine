@@ -13,7 +13,9 @@ class TextureObject : public AbstractObject
 {
 private:
 	int textureID;
+	float t = 0.0f;
 public:
-	TextureObject(Model* model, AbstractShader* shader, int textureID);
+	TextureObject(Model* model, AbstractShader* shader, int textureID, bool isRemovable, Bezier* bezier);
+	TextureObject(Model* model, AbstractShader* shader, int textureID, bool isRemovable);
 	void draw();
 };

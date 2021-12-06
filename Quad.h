@@ -10,6 +10,6 @@
 class Quad : public AbstractObject
 {
 public:
-	Quad(Model* model, AbstractShader* shader);
+	Quad(Model* model, AbstractShader* shader, bool isRemovable);
 	void draw();
 };

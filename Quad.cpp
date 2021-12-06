@@ -3,11 +3,12 @@
 /// <summary>
 /// Class constructor taking pointer to Model and Shader class
 /// </summary>
-Quad::Quad(Model* model, AbstractShader* shader)
+Quad::Quad(Model* model, AbstractShader* shader, bool isRemovable)
 {
 	this->model = model;
 	this->shader = shader;
 	this->transformations = new Transformations();
+	this->isRemovable = isRemovable;
 }
 
 /// <summary>

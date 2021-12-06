@@ -111,24 +111,34 @@ void Controller::checkInput()
 
 				glfwGetCursorPos(window, &mouseX, &mouseY);
 
-				int newy = camera->height - mouseY;
+
+				int newy = Controller::height - mouseY;
 
 				glReadPixels(mouseX, newy, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, color);
 				glReadPixels(mouseX, newy, 1, 1, GL_DEPTH_COMPONENT, GL_FLOAT, &depth);
 				glReadPixels(mouseX, newy, 1, 1, GL_STENCIL_INDEX, GL_UNSIGNED_INT, &index);
 
-				ObjectManager::getInstance()->removeObject(index);
-				printf(" -----------%d-----------\n", index);
-
-				printf("Clicked on pixel %d, %d, color %02hhx%02hhx%02hhx%02hhx, % f, stencil index % u\n", mouseX, mouseY, color[0], color[1], color[2], color[3], depth, index);
 
 					//Mùžeme nastavit vybrané tìleso scena->setSelect(index-1);
 
 					//Mùžeme vypoèíst pozici v globálním souøadném systému.  
 				glm::vec3 screenX = glm::vec3(mouseX, newy, depth);
 
-				glm::vec4 viewPort = glm::vec4(0, 0, camera->width, camera->height);
+				glm::vec4 viewPort = glm::vec4(0, 0, Controller::width, Controller::height);
 				glm::vec3 pos = glm::unProject(screenX, camera->getView(), camera->getProjection(), viewPort);
+
+				if (index == 0)
+				{
+					ObjectManager::getInstance()->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
+						, "Textures/tree.obj", TextureManager::getInstance()->getTexture(3), true);
+					ObjectManager::getInstance()->getObject(ObjectManager::getInstance()->getCount() - 1)->getTransformations()->translate(pos.x, pos.y, pos.z);
+					ObjectManager::getInstance()->getObject(ObjectManager::getInstance()->getCount() - 1)->getTransformations()->scale(0.4, 0.4, 0.4);
+
+				}
+
+				printf("Clicked on pixel %d, %d, color %02hhx%02hhx%02hhx%02hhx, % f, stencil index % u\n", mouseX, mouseY, color[0], color[1], color[2], color[3], depth, index);
+
+				ObjectManager::getInstance()->removeObject(index);
 
 				printf("unProject [%f,%f,%f]\n", pos.x, pos.y, pos.z);
 			}

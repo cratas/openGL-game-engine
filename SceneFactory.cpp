@@ -32,33 +32,27 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 	TextureManager::getInstance()->addTexture("Textures/zombie.png");
 	TextureManager::getInstance()->addTexture("Textures/bake.png");
 
-	scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
-		, "Textures/teren.obj", TextureManager::getInstance()->getTexture(0));
-
 	
-
 	scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
-		, "Textures/building.obj", TextureManager::getInstance()->getTexture(1));
+		, "Textures/teren.obj", TextureManager::getInstance()->getTexture(0), false, nullptr);
+	
+	//building
 	scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
-			, "Textures/skydome.obj", TextureManager::getInstance()->getTexture(2));
-
-
+		, "Textures/building.obj", TextureManager::getInstance()->getTexture(1), false, nullptr);
+	//skydome
+	scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
+			, "Textures/skydome.obj", TextureManager::getInstance()->getTexture(2), false, nullptr);
 
 	//trees
-	scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
-		, "Textures/tree.obj", TextureManager::getInstance()->getTexture(3));
-	scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
-		, "Textures/tree.obj", TextureManager::getInstance()->getTexture(3));
-	scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
-		, "Textures/tree.obj", TextureManager::getInstance()->getTexture(3));
-	scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
-		, "Textures/tree.obj", TextureManager::getInstance()->getTexture(3));
-	scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
-		, "Textures/tree.obj", TextureManager::getInstance()->getTexture(3));
+	for (int i = 0; i < 5; i++)
+	{
+		scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
+			, "Textures/tree.obj", TextureManager::getInstance()->getTexture(3), true, nullptr);
+	}
 
 	//zombie
 	scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
-		, "Textures/zombie.obj", TextureManager::getInstance()->getTexture(4));
+		, "Textures/zombie.obj", TextureManager::getInstance()->getTexture(4), false, new Bezier());
 
 	//light
 	scene->objectManager->createLightObject(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->createConstShader(camera)
@@ -68,7 +62,7 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 	for (int i = 0; i < 23; i++)
 	{
 		scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
-			, "Textures/zed.obj", TextureManager::getInstance()->getTexture(5));
+			, "Textures/zed.obj", TextureManager::getInstance()->getTexture(5), false, nullptr);
 	}
 
 	scene->objectManager->createLightObject(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->createConstShader(camera)
@@ -79,7 +73,7 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 	//scene->objectManager->getObject(33)->getTransformations()->translate(30, 10, 15);
 	//scene->objectManager->getObject(34)->getTransformations()->translate(0, 10, 15);
 
-	scene->objectManager->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->createPhongShader(camera));
+	scene->objectManager->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->createPhongShader(camera), false);
 	scene->objectManager->getObject(35)->getTransformations()->translate(0, 20, 0);
 
 	//grass
@@ -110,7 +104,7 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 
 	//zombie
 	scene->objectManager->getObject(8)->getTransformations()->translate(0, 0, 14);
-	//scene->objectManager->getObject(8)->getTransformations()->scale(0.3, 0.3, 0.3);
+	scene->objectManager->getObject(8)->getTransformations()->scale(1.2, 1.2, 1.2);
 
 	//light
 	//scene->objectManager->getObject(9)->getTransformations()->translate(-30, 10, 15);

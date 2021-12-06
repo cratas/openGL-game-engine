@@ -146,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AbstractObject.cpp" />
+    <ClCompile Include="Bezier.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="ConstantShader.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -175,6 +176,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractObject.h" />
+    <ClInclude Include="Bezier.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="ConstantShader.h" />
     <ClInclude Include="Game.h" />

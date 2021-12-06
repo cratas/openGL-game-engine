@@ -47,3 +47,9 @@ void Transformations::setMatrixDefault()
 {
 	this->M = glm::mat4(1.0);
 }
+
+void Transformations::bezierTranslate(float x, float y, float z)
+{
+	this->M = glm::translate(glm::mat4(1.0), glm::vec3(x, y, z));
+}
+

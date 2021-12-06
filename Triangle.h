@@ -7,6 +7,6 @@
 class Triangle : public AbstractObject
 {
 public:
-	Triangle(Model* model, AbstractShader* shader);
+	Triangle(Model* model, AbstractShader* shader, bool isRemovable);
 	void draw();
 };

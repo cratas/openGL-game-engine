@@ -5,6 +5,7 @@
 /// </summary>
 LightObject::LightObject(Model* model, AbstractShader* shader, glm::vec3 position, glm::vec4 colour)
 {
+	isRemovable = false;
 	this->model = model;
 	this->shader = shader;
 	this->transformations = new Transformations();
@@ -20,7 +21,6 @@ LightObject::LightObject(Model* model, AbstractShader* shader, glm::vec3 positio
 /// </summary>
 void LightObject::draw()
 {
-	
 	shader->activateShader(transformations->getTransformatedMatrix(), this->colour);
 
 	model->bindVAO();

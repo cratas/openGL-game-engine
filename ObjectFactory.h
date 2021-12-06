@@ -17,8 +17,9 @@ private:
 	ObjectFactory();
 public:
 	static ObjectFactory* getInstance();
-	AbstractObject* createQuad(Model* model, AbstractShader* shader);
-	AbstractObject* createTriangle(Model* model, AbstractShader* shader);
-	AbstractObject* createTextureObject(Model* model, AbstractShader* shader, int textureID);
+	AbstractObject* createQuad(Model* model, AbstractShader* shader, bool isRemovable);
+	AbstractObject* createTriangle(Model* model, AbstractShader* shader, bool isRemovable);
+	AbstractObject* createTextureObject(Model* model, AbstractShader* shader, int textureID, bool isRemovable, Bezier* bezier);
+	AbstractObject* createTextureObject(Model* model, AbstractShader* shader, int textureID, bool isRemovable);
 	AbstractObject* createLightObject(Model* model, AbstractShader* shader, glm::vec3 position, glm::vec4 colour);
 };

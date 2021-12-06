@@ -126,6 +126,9 @@
     <ClCompile Include="LambertShader.cpp">
       <Filter>Zdrojové soubory\ShaderManagment</Filter>
     </ClCompile>
+    <ClCompile Include="Bezier.cpp">
+      <Filter>Zdrojové soubory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ObjectFactory.h">
@@ -223,6 +226,9 @@
     </ClInclude>
     <ClInclude Include="LambertShader.h">
       <Filter>Hlavičkové soubory\ShadersManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="Bezier.h">
+      <Filter>Hlavičkové soubory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

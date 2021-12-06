@@ -3,7 +3,6 @@
 /// <summary>
 /// Camera class constructor, which takes one argument: start position of camera
 /// </summary>
-/// <param name="position"></param>
 Camera::Camera(glm::vec3 position)
 {
 	this->position = position;

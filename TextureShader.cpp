@@ -30,7 +30,6 @@ void TextureShader::activateShader(glm::mat4 M, glm::vec4 colour)
 }
 
 
-
 void TextureShader::setTextureID(int id)
 {
 	GLint uniformID = glGetUniformLocation(shaderProgram, "textureUnitID");
