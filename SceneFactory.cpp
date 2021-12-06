@@ -25,65 +25,62 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 {
 	Scene* scene = new Scene(camera);
 
-	//TextureManager::getInstance()->addTexture("Textures/grass.png");
-	//TextureManager::getInstance()->addTexture("Textures/building.png");
-	//TextureManager::getInstance()->addTexture("Textures/skydome.png");
-	//TextureManager::getInstance()->addTexture("Textures/tree.png");
-	//TextureManager::getInstance()->addTexture("Textures/zombie.png");
-	//TextureManager::getInstance()->addTexture("Textures/bake.png");
-	
-	scene->objectManager->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->createConstShader(camera));
-	scene->objectManager->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->createConstShader(camera));
+	TextureManager::getInstance()->addTexture("Textures/grass.png");
+	TextureManager::getInstance()->addTexture("Textures/building.png");
+	TextureManager::getInstance()->addTexture("Textures/skydome.png");
+	TextureManager::getInstance()->addTexture("Textures/tree.png");
+	TextureManager::getInstance()->addTexture("Textures/zombie.png");
+	TextureManager::getInstance()->addTexture("Textures/bake.png");
 
-
-	//scene->objectManager->createLightObject(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getConstantShader(camera)
-	//	, glm::vec3(0.0f, 10.0f, 15.0f), glm::vec4(1.0f, 1.0f, 1.0f, 1.0f));
-
-	/*
-
-	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getPhongShader(camera)
+	scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
 		, "Textures/teren.obj", TextureManager::getInstance()->getTexture(0));
-	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getPhongShader(camera)
+
+	
+
+	scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
 		, "Textures/building.obj", TextureManager::getInstance()->getTexture(1));
-	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getPhongShader(camera)
+	scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
 			, "Textures/skydome.obj", TextureManager::getInstance()->getTexture(2));
 
 
 
 	//trees
-	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getPhongShader(camera)
+	scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
 		, "Textures/tree.obj", TextureManager::getInstance()->getTexture(3));
-	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getPhongShader(camera)
+	scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
 		, "Textures/tree.obj", TextureManager::getInstance()->getTexture(3));
-	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getPhongShader(camera)
+	scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
 		, "Textures/tree.obj", TextureManager::getInstance()->getTexture(3));
-	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getPhongShader(camera)
+	scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
 		, "Textures/tree.obj", TextureManager::getInstance()->getTexture(3));
-	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getPhongShader(camera)
+	scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
 		, "Textures/tree.obj", TextureManager::getInstance()->getTexture(3));
 
 	//zombie
-	scene->objectManager->createTextureObject(ShaderManager::getInstance()->getPhongShader(camera)
+	scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
 		, "Textures/zombie.obj", TextureManager::getInstance()->getTexture(4));
 
 	//light
-	scene->objectManager->createLightObject(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getConstantShader(camera)
+	scene->objectManager->createLightObject(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->createConstShader(camera)
 		, glm::vec3(0.0f, 10.0f, 15.0f), glm::vec4(1.0f, 1.0f, 1.0f, 1.0f));
 
 	//walls
 	for (int i = 0; i < 23; i++)
 	{
-		scene->objectManager->createTextureObject(ShaderManager::getInstance()->getPhongShader(camera)
+		scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
 			, "Textures/zed.obj", TextureManager::getInstance()->getTexture(5));
 	}
 
-	scene->objectManager->createLightObject(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getConstantShader(camera)
+	scene->objectManager->createLightObject(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->createConstShader(camera)
 					, glm::vec3(30.0f, 10.0f, 15.0f), glm::vec4(1.0f, 0.0f, 0.0f, 1.0f));
 	//lights
-	scene->objectManager->createLightObject(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getConstantShader(camera)
+	scene->objectManager->createLightObject(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->createConstShader(camera)
 		, glm::vec3(-30.0f, 10.0f, 15.0f), glm::vec4(0.0f, 0.0f, 1.0f, 1.0f));
 	//scene->objectManager->getObject(33)->getTransformations()->translate(30, 10, 15);
 	//scene->objectManager->getObject(34)->getTransformations()->translate(0, 10, 15);
+
+	scene->objectManager->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->createPhongShader(camera));
+	scene->objectManager->getObject(35)->getTransformations()->translate(0, 20, 0);
 
 	//grass
 	scene->objectManager->getObject(0)->getTransformations()->scale(1.2, 1.2, 1.2);
@@ -161,7 +158,7 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 	scene->objectManager->getObject(30)->getTransformations()->rotate(0, 1.571, 0);
 
 
-	*/
+	
 
 
 	//scene->objectManager->createTriangle(tree, sizeof(tree) / sizeof(tree[0])
@@ -213,7 +210,8 @@ Scene* SceneFactory::createSphereScene(Camera* camera)
 {
 	Scene* scene = new Scene(camera);
 	
-	scene->objectManager->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->createConstShader(camera));
+	//scene->objectManager->createLightObject(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->createConstShader(camera)
+	//	, glm::vec3(0.0f, 10.0f, 15.0f), glm::vec4(1.0f, 0.0f, 1.0f, 1.0f));
 
 	//scene->objectManager->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getPhongShader(camera));
 	//scene->objectManager->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getPhongShader(camera));

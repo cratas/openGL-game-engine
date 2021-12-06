@@ -3,13 +3,14 @@
 #include "AbstractShader.h"
 #include "Transformations.h"
 #include "AbstractObject.h"
+#include "PhongShader.h"
 
 /// <summary>
 /// Class Quad inherits from class AbstractObject and draw Object as Quad
 /// </summary>
-class ConstantShader : public AbstractShader
+class LambertShader : public PhongShader
 {
 public:
-	ConstantShader(const char* vertexFile, const char* fragmentFile, Camera* camera);
+	LambertShader(const char* vertexFile, const char* fragmentFile, Camera* camera);
 	void activateShader(glm::mat4 M, glm::vec4 colour);
 };

@@ -15,7 +15,7 @@ Triangle::Triangle(Model* model, AbstractShader* shader)
 /// </summary>
 void Triangle::draw()
 {
-	shader->activateShader(transformations->getTransformatedMatrix());
+	shader->activateShader(transformations->getTransformatedMatrix(), (glm::vec4)NULL);
 	model->bindVAO();
 	glDrawArrays(GL_TRIANGLES, 0, model->sizeOfPoints);
 }

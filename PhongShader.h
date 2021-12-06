@@ -7,9 +7,9 @@
 /// <summary>
 /// Class Quad inherits from class AbstractObject and draw Object as Quad
 /// </summary>
-class ConstantShader : public AbstractShader
+class PhongShader : public AbstractShader
 {
 public:
-	ConstantShader(const char* vertexFile, const char* fragmentFile, Camera* camera);
+	PhongShader(const char* vertexFile, const char* fragmentFile, Camera* camera);
 	void activateShader(glm::mat4 M, glm::vec4 colour);
 };

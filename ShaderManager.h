@@ -16,6 +16,8 @@ private:
 public:
 	static ShaderManager* getInstance();
 	AbstractShader* createConstShader(Camera* camera);
-	//AbstractShader* getLambertShader(Camera* camera);
-	//AbstractShader* getPhongShader(Camera* camera);
+	AbstractShader* createTextureShader(Camera* camera);
+	AbstractShader* createPhongShader(Camera* camera);
+	AbstractShader* createLambertShader(Camera* camera);
+
 };

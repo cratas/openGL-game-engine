@@ -15,7 +15,7 @@ Quad::Quad(Model* model, AbstractShader* shader)
 /// </summary>
 void Quad::draw()
 {
-	shader->activateShader(transformations->getTransformatedMatrix());
+	shader->activateShader(transformations->getTransformatedMatrix(), (glm::vec4)NULL);
 
 	model->bindVAO();
 	glDrawArrays(GL_QUADS, 0, model->sizeOfPoints); //mode,first,count

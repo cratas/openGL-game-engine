@@ -112,10 +112,19 @@
       <Filter>Zdrojové soubory\ObjectsManagment</Filter>
     </ClCompile>
     <ClCompile Include="ConstantShader.cpp">
-      <Filter>Zdrojové soubory</Filter>
+      <Filter>Zdrojové soubory\ShaderManagment</Filter>
     </ClCompile>
     <ClCompile Include="AbstractShader.cpp">
-      <Filter>Zdrojové soubory</Filter>
+      <Filter>Zdrojové soubory\ShaderManagment</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureShader.cpp">
+      <Filter>Zdrojové soubory\ShaderManagment</Filter>
+    </ClCompile>
+    <ClCompile Include="PhongShader.cpp">
+      <Filter>Zdrojové soubory\ShaderManagment</Filter>
+    </ClCompile>
+    <ClCompile Include="LambertShader.cpp">
+      <Filter>Zdrojové soubory\ShaderManagment</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -204,6 +213,15 @@
       <Filter>Hlavičkové soubory\ShadersManagment</Filter>
     </ClInclude>
     <ClInclude Include="ConstantShader.h">
+      <Filter>Hlavičkové soubory\ShadersManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureShader.h">
+      <Filter>Hlavičkové soubory\ShadersManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="PhongShader.h">
+      <Filter>Hlavičkové soubory\ShadersManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="LambertShader.h">
       <Filter>Hlavičkové soubory\ShadersManagment</Filter>
     </ClInclude>
   </ItemGroup>

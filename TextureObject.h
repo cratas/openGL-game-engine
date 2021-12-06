@@ -4,6 +4,7 @@
 #include "Transformations.h"
 #include "AbstractObject.h"
 #include "TextureManager.h"
+#include "TextureShader.h"
 
 /// <summary>
 /// Class TextureObject inherits from class AbstractObject and draw Assimp Object with texture

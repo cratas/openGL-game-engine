@@ -27,3 +27,10 @@ Light* LightManager::getObject(int i)
 {
 	return this->objects[i];
 }
+
+int LightManager::getCount()
+{
+	return this->count;
+}
+
+

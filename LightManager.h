@@ -10,7 +10,7 @@ class LightManager
 {
 private:
 	std::vector<Light*> objects;
-	int count;
+	int count = 0;
 	LightManager();
 	static LightManager* instance;
 public:
@@ -18,4 +18,5 @@ public:
 	void addObject(Light* object);
 	Light* getObject(int i);
 	int getCount();
+	std::vector<Light*> getAll();
 };

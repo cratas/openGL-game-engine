@@ -7,6 +7,7 @@ out vec4 color;
 out vec2 uv;
 uniform mat4 modelMatrix;
 uniform mat4 camMatrix;
+
 void main () {
 	gl_Position = camMatrix * modelMatrix *  vec4(position, 1.0);
 	color = vec4(colorP, 0.0);

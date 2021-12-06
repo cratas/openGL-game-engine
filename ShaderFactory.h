@@ -1,7 +1,10 @@
 #pragma once
 #include "AbstractShader.h"
 #include "ConstantShader.h"
+#include "TextureShader.h"
 #include "Camera.h"
+#include "PhongShader.h"
+#include "LambertShader.h"
 
 /// <summary>
 /// Singleton lass for creating specific type of Shader using Factory Method pattern
@@ -14,6 +17,7 @@ private:
 public:
 	static ShaderFactory* getInstance();
 	AbstractShader* createConstantShader(Camera* camera);
-	//AbstractShader* createLambertShader(Camera* camera);
-	//AbstractShader* createPhongShader(Camera* camera);
+	AbstractShader* createTextureShader(Camera* camera);
+	AbstractShader* createLambertShader(Camera* camera);
+	AbstractShader* createPhongShader(Camera* camera);
 };

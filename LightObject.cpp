@@ -21,7 +21,7 @@ LightObject::LightObject(Model* model, AbstractShader* shader, glm::vec3 positio
 void LightObject::draw()
 {
 	
-	shader->activateShader(transformations->getTransformatedMatrix());
+	shader->activateShader(transformations->getTransformatedMatrix(), this->colour);
 
 	model->bindVAO();
 	glDrawArrays(GL_QUADS, 0, model->sizeOfPoints); //mode,first,count

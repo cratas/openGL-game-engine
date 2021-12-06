@@ -17,7 +17,7 @@ TextureObject::TextureObject(Model* model, AbstractShader* shader, int textureID
 /// </summary>
 void TextureObject::draw()
 {
-	shader->activateShader(transformations->getTransformatedMatrix());
+	shader->activateShader(transformations->getTransformatedMatrix(), (glm::vec4)NULL);
 	model->bindVAO();
 
 	shader->setTextureID(this->textureID);

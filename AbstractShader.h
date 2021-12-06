@@ -22,7 +22,7 @@ class Camera;
 /// </summary>
 class AbstractShader
 {
-private:
+protected:
 	GLuint vertexShader;
 	Camera* camera;
 	GLuint fragmentShader;
@@ -31,8 +31,8 @@ private:
 	const char* fragment_shader;
 	string loadFile(const char* fname);
 public:
+	virtual void activateShader(glm::mat4 M, glm::vec4 colour) = 0;
 	AbstractShader(const char* vertexFile, const char* fragmentFile, Camera* camera);
-	void activateShader(glm::mat4 M);
 	void deleteShader();
 	void compileErrors();
 	void setTextureID(int id);
