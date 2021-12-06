@@ -1,6 +1,6 @@
 #pragma once
 #include "WindowInitializer.h"
-#include "Shader.h"
+#include "AbstractShader.h"
 #include "Model.h"
 #include "Transformations.h"
 #include "Quad.h"

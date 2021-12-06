@@ -1,6 +1,6 @@
 #pragma once
 #include "Model.h"
-#include "Shader.h"
+#include "AbstractShader.h"
 #include "Transformations.h"
 #include "AbstractObject.h"
 #include "TextureManager.h"
@@ -13,6 +13,6 @@ class TextureObject : public AbstractObject
 private:
 	int textureID;
 public:
-	TextureObject(Model* model, Shader* shader, int textureID);
+	TextureObject(Model* model, AbstractShader* shader, int textureID);
 	void draw();
 };

@@ -3,7 +3,7 @@
 /// <summary>
 /// Class constructor taking pointer to Model and Shader class
 /// </summary>
-LightObject::LightObject(Model* model, Shader* shader, glm::vec3 position, glm::vec4 colour)
+LightObject::LightObject(Model* model, AbstractShader* shader, glm::vec3 position, glm::vec4 colour)
 {
 	this->model = model;
 	this->shader = shader;

@@ -3,7 +3,7 @@
 /// <summary>
 /// Class constructor taking pointer to Model and Shader class
 /// </summary>
-Triangle::Triangle(Model* model, Shader* shader)
+Triangle::Triangle(Model* model, AbstractShader* shader)
 {
 	this->model = model;
 	this->shader = shader;

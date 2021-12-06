@@ -8,14 +8,14 @@
 class ShaderManager
 {
 private:
+	int count;
+	std::vector<AbstractShader*> shaders;
 	static ShaderManager* instance;
+	//void addShader(AbstractShader* shader);
 	ShaderManager();
-	Shader* constantShader;
-	Shader* lambertShader;
-	Shader* phongShader;
 public:
 	static ShaderManager* getInstance();
-	Shader* getConstantShader(Camera* camera);
-	Shader* getLambertShader(Camera* camera);
-	Shader* getPhongShader(Camera* camera);
+	AbstractShader* createConstShader(Camera* camera);
+	//AbstractShader* getLambertShader(Camera* camera);
+	//AbstractShader* getPhongShader(Camera* camera);
 };

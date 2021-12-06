@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -147,6 +147,7 @@
   <ItemGroup>
     <ClCompile Include="AbstractObject.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="ConstantShader.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Light.cpp" />
     <ClCompile Include="LightManager.cpp" />
@@ -159,7 +160,7 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneFactory.cpp" />
     <ClCompile Include="SceneManager.cpp" />
-    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="AbstractShader.cpp" />
     <ClCompile Include="ShaderFactory.cpp" />
     <ClCompile Include="ShaderManager.cpp" />
     <ClCompile Include="TextureManager.cpp" />
@@ -172,6 +173,7 @@
   <ItemGroup>
     <ClInclude Include="AbstractObject.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="ConstantShader.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Light.h" />
     <ClInclude Include="LightManager.h" />
@@ -185,7 +187,7 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneFactory.h" />
     <ClInclude Include="SceneManager.h" />
-    <ClInclude Include="Shader.h" />
+    <ClInclude Include="AbstractShader.h" />
     <ClInclude Include="ShaderFactory.h" />
     <ClInclude Include="ShaderManager.h" />
     <ClInclude Include="sphere.h" />

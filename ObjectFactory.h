@@ -17,8 +17,8 @@ private:
 	ObjectFactory();
 public:
 	static ObjectFactory* getInstance();
-	AbstractObject* createQuad(Model* model, Shader* shader);
-	AbstractObject* createTriangle(Model* model, Shader* shader);
-	AbstractObject* createTextureObject(Model* model, Shader* shader, int textureID);
-	AbstractObject* createLightObject(Model* model, Shader* shader, glm::vec3 position, glm::vec4 colour);
+	AbstractObject* createQuad(Model* model, AbstractShader* shader);
+	AbstractObject* createTriangle(Model* model, AbstractShader* shader);
+	AbstractObject* createTextureObject(Model* model, AbstractShader* shader, int textureID);
+	AbstractObject* createLightObject(Model* model, AbstractShader* shader, glm::vec3 position, glm::vec4 colour);
 };

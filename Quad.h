@@ -10,6 +10,6 @@
 class Quad : public AbstractObject
 {
 public:
-	Quad(Model* model, Shader* shader);
+	Quad(Model* model, AbstractShader* shader);
 	void draw();
 };

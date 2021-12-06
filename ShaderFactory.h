@@ -1,5 +1,6 @@
 #pragma once
-#include "Shader.h"
+#include "AbstractShader.h"
+#include "ConstantShader.h"
 #include "Camera.h"
 
 /// <summary>
@@ -12,7 +13,7 @@ private:
 	ShaderFactory();
 public:
 	static ShaderFactory* getInstance();
-	Shader* createConstantShader(Camera* camera);
-	Shader* createLambertShader(Camera* camera);
-	Shader* createPhongShader(Camera* camera);
+	AbstractShader* createConstantShader(Camera* camera);
+	//AbstractShader* createLambertShader(Camera* camera);
+	//AbstractShader* createPhongShader(Camera* camera);
 };

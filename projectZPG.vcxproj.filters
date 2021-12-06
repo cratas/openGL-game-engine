@@ -66,9 +66,6 @@
     <ClCompile Include="Model.cpp">
       <Filter>Zdrojové soubory\ObjectsManagment</Filter>
     </ClCompile>
-    <ClCompile Include="Shader.cpp">
-      <Filter>Zdrojové soubory\ShaderManagment</Filter>
-    </ClCompile>
     <ClCompile Include="ShaderFactory.cpp">
       <Filter>Zdrojové soubory\ShaderManagment</Filter>
     </ClCompile>
@@ -114,6 +111,12 @@
     <ClCompile Include="LightObject.cpp">
       <Filter>Zdrojové soubory\ObjectsManagment</Filter>
     </ClCompile>
+    <ClCompile Include="ConstantShader.cpp">
+      <Filter>Zdrojové soubory</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractShader.cpp">
+      <Filter>Zdrojové soubory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ObjectFactory.h">
@@ -150,9 +153,6 @@
       <Filter>Hlavičkové soubory\ShadersManagment</Filter>
     </ClInclude>
     <ClInclude Include="ShaderManager.h">
-      <Filter>Hlavičkové soubory\ShadersManagment</Filter>
-    </ClInclude>
-    <ClInclude Include="Shader.h">
       <Filter>Hlavičkové soubory\ShadersManagment</Filter>
     </ClInclude>
     <ClInclude Include="Transformations.h">
@@ -199,6 +199,12 @@
     </ClInclude>
     <ClInclude Include="LightObject.h">
       <Filter>Hlavičkové soubory\ObjectsManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractShader.h">
+      <Filter>Hlavičkové soubory\ShadersManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstantShader.h">
+      <Filter>Hlavičkové soubory\ShadersManagment</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

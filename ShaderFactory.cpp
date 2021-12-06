@@ -19,24 +19,27 @@ ShaderFactory* ShaderFactory::getInstance()
 /// <summary>
 /// Method for creating constant shader
 /// </summary>
-Shader* ShaderFactory::createConstantShader(Camera* camera)
-{ 
-	return new Shader("constant.vert", "constant.frag", camera);
-}
-
-/// <summary>
-/// Method for creating lambert shader
-/// </summary>
-Shader* ShaderFactory::createLambertShader(Camera* camera)
+AbstractShader* ShaderFactory::createConstantShader(Camera* camera)
 {
-	return new Shader("lambert.vert", "lambert.frag", camera);
+	AbstractShader* object = nullptr;
+	object = new ConstantShader("constant.vert", "constant.frag", camera);
+
+	return object;
 }
 
-
-/// <summary>
-/// Method for creating phong shader
-/// </summary>
-Shader* ShaderFactory::createPhongShader(Camera* camera)
-{
-	return new Shader("texture.vert", "texture.frag", camera);
-}
+///// <summary>
+///// Method for creating lambert shader
+///// </summary>
+//Shader* ShaderFactory::createLambertShader(Camera* camera)
+//{
+//	return new Shader("lambert.vert", "lambert.frag", camera);
+//}
+//
+//
+///// <summary>
+///// Method for creating phong shader
+///// </summary>
+//Shader* ShaderFactory::createPhongShader(Camera* camera)
+//{
+//	return new Shader("texture.vert", "texture.frag", camera);
+//}

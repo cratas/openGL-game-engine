@@ -13,6 +13,6 @@ private:
 	glm::vec3 position;
 	glm::vec4 colour;
 public:
-	LightObject(Model* model, Shader* shader, glm::vec3 position, glm::vec4 colour);
+	LightObject(Model* model, AbstractShader* shader, glm::vec3 position, glm::vec4 colour);
 	void draw();
 };

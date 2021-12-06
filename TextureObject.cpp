@@ -4,7 +4,7 @@
 /// <summary>
 /// Class constructor taking pointer to Model and Shader class
 /// </summary>
-TextureObject::TextureObject(Model* model, Shader* shader, int textureID)
+TextureObject::TextureObject(Model* model, AbstractShader* shader, int textureID)
 {
 	this->model = model;
 	this->shader = shader;

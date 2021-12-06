@@ -20,7 +20,7 @@ ObjectFactory* ObjectFactory::getInstance()
 /// <summary>
 /// Method creating specific type of Abstract Object(Quad)
 /// </summary>
-AbstractObject* ObjectFactory::createQuad(Model* model, Shader* shader)
+AbstractObject* ObjectFactory::createQuad(Model* model, AbstractShader* shader)
 {
 	AbstractObject* object = nullptr;
 	object = new Quad(model, shader);
@@ -31,7 +31,7 @@ AbstractObject* ObjectFactory::createQuad(Model* model, Shader* shader)
 /// <summary>
 /// Method creating specific type of Abstract Object(Triangle)
 /// </summary>
-AbstractObject* ObjectFactory::createTriangle(Model* model, Shader* shader)
+AbstractObject* ObjectFactory::createTriangle(Model* model, AbstractShader* shader)
 {
 	AbstractObject* object = nullptr;
 	object = new Triangle(model, shader);
@@ -42,7 +42,7 @@ AbstractObject* ObjectFactory::createTriangle(Model* model, Shader* shader)
 /// <summary>
 /// Method creating specific type of Abstract Object(Triangle)
 /// </summary>
-AbstractObject* ObjectFactory::createLightObject(Model* model, Shader* shader, glm::vec3 position, glm::vec4 colour)
+AbstractObject* ObjectFactory::createLightObject(Model* model, AbstractShader* shader, glm::vec3 position, glm::vec4 colour)
 {
 	AbstractObject* object = nullptr;
 	object = new LightObject(model, shader, position, colour);
@@ -53,7 +53,7 @@ AbstractObject* ObjectFactory::createLightObject(Model* model, Shader* shader, g
 /// <summary>
 /// Method creating specific type of Abstract Object(TexureObject)
 /// </summary>
-AbstractObject* ObjectFactory::createTextureObject(Model* model, Shader* shader, int textureID)
+AbstractObject* ObjectFactory::createTextureObject(Model* model, AbstractShader* shader, int textureID)
 {
 	AbstractObject* object = nullptr;
 	object = new TextureObject(model, shader, textureID);

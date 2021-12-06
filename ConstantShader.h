@@ -10,6 +10,6 @@
 class ConstantShader : public AbstractShader
 {
 public:
-	ConstantShader(Camera* camera);
-	void draw();
+	ConstantShader(const char* vertexFile, const char* fragmentFile, Camera* camera);
+	//void activateShader(glm::mat4);
 };

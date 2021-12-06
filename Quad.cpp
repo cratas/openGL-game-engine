@@ -3,7 +3,7 @@
 /// <summary>
 /// Class constructor taking pointer to Model and Shader class
 /// </summary>
-Quad::Quad(Model* model, Shader* shader)
+Quad::Quad(Model* model, AbstractShader* shader)
 {
 	this->model = model;
 	this->shader = shader;

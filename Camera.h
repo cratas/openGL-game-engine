@@ -22,7 +22,7 @@
 #include <stdexcept>
 #include "AbstractShader.h"
 
-class Shader;
+class AbstractShader;
 
 /// <summary>
 /// Class visualising moving camera controlled via userInput class
