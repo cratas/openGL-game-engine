@@ -9,6 +9,16 @@ Triangle::Triangle(Model* model, AbstractShader* shader, bool isRemovable)
 	this->shader = shader;
 	this->transformations = new Transformations();
 	this->isRemovable = isRemovable;
+	this->bezier = nullptr;
+}
+
+/// <summary>
+/// Class constructor taking pointer to Model and Shader class
+/// </summary>
+Triangle::Triangle(Model* model, AbstractShader* shader, bool isRemovable, Bezier* bezier)
+{
+	Triangle(model, shader, isRemovable);
+	this->bezier = bezier;
 }
 
 /// <summary>
@@ -20,3 +30,5 @@ void Triangle::draw()
 	model->bindVAO();
 	glDrawArrays(GL_TRIANGLES, 0, model->sizeOfPoints);
 }
+
+

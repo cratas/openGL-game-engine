@@ -8,11 +8,13 @@ class Bezier
 private:
 	float t = 0;
 	bool growing = true;
+	glm::mat4x3 bezierPoints;
 	glm::mat4 A = glm::mat4(glm::vec4(-1.0, 3.0, -3.0, 1.0),
 		glm::vec4(3.0, -6.0, 3.0, 0),
 		glm::vec4(-3.0, 3.0, 0, 0),
 		glm::vec4(1, 0, 0, 0));
 public:
 	Bezier();
+	Bezier(glm::mat4x4 bezierPoints);
 	glm::vec3 getBezierCurve();
 };

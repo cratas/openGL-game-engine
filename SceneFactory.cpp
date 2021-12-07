@@ -50,9 +50,14 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 			, "Textures/tree.obj", TextureManager::getInstance()->getTexture(3), true, nullptr);
 	}
 
+	glm::mat4x3 B = glm::mat4x3(glm::vec3(-7, 0, 0),
+		glm::vec3(-12, 0, 23),
+		glm::vec3(12, 0, 23),
+		glm::vec3(10, 0, 0));
+
 	//zombie
 	scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
-		, "Textures/zombie.obj", TextureManager::getInstance()->getTexture(4), false, new Bezier());
+		, "Textures/zombie.obj", TextureManager::getInstance()->getTexture(4), false, new Bezier(B));
 
 	//light
 	scene->objectManager->createLightObject(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->createConstShader(camera)

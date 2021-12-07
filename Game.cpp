@@ -32,7 +32,6 @@ void Game::runGame()
 	while (!glfwWindowShouldClose(window))
 	{
 		// clear color and depth buffer
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		controller->checkInput();
 

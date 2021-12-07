@@ -10,7 +10,7 @@ uniform sampler2D textureUnitID;
 in vec2 uv;
 
 void main() 
-}
+{
     for(int i = 0; i < 4; i++)
     {
         vec3 lightVec = lightObjectPositions[i] - vec3(ex_worldPosition); 

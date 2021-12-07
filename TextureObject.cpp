@@ -5,11 +5,12 @@
 /// </summary>
 TextureObject::TextureObject(Model* model, AbstractShader* shader, int textureID, bool isRemovable, Bezier* bezier)
 {
-	this->model = model;
-	this->shader = shader;
-	this->transformations = new Transformations();
-	this->textureID = textureID;
-	this->isRemovable = isRemovable;
+    this->model = model;
+    this->shader = shader;
+    this->transformations = new Transformations();
+    this->textureID = textureID;
+    this->isRemovable = isRemovable;
+    this->bezier = nullptr;
     this->bezier = bezier;
 }
 

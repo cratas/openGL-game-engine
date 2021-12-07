@@ -76,6 +76,17 @@ void ObjectManager::createQuad(const float points[], int size, AbstractShader* s
 }
 
 /// <summary>
+/// Method creating specific type of AbstractObject calling FactoryObject class with bezier curve movement
+/// </summary>
+void ObjectManager::createQuad(const float points[], int size, AbstractShader* shader, bool isRemovable, Bezier* bezier)
+{
+	AbstractObject* object = nullptr;
+	object = ObjectFactory::getInstance()->createQuad(new Model(points, size, false), shader, isRemovable, bezier);
+
+	this->addObject(object);
+}
+
+/// <summary>
 /// Method creating specific type of AbstractObject calling FactoryObject class
 /// </summary>
 void ObjectManager::createTriangle(const float points[], int size, AbstractShader* shader, bool isRemovable)
@@ -87,7 +98,18 @@ void ObjectManager::createTriangle(const float points[], int size, AbstractShade
 }
 
 /// <summary>
-/// Method creating specific type of AbstractObject calling FactoryObject class
+/// Method creating specific type of AbstractObject calling FactoryObject class with bezier curve movement
+/// </summary>
+void ObjectManager::createTriangle(const float points[], int size, AbstractShader* shader, bool isRemovable, Bezier* bezier)
+{
+	AbstractObject* object = nullptr;
+	object = ObjectFactory::getInstance()->createTriangle(new Model(points, size, false), shader, isRemovable, bezier);
+
+	this->addObject(object);
+}
+
+/// <summary>
+/// Method creating specific type of AbstractObject calling FactoryObject class with Bezier curve movement
 /// </summary>
 void ObjectManager::createTextureObject(AbstractShader* shader, string fileName, int textureID, bool isRemovable, Bezier* bezier)
 {

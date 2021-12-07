@@ -11,5 +11,7 @@ class Quad : public AbstractObject
 {
 public:
 	Quad(Model* model, AbstractShader* shader, bool isRemovable);
+	Quad(Model* model, AbstractShader* shader, bool isRemovable, Bezier* bezier);
+
 	void draw();
 };

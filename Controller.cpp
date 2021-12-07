@@ -111,7 +111,6 @@ void Controller::checkInput()
 
 				glfwGetCursorPos(window, &mouseX, &mouseY);
 
-
 				int newy = Controller::height - mouseY;
 
 				glReadPixels(mouseX, newy, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, color);
@@ -119,9 +118,9 @@ void Controller::checkInput()
 				glReadPixels(mouseX, newy, 1, 1, GL_STENCIL_INDEX, GL_UNSIGNED_INT, &index);
 
 
-					//Mùžeme nastavit vybrané tìleso scena->setSelect(index-1);
+				//Mùžeme nastavit vybrané tìleso scena->setSelect(index-1);
 
-					//Mùžeme vypoèíst pozici v globálním souøadném systému.  
+				//Mùžeme vypoèíst pozici v globálním souøadném systému.  
 				glm::vec3 screenX = glm::vec3(mouseX, newy, depth);
 
 				glm::vec4 viewPort = glm::vec4(0, 0, Controller::width, Controller::height);

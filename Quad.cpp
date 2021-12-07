@@ -12,6 +12,15 @@ Quad::Quad(Model* model, AbstractShader* shader, bool isRemovable)
 }
 
 /// <summary>
+/// Class constructor taking pointer to Model and Shader class
+/// </summary>
+Quad::Quad(Model* model, AbstractShader* shader, bool isRemovable, Bezier* bezier)
+{
+	Quad(model, shader, isRemovable, bezier);
+	this->bezier = bezier;
+}
+
+/// <summary>
 /// Method draw activates shader with current Matrix, bind VAO and draw QUAD
 /// </summary>
 void Quad::draw()
@@ -21,6 +30,8 @@ void Quad::draw()
 	model->bindVAO();
 	glDrawArrays(GL_QUADS, 0, model->sizeOfPoints); //mode,first,count
 }
+
+
 
 
 

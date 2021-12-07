@@ -1,14 +1,14 @@
 #include "Bezier.h"
 
-Bezier::Bezier(){}
+Bezier::Bezier() {}
+
+Bezier::Bezier(glm::mat4x4 bezierPoints)
+{
+    this->bezierPoints = bezierPoints;
+}
 
 glm::vec3 Bezier::getBezierCurve()
 {
-    glm::mat4x3 B = glm::mat4x3(glm::vec3(-7, 0, 0),
-        glm::vec3(-12, 0, 23),
-        glm::vec3(12, 0, 23),
-        glm::vec3(10, 0, 0));
-
     if (this->t > 1.0f) this->growing = false;
     if (this->t < 0.0f) this->growing = true;
 
@@ -21,10 +21,8 @@ glm::vec3 Bezier::getBezierCurve()
         this->t -= 0.005f;
     }
 
-
     glm::vec4 parameters = glm::vec4(t * t * t, t * t, t, 1.0f);
-
-    glm::vec3 p = parameters * A * glm::transpose(B);
+    glm::vec3 p = parameters * A * glm::transpose(this->bezierPoints);
 
     return p;
 }

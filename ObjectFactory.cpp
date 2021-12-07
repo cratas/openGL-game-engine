@@ -29,6 +29,17 @@ AbstractObject* ObjectFactory::createQuad(Model* model, AbstractShader* shader, 
 }
 
 /// <summary>
+/// Method creating specific type of Abstract Object(Quad) with Bezier curve movement
+/// </summary>
+AbstractObject* ObjectFactory::createQuad(Model* model, AbstractShader* shader, bool isRemovable, Bezier* bezier)
+{
+	AbstractObject* object = nullptr;
+	object = new Quad(model, shader, isRemovable, bezier);
+
+	return object;
+}
+
+/// <summary>
 /// Method creating specific type of Abstract Object(Triangle)
 /// </summary>
 AbstractObject* ObjectFactory::createTriangle(Model* model, AbstractShader* shader, bool isRemovable)
@@ -40,7 +51,18 @@ AbstractObject* ObjectFactory::createTriangle(Model* model, AbstractShader* shad
 }
 
 /// <summary>
-/// Method creating specific type of Abstract Object(Triangle)
+/// Method creating specific type of Abstract Object(Triangle) with Bezier curve movement
+/// </summary>
+AbstractObject* ObjectFactory::createTriangle(Model* model, AbstractShader* shader, bool isRemovable, Bezier* bezier)
+{
+	AbstractObject* object = nullptr;
+	object = new Triangle(model, shader, isRemovable, bezier);
+
+	return object;
+}
+
+/// <summary>
+/// Method creating Ligh object
 /// </summary>
 AbstractObject* ObjectFactory::createLightObject(Model* model, AbstractShader* shader, glm::vec3 position, glm::vec4 colour)
 {
@@ -51,7 +73,7 @@ AbstractObject* ObjectFactory::createLightObject(Model* model, AbstractShader* s
 }
 
 /// <summary>
-/// Method creating specific type of Abstract Object(TexureObject)
+/// Method creating specific type of Abstract Object(TexureObject) with Bezier curve movement
 /// </summary>
 AbstractObject* ObjectFactory::createTextureObject(Model* model, AbstractShader* shader, int textureID, bool isRemovable, Bezier* bezier)
 {
