@@ -18,18 +18,17 @@ LightManager* LightManager::getInstance()
 
 void LightManager::addObject(Light* light)
 {
-	objects.push_back(light);
-	count++;
+	lights.push_back(light);
 }
 
 Light* LightManager::getObject(int i)
 {
-	return this->objects[i];
+	return this->lights[i];
 }
 
 int LightManager::getCount()
 {
-	return this->count;
+	return this->lights.size();
 }
 
 
