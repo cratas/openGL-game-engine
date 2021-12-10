@@ -49,5 +49,6 @@ public:
 	void setMatrix(float FOVdeg, float nearPlane, float farPlane, GLuint& shader, const char* uniform);
 	glm::mat4 getView();
 	glm::mat4 getProjection();
+	glm::vec3 getOrientation();
 
 };

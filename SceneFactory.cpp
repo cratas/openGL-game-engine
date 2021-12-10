@@ -19,7 +19,7 @@ SceneFactory* SceneFactory::getInstance()
 }
 
 /// <summary>
-/// Method for creating scene with forst
+/// Method for creating scene with forest
 /// </summary>
 Scene* SceneFactory::createForestScene(Camera* camera)
 {
@@ -50,14 +50,19 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 			, "Textures/tree.obj", TextureManager::getInstance()->getTexture(3), true, nullptr);
 	}
 
-	glm::mat4x3 B = glm::mat4x3(glm::vec3(-7, 0, 0),
+	glm::mat4x3 firstCurve = glm::mat4x3(glm::vec3(-7, 0, 0),
 		glm::vec3(-12, 0, 23),
 		glm::vec3(12, 0, 23),
 		glm::vec3(10, 0, 0));
 
+	glm::mat4x3 secondCurve = glm::mat4x3(glm::vec3(-7, 0, 27),
+		glm::vec3(0, 0, 27),
+		glm::vec3(0, 0, 27),
+		glm::vec3(7, 0, 27));
+
 	//zombie
 	scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
-		, "Textures/zombie.obj", TextureManager::getInstance()->getTexture(4), false, new Bezier(B));
+		, "Textures/zombie.obj", TextureManager::getInstance()->getTexture(4), false, new Bezier(firstCurve));
 
 	//light
 	scene->objectManager->createLightObject(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->createConstShader(camera)
@@ -78,6 +83,10 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 
 	scene->objectManager->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->createPhongShader(camera), false);
 	scene->objectManager->getObject(35)->getTransformations()->translate(0, 20, 0);
+
+
+	scene->objectManager->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
+		, "Textures/zombie.obj", TextureManager::getInstance()->getTexture(4), false, new Bezier(secondCurve));
 
 	//grass
 	scene->objectManager->getObject(0)->getTransformations()->scale(1.2, 1.2, 1.2);
@@ -107,7 +116,6 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 
 	//zombie
 	scene->objectManager->getObject(8)->getTransformations()->translate(0, 0, 14);
-	scene->objectManager->getObject(8)->getTransformations()->scale(1.2, 1.2, 1.2);
 
 	//light
 	//scene->objectManager->getObject(9)->getTransformations()->translate(-30, 10, 15);

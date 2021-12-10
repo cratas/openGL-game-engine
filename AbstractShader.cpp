@@ -41,8 +41,6 @@ AbstractShader::AbstractShader(const char* vertexFile, const char* fragmentFile,
 	compileErrors();
 }
 
-
-
 void AbstractShader::setTextureID(int id)
 {
 	GLint uniformID = glGetUniformLocation(shaderProgram, "textureUnitID");

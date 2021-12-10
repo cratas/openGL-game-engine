@@ -58,6 +58,10 @@ void Controller::checkInput()
 	{
 		camera->speed = 0.1f;
 	}
+	else if (glfwGetKey(window, GLFW_KEY_CAPS_LOCK) == GLFW_PRESS)
+	{
+		
+	}
 
 	glfwSetWindowSizeCallback(window, window_size_callback);
 

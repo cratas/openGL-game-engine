@@ -29,3 +29,8 @@ glm::mat4 Camera::getProjection()
 {
 	return this->projection;
 }
+
+glm::vec3 Camera::getOrientation()
+{
+	return this->orientation;
+}
