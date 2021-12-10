@@ -22,7 +22,6 @@ Game::Game()
 void Game::runGame()
 {
 	SceneManager::getInstance()->createForestScene(camera);
-	//SceneManager::getInstance()->createSphereScene(camera);
 
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_STENCIL_TEST);
@@ -31,16 +30,9 @@ void Game::runGame()
 	float angle = 1;
 	while (!glfwWindowShouldClose(window))
 	{
-		// clear color and depth buffer
-
 		controller->checkInput();
 
-		angle += 0.01;
-
 		SceneManager::getInstance()->drawForestScene();
-		//SceneManager::getInstance()->drawSphereScene(angle);
-
-		//SceneManager::getInstance()->drawForestScene();
 		
 		// update other events like input handling
 		glfwPollEvents();

@@ -2,6 +2,7 @@
 #include "Camera.h"
 #include "ObjectManager.h"
 #include "ShaderManager.h"
+#include <ctime> 
 
 /// <summary>
 /// Class used for reading User input and control camera

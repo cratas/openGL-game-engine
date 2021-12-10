@@ -75,8 +75,6 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 	//lights
 	scene->objectManager->createLightObject(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->createConstShader(camera)
 		, glm::vec3(-30.0f, 10.0f, 15.0f), glm::vec4(0.0f, 0.0f, 1.0f, 1.0f));
-	//scene->objectManager->getObject(33)->getTransformations()->translate(30, 10, 15);
-	//scene->objectManager->getObject(34)->getTransformations()->translate(0, 10, 15);
 
 	scene->objectManager->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->createPhongShader(camera), false);
 	scene->objectManager->getObject(35)->getTransformations()->translate(0, 20, 0);
@@ -156,48 +154,6 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 	scene->objectManager->getObject(30)->getTransformations()->translate(-19.6, 0, 19);
 	scene->objectManager->getObject(30)->getTransformations()->rotate(0, 1.571, 0);
 
-
-	
-
-
-	//scene->objectManager->createTriangle(tree, sizeof(tree) / sizeof(tree[0])
-	//	, ShaderManager::getInstance()->getLambertShader(camera));
-
-	//scene->objectManager->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getLambertShader(camera));
-	//scene->objectManager->getObject(1)->getTransformations()->scale(0.3, 0.3, 0.3);
-	//scene->objectManager->getObject(1)->getTransformations()->translate(-8, 0, 0);
-
-	//scene->objectManager->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getLambertShader(camera));
-	//scene->objectManager->getObject(2)->getTransformations()->translate(8, 0, 0);
-
-	//scene->objectManager->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getLambertShader(camera));
-	//scene->objectManager->getObject(2)->getTransformations()->scale(0.5, 0.5, 0.5);
-	//scene->objectManager->getObject(2)->getTransformations()->translate(6, 0, 10);
-
-	//scene->objectManager->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getConstantShader(camera));
-	//scene->objectManager->getObject(3)->getTransformations()->scale(1.2, 1.2, 1.2);
-	//scene->objectManager->getObject(3)->getTransformations()->translate(4, 0, -8);
-
-	//scene->objectManager->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getLambertShader(camera));
-	//scene->objectManager->getObject(4)->getTransformations()->scale(0.9, 0.9, 0.9);
-	//scene->objectManager->getObject(4)->getTransformations()->translate(0, 0, 10);
-
-	//scene->objectManager->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getLambertShader(camera));
-	//scene->objectManager->getObject(5)->getTransformations()->scale(0.8, 0.8, 0.8);
-	//scene->objectManager->getObject(5)->getTransformations()->translate(5, 0, 10);
-
-	//scene->objectManager->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getLambertShader(camera));
-	//scene->objectManager->getObject(6)->getTransformations()->scale(0.8, 0.8, 0.8);
-	//scene->objectManager->getObject(6)->getTransformations()->translate(0, 0, -10);
-
-	//scene->objectManager->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getPhongShader(camera));
-	//scene->objectManager->getObject(7)->getTransformations()->scale(1.8, 1.8, 1.8);
-	//scene->objectManager->getObject(7)->getTransformations()->translate(7, 0, 0);
-
-	//scene->objectManager->createTriangle(tree, sizeof(tree) / sizeof(tree[0]), ShaderManager::getInstance()->getLambertShader(camera));
-	//scene->objectManager->getObject(8)->getTransformations()->scale(1.2, 1.2, 1.2);
-	//scene->objectManager->getObject(8)->getTransformations()->translate(5, 0, 0);
-
 	return scene;
 }
 
@@ -209,13 +165,13 @@ Scene* SceneFactory::createSphereScene(Camera* camera)
 {
 	Scene* scene = new Scene(camera);
 	
-	//scene->objectManager->createLightObject(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->createConstShader(camera)
-	//	, glm::vec3(0.0f, 10.0f, 15.0f), glm::vec4(1.0f, 0.0f, 1.0f, 1.0f));
+	scene->objectManager->createLightObject(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->createConstShader(camera)
+		, glm::vec3(0.0f, 10.0f, 15.0f), glm::vec4(1.0f, 0.0f, 1.0f, 1.0f));
 
-	//scene->objectManager->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getPhongShader(camera));
-	//scene->objectManager->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getPhongShader(camera));
-	//scene->objectManager->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getPhongShader(camera));
-	//scene->objectManager->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->getPhongShader(camera));
+	scene->objectManager->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->createConstShader(camera), false);
+	scene->objectManager->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->createConstShader(camera), false);
+	scene->objectManager->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->createConstShader(camera), false);
+	scene->objectManager->createTriangle(sphere, sizeof(sphere) / sizeof(sphere[0]), ShaderManager::getInstance()->createConstShader(camera), false);
 
 	return scene;
 }

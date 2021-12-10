@@ -12,5 +12,4 @@ class LambertShader : public PhongShader
 {
 public:
 	LambertShader(const char* vertexFile, const char* fragmentFile, Camera* camera);
-	void activateShader(glm::mat4 M, glm::vec4 colour);
 };

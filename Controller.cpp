@@ -128,10 +128,14 @@ void Controller::checkInput()
 
 				if (index == 0)
 				{
+					const float MIN_RAND = 0.2, MAX_RAND = 0.8;
+					const float range = MAX_RAND - MIN_RAND;
+					float scaleValue = range * ((((float)rand()) / (float)RAND_MAX)) + MIN_RAND;
+
 					ObjectManager::getInstance()->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
 						, "Textures/tree.obj", TextureManager::getInstance()->getTexture(3), true);
 					ObjectManager::getInstance()->getObject(ObjectManager::getInstance()->getCount() - 1)->getTransformations()->translate(pos.x, pos.y, pos.z);
-					ObjectManager::getInstance()->getObject(ObjectManager::getInstance()->getCount() - 1)->getTransformations()->scale(0.4, 0.4, 0.4);
+					ObjectManager::getInstance()->getObject(ObjectManager::getInstance()->getCount() - 1)->getTransformations()->scale(scaleValue, scaleValue, scaleValue);
 
 				}
 
