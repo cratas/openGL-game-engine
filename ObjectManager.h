@@ -22,8 +22,8 @@ public:
 	void drawAllObjects();
 	void createTriangle(const float points[], int size, AbstractShader* shader, bool isRemovable);
 	void createTriangle(const float points[], int size, AbstractShader* shader, bool isRemovable, Bezier* bezier);
-	void createTextureObject(AbstractShader* shader, const string fileName, int textureID, bool isRemovable, Bezier* bezier);
-	void createTextureObject(AbstractShader* shader, const string fileName, int textureID, bool isRemovable);
+	void createTextureObject(AbstractShader* shader, const string fileName, int textureID, bool isRemovable, Bezier* bezier, Material* material);
+	void createTextureObject(AbstractShader* shader, const string fileName, int textureID, bool isRemovable, Material* material);
 	void createQuad(const float points[], int size, AbstractShader* shader, bool isRemovable);
 	void createQuad(const float points[], int size, AbstractShader* shader, bool isRemovable, Bezier* bezier);
 	void createLightObject(const float points[], int size, AbstractShader* shader, glm::vec3 position, glm::vec4 colour);

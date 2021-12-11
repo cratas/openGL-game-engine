@@ -129,6 +129,9 @@
     <ClCompile Include="Bezier.cpp">
       <Filter>Zdrojové soubory</Filter>
     </ClCompile>
+    <ClCompile Include="Material.cpp">
+      <Filter>Zdrojové soubory\ObjectsManagment</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ObjectFactory.h">
@@ -229,6 +232,9 @@
     </ClInclude>
     <ClInclude Include="Bezier.h">
       <Filter>Hlavičkové soubory</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>Hlavičkové soubory\ObjectsManagment</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

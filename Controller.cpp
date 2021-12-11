@@ -137,7 +137,7 @@ void Controller::checkInput()
 					float scaleValue = range * ((((float)rand()) / (float)RAND_MAX)) + MIN_RAND;
 
 					ObjectManager::getInstance()->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
-						, "Textures/tree.obj", TextureManager::getInstance()->getTexture(3), true);
+						, "Textures/tree.obj", TextureManager::getInstance()->getTexture(3), true, new Material(0.0f));
 					ObjectManager::getInstance()->getObject(ObjectManager::getInstance()->getCount() - 1)->getTransformations()->translate(pos.x, pos.y, pos.z);
 					ObjectManager::getInstance()->getObject(ObjectManager::getInstance()->getCount() - 1)->getTransformations()->scale(scaleValue, scaleValue, scaleValue);
 

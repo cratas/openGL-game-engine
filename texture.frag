@@ -8,13 +8,14 @@ uniform vec3 lightObjectPositions[4];
 uniform vec4 lightObjectColour[4];
 uniform sampler2D textureUnitID;
 uniform vec3 lookingDirection;
+uniform float specularLight;
 in vec2 uv;
 
 
 vec4 spotLight()
 {
-    float outerCone = 0.90f;
-    float innerCone = 0.95f;
+    float outerCone = 0.50f;
+    float innerCone = 0.55f;
     vec3 lightVec = camPosition - vec3(ex_worldPosition); 
     float distance = length(lightVec);
     float a = 0.005;
@@ -37,6 +38,7 @@ vec4 spotLight()
     float angle = dot( normalize(vec3(ex_worldPosition) - camPosition), normalize(lookingDirection));
     float inten = clamp((angle - outerCone) / (innerCone - outerCone) , 0.0f, 1.0f);
 
+
     return(diffuse * inten * intensity + ambient);
 
 }
@@ -57,14 +59,14 @@ void main()
 
         vec4 diffuse = dot_product * lightObjectColour[i];       
         vec4 ambient = (0.1 / 4)* vec4(1.0, 1.0, 1.0, 1.0);    
-    
-        float specularLight = 0.50f;                                                  
+                      
+                      
         vec3 viewDirection = normalize(camPosition  -vec3 (ex_worldPosition));                             
         vec3 reflectionDirection = reflect((-lightDirection), (normal));                  
         float specAmount = pow(max(dot(viewDirection, (reflectionDirection)), 0.0f), 16);
         float specular = specAmount * specularLight;     
         
-        vec4 frag_colour = (ambient +  diffuse * intensity);
+        vec4 frag_colour = (ambient +  diffuse * intensity) + specular;
         
         final_colour+=frag_colour;
     }

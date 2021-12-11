@@ -3,7 +3,7 @@
 /// <summary>
 /// Class constructor taking pointer to Model and Shader class
 /// </summary>
-TextureObject::TextureObject(Model* model, AbstractShader* shader, int textureID, bool isRemovable, Bezier* bezier)
+TextureObject::TextureObject(Model* model, AbstractShader* shader, int textureID, bool isRemovable, Bezier* bezier, Material* material)
 {
     this->model = model;
     this->shader = shader;
@@ -12,12 +12,14 @@ TextureObject::TextureObject(Model* model, AbstractShader* shader, int textureID
     this->isRemovable = isRemovable;
     this->bezier = nullptr;
     this->bezier = bezier;
+    this->material = material;
+
 }
 
 /// <summary>
 /// Class constructor taking pointer to Model and Shader class
 /// </summary>
-TextureObject::TextureObject(Model* model, AbstractShader* shader, int textureID, bool isRemovable)
+TextureObject::TextureObject(Model* model, AbstractShader* shader, int textureID, bool isRemovable, Material* material)
 {
     this->model = model;
     this->shader = shader;
@@ -25,6 +27,7 @@ TextureObject::TextureObject(Model* model, AbstractShader* shader, int textureID
     this->textureID = textureID;
     this->isRemovable = isRemovable;
     this->bezier = nullptr;
+    this->material = material;
 }
 
 /// <summary>
@@ -32,7 +35,8 @@ TextureObject::TextureObject(Model* model, AbstractShader* shader, int textureID
 /// </summary>
 void TextureObject::draw()
 {
-	shader->activateShader(transformations->getTransformatedMatrix(), (glm::vec4)NULL);
+    glm::vec4 specLight = glm::vec4(material->getSpecularValue(), 0.0f, 0.0f, 0.0f);
+	shader->activateShader(transformations->getTransformatedMatrix(), specLight);
 	model->bindVAO();
 
 	shader->setTextureID(this->textureID);

@@ -75,10 +75,10 @@ AbstractObject* ObjectFactory::createLightObject(Model* model, AbstractShader* s
 /// <summary>
 /// Method creating specific type of Abstract Object(TexureObject) with Bezier curve movement
 /// </summary>
-AbstractObject* ObjectFactory::createTextureObject(Model* model, AbstractShader* shader, int textureID, bool isRemovable, Bezier* bezier)
+AbstractObject* ObjectFactory::createTextureObject(Model* model, AbstractShader* shader, int textureID, bool isRemovable, Bezier* bezier, Material* material)
 {
 	AbstractObject* object = nullptr;
-	object = new TextureObject(model, shader, textureID, isRemovable, bezier);
+	object = new TextureObject(model, shader, textureID, isRemovable, bezier, material);
 
 	return object;
 }
@@ -86,12 +86,14 @@ AbstractObject* ObjectFactory::createTextureObject(Model* model, AbstractShader*
 /// <summary>
 /// Method creating specific type of Abstract Object(TexureObject)
 /// </summary>
-AbstractObject* ObjectFactory::createTextureObject(Model* model, AbstractShader* shader, int textureID, bool isRemovable)
+AbstractObject* ObjectFactory::createTextureObject(Model* model, AbstractShader* shader, int textureID, bool isRemovable, Material* material)
 {
 	AbstractObject* object = nullptr;
-	object = new TextureObject(model, shader, textureID, isRemovable);
+	object = new TextureObject(model, shader, textureID, isRemovable, material);
 
 	return object;
 }
+
+
 
 

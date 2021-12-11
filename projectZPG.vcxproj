@@ -154,6 +154,7 @@
     <ClCompile Include="Light.cpp" />
     <ClCompile Include="LightManager.cpp" />
     <ClCompile Include="LightObject.cpp" />
+    <ClCompile Include="Material.cpp" />
     <ClCompile Include="ObjectFactory.cpp" />
     <ClCompile Include="ObjectManager.cpp" />
     <ClCompile Include="PhongShader.cpp" />
@@ -184,6 +185,7 @@
     <ClInclude Include="Light.h" />
     <ClInclude Include="LightManager.h" />
     <ClInclude Include="LightObject.h" />
+    <ClInclude Include="Material.h" />
     <ClInclude Include="ObjectFactory.h" />
     <ClInclude Include="ObjectManager.h" />
     <ClInclude Include="PhongShader.h" />

@@ -21,7 +21,7 @@ public:
 	AbstractObject* createQuad(Model* model, AbstractShader* shader, bool isRemovable, Bezier* bezier);
 	AbstractObject* createTriangle(Model* model, AbstractShader* shader, bool isRemovable);
 	AbstractObject* createTriangle(Model* model, AbstractShader* shader, bool isRemovable, Bezier* bezier);
-	AbstractObject* createTextureObject(Model* model, AbstractShader* shader, int textureID, bool isRemovable, Bezier* bezier);
-	AbstractObject* createTextureObject(Model* model, AbstractShader* shader, int textureID, bool isRemovable);
+	AbstractObject* createTextureObject(Model* model, AbstractShader* shader, int textureID, bool isRemovable, Bezier* bezier, Material* material);
+	AbstractObject* createTextureObject(Model* model, AbstractShader* shader, int textureID, bool isRemovable, Material* material);
 	AbstractObject* createLightObject(Model* model, AbstractShader* shader, glm::vec3 position, glm::vec4 colour);
 };

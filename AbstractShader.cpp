@@ -47,6 +47,11 @@ void AbstractShader::setTextureID(int id)
 	glUniform1i(uniformID, id);
 }
 
+void AbstractShader::sendSpecularLight(float specularLight)
+{
+	glUniform1f(glGetUniformLocation(shaderProgram, "specularLight"), specularLight);
+}
+
 /// <summary>
 /// Method for loading shaders from file
 /// </summary>

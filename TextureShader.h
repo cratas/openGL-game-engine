@@ -9,8 +9,11 @@
 /// </summary>
 class TextureShader : public AbstractShader
 {
+private:
+	float specularLight;
 public:
 	TextureShader(const char* vertexFile, const char* fragmentFile, Camera* camera);
-	void activateShader(glm::mat4 M, glm::vec4 colour);
+	void activateShader(glm::mat4 M, glm::vec4 specLight);
+	void sendSpecularLight(float specularLight);
 	void setTextureID(int id);
 };

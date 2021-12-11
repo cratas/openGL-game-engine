@@ -111,10 +111,10 @@ void ObjectManager::createTriangle(const float points[], int size, AbstractShade
 /// <summary>
 /// Method creating specific type of AbstractObject calling FactoryObject class with Bezier curve movement
 /// </summary>
-void ObjectManager::createTextureObject(AbstractShader* shader, string fileName, int textureID, bool isRemovable, Bezier* bezier)
+void ObjectManager::createTextureObject(AbstractShader* shader, string fileName, int textureID, bool isRemovable, Bezier* bezier, Material* material)
 {
 	AbstractObject* object = nullptr;
-	object = ObjectFactory::getInstance()->createTextureObject(new Model(fileName), shader, textureID, isRemovable, bezier);
+	object = ObjectFactory::getInstance()->createTextureObject(new Model(fileName), shader, textureID, isRemovable, bezier, material);
 
 	this->addObject(object);
 }
@@ -122,10 +122,10 @@ void ObjectManager::createTextureObject(AbstractShader* shader, string fileName,
 /// <summary>
 /// Method creating specific type of AbstractObject calling FactoryObject class
 /// </summary>
-void ObjectManager::createTextureObject(AbstractShader* shader, string fileName, int textureID, bool isRemovable)
+void ObjectManager::createTextureObject(AbstractShader* shader, string fileName, int textureID, bool isRemovable, Material* material)
 {
 	AbstractObject* object = nullptr;
-	object = ObjectFactory::getInstance()->createTextureObject(new Model(fileName), shader, textureID, isRemovable);
+	object = ObjectFactory::getInstance()->createTextureObject(new Model(fileName), shader, textureID, isRemovable, material);
 
 	this->addObject(object);
 }

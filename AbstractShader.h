@@ -36,4 +36,5 @@ public:
 	void deleteShader();
 	void compileErrors();
 	void setTextureID(int id);
+	void sendSpecularLight(float specularLight);
 };

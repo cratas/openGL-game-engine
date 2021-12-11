@@ -5,6 +5,7 @@
 #include "AbstractObject.h"
 #include "TextureManager.h"
 #include "TextureShader.h"
+#include "Material.h"
 
 /// <summary>
 /// Class TextureObject inherits from class AbstractObject and draw Assimp Object with texture
@@ -14,8 +15,9 @@ class TextureObject : public AbstractObject
 private:
 	int textureID;
 	float t = 0.0f;
+	Material* material;
 public:
-	TextureObject(Model* model, AbstractShader* shader, int textureID, bool isRemovable, Bezier* bezier);
-	TextureObject(Model* model, AbstractShader* shader, int textureID, bool isRemovable);
+	TextureObject(Model* model, AbstractShader* shader, int textureID, bool isRemovable, Bezier* bezier, Material* material);
+	TextureObject(Model* model, AbstractShader* shader, int textureID, bool isRemovable, Material* material);
 	void draw();
 };
