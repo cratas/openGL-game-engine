@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
-#include "Light.h"
-
+#include "DirectionalLight.h"
+#include "PointLight.h"
 
 /// <summary>
 /// Class managing game Objects
@@ -9,13 +9,16 @@
 class LightManager
 {
 private:
-	std::vector<Light*> lights;
+	std::vector<DirectionalLight*> directionalLights;
+	std::vector<PointLight*> pointLights;
 	LightManager();
 	static LightManager* instance;
 public:
 	static LightManager* getInstance();
-	void addObject(Light* object);
-	Light* getObject(int i);
-	int getCount();
-	std::vector<Light*> getAll();
+	void addDirectionalLight(DirectionalLight* light);
+	void addPointLight(PointLight* light);
+	PointLight* getPointLight(int i);
+	DirectionalLight* getDirectionalLight(int i);
+	int getDirectionalsCount();
+	int getPointsCount();
 };

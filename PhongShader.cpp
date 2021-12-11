@@ -8,12 +8,12 @@ void PhongShader::activateShader(glm::mat4 M, glm::vec4 colour)
 {
 	std::vector<glm::vec3> lightPositions;
 	std::vector<glm::vec4> lightColours;
-	int lightsCount = LightManager::getInstance()->getCount();
+	int lightsCount = LightManager::getInstance()->getPointsCount();
 
 	for (int i = 0; i < lightsCount; i++)
 	{
-		lightPositions.push_back(LightManager::getInstance()->getObject(i)->position);
-		lightColours.push_back(LightManager::getInstance()->getObject(i)->colour);
+		lightPositions.push_back(LightManager::getInstance()->getPointLight(i)->position);
+		lightColours.push_back(LightManager::getInstance()->getPointLight(i)->colour);
 	}
 	lightPositions.push_back(glm::vec3(camera->position.x, camera->position.y, camera->position.z));
 	lightColours.push_back(glm::vec4(1.0f, 1.0f, 1.0f, 1.0f));

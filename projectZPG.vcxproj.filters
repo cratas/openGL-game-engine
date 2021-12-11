@@ -132,6 +132,12 @@
     <ClCompile Include="Material.cpp">
       <Filter>Zdrojové soubory\ObjectsManagment</Filter>
     </ClCompile>
+    <ClCompile Include="DirectionalLight.cpp">
+      <Filter>Zdrojové soubory\LightManagment</Filter>
+    </ClCompile>
+    <ClCompile Include="PointLight.cpp">
+      <Filter>Zdrojové soubory\LightManagment</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ObjectFactory.h">
@@ -235,6 +241,12 @@
     </ClInclude>
     <ClInclude Include="Material.h">
       <Filter>Hlavičkové soubory\ObjectsManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectionalLight.h">
+      <Filter>Hlavičkové soubory\LightManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="PointLight.h">
+      <Filter>Hlavičkové soubory\LightManagment</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -16,19 +16,34 @@ LightManager* LightManager::getInstance()
 	return instance;
 }
 
-void LightManager::addObject(Light* light)
+void LightManager::addPointLight(PointLight* light)
 {
-	lights.push_back(light);
+	pointLights.push_back(light);
 }
 
-Light* LightManager::getObject(int i)
+void LightManager::addDirectionalLight(DirectionalLight* light)
 {
-	return this->lights[i];
+	directionalLights.push_back(light);
 }
 
-int LightManager::getCount()
+PointLight* LightManager::getPointLight(int i)
 {
-	return this->lights.size();
+	return this->pointLights[i];
+}
+
+DirectionalLight* LightManager::getDirectionalLight(int i)
+{
+	return this->directionalLights[i];
+}
+
+int LightManager::getPointsCount()
+{
+	return this->pointLights.size();
+}
+
+int LightManager::getDirectionalsCount()
+{
+	return this->directionalLights.size();
 }
 
 

@@ -149,6 +149,7 @@
     <ClCompile Include="Bezier.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="ConstantShader.cpp" />
+    <ClCompile Include="DirectionalLight.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="LambertShader.cpp" />
     <ClCompile Include="Light.cpp" />
@@ -158,6 +159,7 @@
     <ClCompile Include="ObjectFactory.cpp" />
     <ClCompile Include="ObjectManager.cpp" />
     <ClCompile Include="PhongShader.cpp" />
+    <ClCompile Include="PointLight.cpp" />
     <ClCompile Include="Quad.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Model.cpp" />
@@ -180,6 +182,7 @@
     <ClInclude Include="Bezier.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="ConstantShader.h" />
+    <ClInclude Include="DirectionalLight.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="LambertShader.h" />
     <ClInclude Include="Light.h" />
@@ -191,6 +194,7 @@
     <ClInclude Include="PhongShader.h" />
     <ClInclude Include="plain.h" />
     <ClInclude Include="plainTexture.h" />
+    <ClInclude Include="PointLight.h" />
     <ClInclude Include="Quad.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="Scene.h" />
