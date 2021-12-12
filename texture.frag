@@ -19,11 +19,9 @@ vec4 spotLight()
     float innerCone = 0.98f;
     vec3 lightVec = camPosition - vec3(ex_worldPosition); 
     float distance = length(lightVec);
-    float a = 0.003;
-    float b = 0.0001;
-    float intensity = 2 / (a * distance * distance  + b * distance + 1.0);
-
-    float ambient;
+    float a = 0.03;
+    float b = 0.001;
+    float intensity = 1 / (a * distance * distance  + b * distance + 1.0);
 
     vec3 normal = normalize(vec3(ex_worldNormal));    
     vec3 lightDirection = normalize(camPosition - vec3(ex_worldPosition));
@@ -33,7 +31,7 @@ vec4 spotLight()
     float angle = dot( normalize(vec3(ex_worldPosition) - camPosition), normalize(lookingDirection));
     float inten = clamp((angle - outerCone) / (innerCone - outerCone) , 0.0f, 1.0f);
   
-    return (diffuse * inten * intensity + ambient);
+    return (diffuse * inten * intensity);
 }
 
 void main() 
