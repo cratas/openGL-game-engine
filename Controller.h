@@ -11,6 +11,8 @@ class Controller
 {
 private:
 	Camera* camera;
+	bool isReflectorActivated = false; //boolen variable checking if is reflector activated
+	bool activateReflector = true;			
 public:
 	void checkInput();
 	Controller(Camera* camera);

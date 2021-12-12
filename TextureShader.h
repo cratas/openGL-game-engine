@@ -13,7 +13,8 @@ private:
 	float specularLight;
 public:
 	TextureShader(const char* vertexFile, const char* fragmentFile, Camera* camera);
-	void activateShader(glm::mat4 M, glm::vec4 specLight);
+	void activateShader(glm::mat4 M, glm::vec4 colour);
 	void sendSpecularLight(float specularLight);
+	void activateReflector(bool existsReflector);
 	void setTextureID(int id);
 };

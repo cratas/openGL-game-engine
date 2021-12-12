@@ -4,7 +4,7 @@ TextureShader::TextureShader(const char* vertexFile, const char* fragmentFile, C
 	: AbstractShader(vertexFile, fragmentFile, camera)
 {}
 
-void TextureShader::activateShader(glm::mat4 M, glm::vec4 specLight)
+void TextureShader::activateShader(glm::mat4 M, glm::vec4 colour)
 {
 	std::vector<glm::vec3> lightPositions;
 	std::vector<glm::vec4> lightColours;
@@ -15,9 +15,6 @@ void TextureShader::activateShader(glm::mat4 M, glm::vec4 specLight)
 		lightPositions.push_back(LightManager::getInstance()->getPointLight(i)->position);
 		lightColours.push_back(LightManager::getInstance()->getPointLight(i)->colour);
 	}
-	//lightPositions.push_back(glm::vec3(camera->position.x, camera->position.y, camera->position.z));
-	//lightColours.push_back(glm::vec4(1.0f, 1.0f, 1.0f, 1.0f));
-
 
 	glUseProgram(shaderProgram);
 	camera->setMatrix(45.0f, 0.1f, 200.0f, shaderProgram, "camMatrix");
@@ -26,13 +23,18 @@ void TextureShader::activateShader(glm::mat4 M, glm::vec4 specLight)
 	glUniform4fv(glGetUniformLocation(shaderProgram, "lightObjectColour"), 3, glm::value_ptr(lightColours[0]));
 	glUniform3fv(glGetUniformLocation(shaderProgram, "lightObjectPositions"), 3, glm::value_ptr(lightPositions[0]));
 	glUniform3f(glGetUniformLocation(shaderProgram, "lookingDirection"),  camera->getOrientation().x, camera->getOrientation().y, camera->getOrientation().z);
-	glUniform1f(glGetUniformLocation(shaderProgram, "specularLight"), specLight.x);
 	glUniformMatrix4fv(idModelTransform, 1, GL_FALSE, &M[0][0]);
 }
 
 void TextureShader::sendSpecularLight(float specularLight)
 {
-	this->specularLight = specularLight;
+	glUniform1f(glGetUniformLocation(shaderProgram, "specularLight"), specularLight);
+
+}
+
+void TextureShader::activateReflector(bool existsReflector)
+{
+	glUniform1i(glGetUniformLocation(this->shaderProgram, "existsReflector"), (int)existsReflector);
 }
 
 void TextureShader::setTextureID(int id)

@@ -58,9 +58,27 @@ void Controller::checkInput()
 	{
 		camera->speed = 0.1f;
 	}
-	else if (glfwGetKey(window, GLFW_KEY_CAPS_LOCK) == GLFW_PRESS)
+	if (glfwGetKey(window, GLFW_KEY_CAPS_LOCK) == GLFW_PRESS)
 	{
-		
+		if (activateReflector)
+		{
+			if (!isReflectorActivated)
+			{
+				ShaderManager::getInstance()->activateReflector(true);
+				isReflectorActivated = true;
+			}
+			else
+			{
+				ShaderManager::getInstance()->activateReflector(false);
+				isReflectorActivated = false;
+			}
+
+			activateReflector = false;
+		}
+	}
+	else if (glfwGetKey(window, GLFW_KEY_CAPS_LOCK) == GLFW_RELEASE)
+	{
+		activateReflector = true;
 	}
 
 	glfwSetWindowSizeCallback(window, window_size_callback);
@@ -136,11 +154,10 @@ void Controller::checkInput()
 					const float range = MAX_RAND - MIN_RAND;
 					float scaleValue = range * ((((float)rand()) / (float)RAND_MAX)) + MIN_RAND;
 
-					ObjectManager::getInstance()->createTextureObject(ShaderManager::getInstance()->createTextureShader(camera)
+					ObjectManager::getInstance()->createTextureObject(ShaderManager::getInstance()->getShader(0)
 						, "Textures/tree.obj", TextureManager::getInstance()->getTexture(3), true, new Material(0.0f));
 					ObjectManager::getInstance()->getObject(ObjectManager::getInstance()->getCount() - 1)->getTransformations()->translate(pos.x, pos.y, pos.z);
 					ObjectManager::getInstance()->getObject(ObjectManager::getInstance()->getCount() - 1)->getTransformations()->scale(scaleValue, scaleValue, scaleValue);
-
 				}
 
 				printf("Clicked on pixel %d, %d, color %02hhx%02hhx%02hhx%02hhx, % f, stencil index % u\n", mouseX, mouseY, color[0], color[1], color[2], color[3], depth, index);

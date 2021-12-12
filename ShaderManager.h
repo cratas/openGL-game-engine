@@ -11,7 +11,7 @@ private:
 	int count;
 	std::vector<AbstractShader*> shaders;
 	static ShaderManager* instance;
-	//void addShader(AbstractShader* shader);
+	void addShader(AbstractShader* shader);
 	ShaderManager();
 public:
 	static ShaderManager* getInstance();
@@ -19,5 +19,6 @@ public:
 	AbstractShader* createTextureShader(Camera* camera);
 	AbstractShader* createPhongShader(Camera* camera);
 	AbstractShader* createLambertShader(Camera* camera);
-
+	AbstractShader* getShader(int i);
+	void activateReflector(bool isActivated);
 };

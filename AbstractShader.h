@@ -37,4 +37,5 @@ public:
 	void compileErrors();
 	void setTextureID(int id);
 	void sendSpecularLight(float specularLight);
+	void activateReflector(bool existsReflector);
 };

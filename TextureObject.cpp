@@ -37,6 +37,7 @@ void TextureObject::draw()
 {
     glm::vec4 specLight = glm::vec4(material->getSpecularValue(), 0.0f, 0.0f, 0.0f);
 	shader->activateShader(transformations->getTransformatedMatrix(), specLight);
+    shader->sendSpecularLight(material->getSpecularValue());
 	model->bindVAO();
 
 	shader->setTextureID(this->textureID);

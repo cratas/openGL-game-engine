@@ -24,7 +24,7 @@ AbstractShader* ShaderManager::createConstShader(Camera* camera)
 	AbstractShader* shader = nullptr;
 	shader = ShaderFactory::getInstance()->createConstantShader(camera);
 
-	//this->addShader(shader);
+	this->addShader(shader);
 
 	return shader;
 }
@@ -38,7 +38,7 @@ AbstractShader* ShaderManager::createTextureShader(Camera* camera)
 	AbstractShader* shader = nullptr;
 	shader = ShaderFactory::getInstance()->createTextureShader(camera);
 
-	//this->addShader(shader);
+	this->addShader(shader);
 
 	return shader;
 }
@@ -51,7 +51,7 @@ AbstractShader* ShaderManager::createPhongShader(Camera* camera)
 	AbstractShader* shader = nullptr;
 	shader = ShaderFactory::getInstance()->createPhongShader(camera);
 
-	//this->addShader(shader);
+	this->addShader(shader);
 
 	return shader;
 }
@@ -63,7 +63,26 @@ AbstractShader* ShaderManager::createLambertShader(Camera* camera)
 	AbstractShader* shader = nullptr;
 	shader = ShaderFactory::getInstance()->createLambertShader(camera);
 
-	//this->addShader(shader);
+	this->addShader(shader);
 
 	return shader;
 }
+
+AbstractShader* ShaderManager::getShader(int i)
+{
+	return shaders[i];
+}
+
+void ShaderManager::addShader(AbstractShader* shader)
+{
+	this->shaders.push_back(shader);
+}
+
+void ShaderManager::activateReflector(bool isActivated)
+{
+	for(int i = 0; i < shaders.size(); i++)
+	{
+		shaders[i]->activateReflector(isActivated);
+	}
+}
+

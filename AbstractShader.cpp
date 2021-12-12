@@ -52,6 +52,13 @@ void AbstractShader::sendSpecularLight(float specularLight)
 	glUniform1f(glGetUniformLocation(shaderProgram, "specularLight"), specularLight);
 }
 
+
+void AbstractShader::activateReflector(bool existsReflector)
+{
+	glUniform1i(glGetUniformLocation(this->shaderProgram, "existsReflector"), (int)existsReflector);
+}
+
+
 /// <summary>
 /// Method for loading shaders from file
 /// </summary>
