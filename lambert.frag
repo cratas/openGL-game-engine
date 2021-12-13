@@ -19,7 +19,7 @@ vec4 spotLight()
     float distance = length(lightVec);
     float a = 0.03;
     float b = 0.001;
-    float intensity = 2 / (a * distance * distance  + b * distance + 1.0);
+    float intensity = 3 / (a * distance * distance  + b * distance + 1.0);
 
     vec3 normal = normalize(vec3(ex_worldNormal));    
     vec3 lightDirection = normalize(camPosition - vec3(ex_worldPosition));

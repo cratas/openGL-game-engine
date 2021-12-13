@@ -12,6 +12,5 @@ out vec4 color;
 
 void main () {
         gl_Position = camMatrix  * modelMatrix  * vec4(position,1.0);
-        //color = vec4(1.0, 1.0, 1.0, 1.0);
         pos = position;
 }

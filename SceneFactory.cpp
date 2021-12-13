@@ -100,7 +100,7 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 
 
 	//grass
-	scene->objectManager->getObject(1)->getTransformations()->scale(1.2, 1.2, 1.2);
+	scene->objectManager->getObject(1)->getTransformations()->scale(2, 2, 2);
 	
 
 	//skydome
