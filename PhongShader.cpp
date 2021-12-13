@@ -15,15 +15,30 @@ void PhongShader::activateShader(glm::mat4 M, glm::vec4 colour)
 		lightPositions.push_back(LightManager::getInstance()->getPointLight(i)->position);
 		lightColours.push_back(LightManager::getInstance()->getPointLight(i)->colour);
 	}
-	lightPositions.push_back(glm::vec3(camera->position.x, camera->position.y, camera->position.z));
-	lightColours.push_back(glm::vec4(1.0f, 1.0f, 1.0f, 1.0f));
-
 
 	glUseProgram(shaderProgram);
 	camera->setMatrix(45.0f, 0.1f, 200.0f, shaderProgram, "camMatrix");
 	GLint idModelTransform = glGetUniformLocation(shaderProgram, "modelMatrix");
 	glUniform3f(glGetUniformLocation(shaderProgram, "camPosition"), camera->position.x, camera->position.y, camera->position.z);
-	glUniform4fv(glGetUniformLocation(shaderProgram, "lightObjectColour"), lightsCount + 1, glm::value_ptr(lightColours[0]));
-	glUniform3fv(glGetUniformLocation(shaderProgram, "lightObjectPositions"), lightsCount + 1, glm::value_ptr(lightPositions[0]));
+	glUniform4fv(glGetUniformLocation(shaderProgram, "lightObjectColour"), 3, glm::value_ptr(lightColours[0]));
+	glUniform3fv(glGetUniformLocation(shaderProgram, "lightObjectPositions"), 3, glm::value_ptr(lightPositions[0]));
+	glUniform3f(glGetUniformLocation(shaderProgram, "lookingDirection"), camera->getOrientation().x, camera->getOrientation().y, camera->getOrientation().z);
 	glUniformMatrix4fv(idModelTransform, 1, GL_FALSE, &M[0][0]);
+}
+
+void PhongShader::sendSpecularLight(float specularLight)
+{
+	glUniform1f(glGetUniformLocation(shaderProgram, "specularLight"), specularLight);
+
+}
+
+void PhongShader::activateReflector(bool existsReflector)
+{
+	glUniform1i(glGetUniformLocation(this->shaderProgram, "existsReflector"), (int)existsReflector);
+}
+
+void PhongShader::setTextureID(int id)
+{
+	GLint uniformID = glGetUniformLocation(shaderProgram, "textureUnitID");
+	glUniform1i(uniformID, id);
 }

@@ -29,20 +29,6 @@ AbstractShader* ShaderManager::createConstShader(Camera* camera)
 	return shader;
 }
 
-
-/// <summary>
-/// Method returning pointer to texture shader
-/// </summary>
-AbstractShader* ShaderManager::createTextureShader(Camera* camera)
-{
-	AbstractShader* shader = nullptr;
-	shader = ShaderFactory::getInstance()->createTextureShader(camera);
-
-	this->addShader(shader);
-
-	return shader;
-}
-
 /// <summary>
 /// Method returning pointer to phong shader
 /// </summary>

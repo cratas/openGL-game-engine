@@ -117,9 +117,6 @@
     <ClCompile Include="AbstractShader.cpp">
       <Filter>Zdrojové soubory\ShaderManagment</Filter>
     </ClCompile>
-    <ClCompile Include="TextureShader.cpp">
-      <Filter>Zdrojové soubory\ShaderManagment</Filter>
-    </ClCompile>
     <ClCompile Include="PhongShader.cpp">
       <Filter>Zdrojové soubory\ShaderManagment</Filter>
     </ClCompile>
@@ -227,9 +224,6 @@
     <ClInclude Include="ConstantShader.h">
       <Filter>Hlavičkové soubory\ShadersManagment</Filter>
     </ClInclude>
-    <ClInclude Include="TextureShader.h">
-      <Filter>Hlavičkové soubory\ShadersManagment</Filter>
-    </ClInclude>
     <ClInclude Include="PhongShader.h">
       <Filter>Hlavičkové soubory\ShadersManagment</Filter>
     </ClInclude>
@@ -266,12 +260,6 @@
       <Filter>Soubory zdrojů</Filter>
     </None>
     <None Include="phong.frag">
-      <Filter>Soubory zdrojů</Filter>
-    </None>
-    <None Include="texture.frag">
-      <Filter>Soubory zdrojů</Filter>
-    </None>
-    <None Include="texture.vert">
       <Filter>Soubory zdrojů</Filter>
     </None>
   </ItemGroup>

@@ -30,17 +30,6 @@ AbstractShader* ShaderFactory::createConstantShader(Camera* camera)
 /// <summary>
 /// Method for creating texture shader
 /// </summary>
-AbstractShader* ShaderFactory::createTextureShader(Camera* camera)
-{
-	AbstractShader* object = nullptr;
-	object = new TextureShader("texture.vert", "texture.frag", camera);
-
-	return object;
-}
-
-/// <summary>
-/// Method for creating texture shader
-/// </summary>
 AbstractShader* ShaderFactory::createPhongShader(Camera* camera)
 {
 	AbstractShader* object = nullptr;
