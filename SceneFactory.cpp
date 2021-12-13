@@ -31,6 +31,10 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 	TextureManager::getInstance()->addTexture("Textures/tree.png");
 	TextureManager::getInstance()->addTexture("Textures/zombie.png");
 	TextureManager::getInstance()->addTexture("Textures/bake.png");
+	TextureManager::getInstance()->addTexture("Textures/test.png");
+	TextureManager::getInstance()->loadCubeMap("Textures/posx.jpg", "Textures/negx.jpg", "Textures/posy.jpg", "Textures/negy.jpg", "Textures/posz.jpg", "Textures/negz.jpg");
+
+
 
 	glm::mat4x3 firstCurve = glm::mat4x3(glm::vec3(-7, 0, 0),
 		glm::vec3(-12, 0, 23),
@@ -45,15 +49,18 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 	AbstractShader* phongShader = ShaderManager::getInstance()->createPhongShader(camera);
 	AbstractShader* constShader = ShaderManager::getInstance()->createConstShader(camera);
 	AbstractShader* lambertShader = ShaderManager::getInstance()->createLambertShader(camera);
+	AbstractShader* skyboxShader = ShaderManager::getInstance()->createSkyboxShader(camera);
 
 
+	//skybox
+	scene->objectManager->createTextureObject(skyboxShader, "Textures/skybox.obj", TextureManager::getInstance()->getTexture(7), false, nullptr, new Material(0.0f));
+	scene->objectManager->getObject(0)->getTransformations()->scale(100, 100, 100);
 	//teren
 	scene->objectManager->createTextureObject(phongShader, "Textures/teren.obj", TextureManager::getInstance()->getTexture(0), false, nullptr, new Material(0.0f));
 	
 	//building
 	scene->objectManager->createTextureObject(phongShader, "Textures/building.obj", TextureManager::getInstance()->getTexture(1), false, nullptr, new Material(1.0f));
-	//skydome
-	scene->objectManager->createTextureObject(phongShader, "Textures/skydome.obj", TextureManager::getInstance()->getTexture(2), false, nullptr, new Material(0.0f));
+
 
 	//trees
 	for (int i = 0; i < 5; i++)
@@ -61,8 +68,6 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 		scene->objectManager->createTextureObject(phongShader
 			, "Textures/tree.obj", TextureManager::getInstance()->getTexture(3), true, nullptr, new Material(0.0f));
 	}
-
-
 
 	//zombie
 	scene->objectManager->createTextureObject(phongShader
@@ -89,15 +94,16 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 	scene->objectManager->getObject(35)->getTransformations()->translate(0, 20, 0);
 
 
+
 	scene->objectManager->createTextureObject(phongShader
 		, "Textures/zombie.obj", TextureManager::getInstance()->getTexture(4), false, new Bezier(secondCurve), new Material(0.0f));
 
+
 	//grass
-	scene->objectManager->getObject(0)->getTransformations()->scale(1.2, 1.2, 1.2);
+	scene->objectManager->getObject(1)->getTransformations()->scale(1.2, 1.2, 1.2);
 	
+
 	//skydome
-	scene->objectManager->getObject(2)->getTransformations()->scale(15, 15, 15);
-	scene->objectManager->getObject(2)->getTransformations()->translate(0, 0.9, 0);
 	//tree 0
 	scene->objectManager->getObject(3)->getTransformations()->translate(15, 0, 0);
 	scene->objectManager->getObject(3)->getTransformations()->scale(0.5, 0.5, 0.5);

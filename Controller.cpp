@@ -148,7 +148,7 @@ void Controller::checkInput()
 				glm::vec4 viewPort = glm::vec4(0, 0, Controller::width, Controller::height);
 				glm::vec3 pos = glm::unProject(screenX, camera->getView(), camera->getProjection(), viewPort);
 
-				if (index == 0)
+				if (index == 1)
 				{
 					const float MIN_RAND = 0.2, MAX_RAND = 0.8;
 					const float range = MAX_RAND - MIN_RAND;
@@ -160,7 +160,6 @@ void Controller::checkInput()
 					ObjectManager::getInstance()->getObject(ObjectManager::getInstance()->getCount() - 1)->getTransformations()->scale(scaleValue, scaleValue, scaleValue);
 				}
 
-				printf("Clicked on pixel %d, %d, color %02hhx%02hhx%02hhx%02hhx, % f, stencil index % u\n", mouseX, mouseY, color[0], color[1], color[2], color[3], depth, index);
 
 				ObjectManager::getInstance()->removeObject(index);
 

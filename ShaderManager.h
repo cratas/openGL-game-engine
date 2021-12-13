@@ -8,7 +8,6 @@
 class ShaderManager
 {
 private:
-	int count;
 	std::vector<AbstractShader*> shaders;
 	static ShaderManager* instance;
 	void addShader(AbstractShader* shader);
@@ -18,6 +17,7 @@ public:
 	AbstractShader* createConstShader(Camera* camera);
 	AbstractShader* createPhongShader(Camera* camera);
 	AbstractShader* createLambertShader(Camera* camera);
+	AbstractShader* createSkyboxShader(Camera* camera);
 	AbstractShader* getShader(int i);
 	void activateReflector(bool isActivated);
 };

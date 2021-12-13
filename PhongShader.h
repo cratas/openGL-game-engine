@@ -2,10 +2,9 @@
 #include "Model.h"
 #include "AbstractShader.h"
 #include "Transformations.h"
-#include "AbstractObject.h"
 
 /// <summary>
-/// Class Quad inherits from class AbstractObject and draw Object as Quad
+/// Class PhongShader inherits from class LambertShader and implements own activateShader function
 /// </summary>
 class PhongShader : public AbstractShader
 {

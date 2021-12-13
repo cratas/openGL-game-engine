@@ -31,6 +31,7 @@ void Game::runGame()
 	while (!glfwWindowShouldClose(window))
 	{
 		controller->checkInput();
+		ObjectManager::getInstance()->getObject(0)->getTransformations()->bezierTranslate(camera->position.x, camera->position.y, camera->position.z);
 
 		SceneManager::getInstance()->drawForestScene();
 		

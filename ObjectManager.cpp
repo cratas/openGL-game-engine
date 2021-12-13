@@ -57,10 +57,23 @@ void ObjectManager::removeObject(int id)
 /// </summary>
 void ObjectManager::drawAllObjects()
 {
+
 	for (int i = 0; i < this->getCount(); i++)
 	{
-		glStencilFunc(GL_ALWAYS, i, 0xFF);
-		objects[i]->draw();
+		if (i == 0)
+		{
+			glDepthMask(GL_FALSE);
+			objects[i]->draw();
+			glDepthMask(GL_TRUE);
+		}
+		else
+		{
+			glStencilFunc(GL_ALWAYS, i, 0xFF);
+			objects[i]->draw();
+		}	
+		//glStencilFunc(GL_ALWAYS, i, 0xFF);
+		//objects[i]->draw();
+
 	}
 }
 

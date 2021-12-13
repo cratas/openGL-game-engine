@@ -1,6 +1,10 @@
 #pragma once
 #include "Light.h"
 
+
+/// <summary>
+/// DirectionalClass light used for keeping informations about ligh position and colour light direction
+/// </summary>
 class DirectionalLight : public Light
 {
 public:

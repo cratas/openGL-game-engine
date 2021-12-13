@@ -19,4 +19,5 @@ public:
 	AbstractShader* createConstantShader(Camera* camera);
 	AbstractShader* createLambertShader(Camera* camera);
 	AbstractShader* createPhongShader(Camera* camera);
+	AbstractShader* createSkyboxShader(Camera* camera);
 };

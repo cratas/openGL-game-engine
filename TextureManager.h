@@ -20,4 +20,5 @@ public:
 	static TextureManager* getInstance();
 	void addTexture(const char*);
 	int getTexture(int textureID);
+	void loadCubeMap(const char* xpos, const char* xneg, const char* ypos, const char* yneg, const char* zpos, const char* zneg);
 };

@@ -262,5 +262,11 @@
     <None Include="phong.frag">
       <Filter>Soubory zdrojů</Filter>
     </None>
+    <None Include="skybox.frag">
+      <Filter>Soubory zdrojů</Filter>
+    </None>
+    <None Include="skybox.vert">
+      <Filter>Soubory zdrojů</Filter>
+    </None>
   </ItemGroup>
 </Project>

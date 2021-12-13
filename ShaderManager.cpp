@@ -54,6 +54,18 @@ AbstractShader* ShaderManager::createLambertShader(Camera* camera)
 	return shader;
 }
 
+/// Method returning pointer to lambert shader
+/// </summary>
+AbstractShader* ShaderManager::createSkyboxShader(Camera* camera)
+{
+	AbstractShader* shader = nullptr;
+	shader = ShaderFactory::getInstance()->createSkyboxShader(camera);
+
+	this->addShader(shader);
+
+	return shader;
+}
+
 AbstractShader* ShaderManager::getShader(int i)
 {
 	return shaders[i];

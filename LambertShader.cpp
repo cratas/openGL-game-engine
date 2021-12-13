@@ -1,7 +1,7 @@
 #include "LambertShader.h"
 
 LambertShader::LambertShader(const char* vertexFile, const char* fragmentFile, Camera* camera)
-	: PhongShader(vertexFile, fragmentFile, camera)
+	: AbstractShader(vertexFile, fragmentFile, camera)
 {}
 
 void LambertShader::activateShader(glm::mat4 M, glm::vec4 colour)

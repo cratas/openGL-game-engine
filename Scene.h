@@ -11,6 +11,9 @@
 #include "tree.h"
 #include "plainTexture.h"
 
+/// <summary>
+/// Scene class which includes all objects to draw, used for switching between scenes
+/// </summary>
 class Scene
 {
 	Camera* camera;

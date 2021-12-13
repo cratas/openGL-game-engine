@@ -41,6 +41,17 @@ AbstractShader* ShaderFactory::createPhongShader(Camera* camera)
 /// <summary>
 /// Method for creating texture shader
 /// </summary>
+AbstractShader* ShaderFactory::createSkyboxShader(Camera* camera)
+{
+	AbstractShader* object = nullptr;
+	object = new ConstantShader("skybox.vert", "skybox.frag", camera);
+
+	return object;
+}
+
+/// <summary>
+/// Method for creating texture shader
+/// </summary>
 AbstractShader* ShaderFactory::createLambertShader(Camera* camera)
 {
 	AbstractShader* object = nullptr;

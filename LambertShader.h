@@ -6,9 +6,9 @@
 #include "PhongShader.h"
 
 /// <summary>
-/// Class Quad inherits from class AbstractObject and draw Object as Quad
+/// Class LambertShader inherits from class AbstractShader and implements own activateShader function
 /// </summary>
-class LambertShader : public PhongShader
+class LambertShader : public AbstractShader
 {
 public:
 	LambertShader(const char* vertexFile, const char* fragmentFile, Camera* camera);

@@ -18,7 +18,7 @@
 class Camera;
 
 /// <summary>
-/// Shader class keeps information about vert, frag shaders and shaderID, which is called shaderProgram
+/// Abstract Shader class keeps information about vert, frag shaders and shaderID, which is called shaderProgram
 /// </summary>
 class AbstractShader
 {
@@ -37,5 +37,5 @@ public:
 	void compileErrors();
 	void setTextureID(int id);
 	void sendSpecularLight(float specularLight);
-	void activateReflector(bool existsReflector);
+	virtual void activateReflector(bool existsReflector) = 0;
 };

@@ -1,5 +1,9 @@
 #pragma once
 
+
+/// <summary>
+/// Class Material forr keeping information about specular value of object
+/// </summary>
 class Material
 {
 private:
