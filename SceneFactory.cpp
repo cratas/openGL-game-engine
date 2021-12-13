@@ -33,7 +33,8 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 	TextureManager::getInstance()->addTexture("Textures/bake.png");
 	TextureManager::getInstance()->addTexture("Textures/test.png");
 	TextureManager::getInstance()->loadCubeMap("Textures/posx.jpg", "Textures/negx.jpg", "Textures/posy.jpg", "Textures/negy.jpg", "Textures/posz.jpg", "Textures/negz.jpg");
-
+	TextureManager::getInstance()->addTexture("Textures/m4.tga");
+	TextureManager::getInstance()->addTexture("Textures/deagle.tga");
 
 
 	glm::mat4x3 firstCurve = glm::mat4x3(glm::vec3(-7, 0, 0),
@@ -97,6 +98,22 @@ Scene* SceneFactory::createForestScene(Camera* camera)
 
 	scene->objectManager->createTextureObject(phongShader
 		, "Textures/zombie.obj", TextureManager::getInstance()->getTexture(4), false, new Bezier(secondCurve), new Material(0.0f));
+
+	scene->objectManager->createTextureObject(phongShader
+		, "Textures/m4a1.obj", TextureManager::getInstance()->getTexture(8), false, nullptr, new Material(0.0f));
+
+
+	scene->objectManager->createTextureObject(phongShader
+		, "Textures/deagle.obj", TextureManager::getInstance()->getTexture(9), false, nullptr, new Material(0.0f));
+
+	scene->objectManager->getObject(37)->getTransformations()->translate(2, 2, 20);
+	scene->objectManager->getObject(37)->getTransformations()->rotate(0, 15, 0);
+	scene->objectManager->getObject(37)->getTransformations()->scale(0.2, 0.2, 0.2);
+	
+	scene->objectManager->getObject(38)->getTransformations()->translate(-4, 2, 20);
+	scene->objectManager->getObject(38)->getTransformations()->rotate(1, 0, 3);
+	scene->objectManager->getObject(38)->getTransformations()->scale(0.5, 0.5, 0.5);
+
 
 
 	//grass
